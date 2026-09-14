@@ -1,0 +1,108 @@
+/* ==========================================================================
+   VETCARE PRO — RTL STYLESHEET (Arabic, Hebrew & RTL Locales)
+   ========================================================================== */
+
+[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+[dir="rtl"] .navbar-nav {
+  padding-right: 0;
+}
+
+[dir="rtl"] .dropdown-menu {
+  text-align: right;
+}
+
+[dir="rtl"] .nav-dropdown-menu .dropdown-item {
+  text-align: right;
+}
+
+/* Mirrored margin and paddings */
+[dir="rtl"] .ms-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+[dir="rtl"] .me-auto {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+[dir="rtl"] .text-end {
+  text-align: left !important;
+}
+
+[dir="rtl"] .text-start {
+  text-align: right !important;
+}
+
+/* Mirrored icons in list items */
+[dir="rtl"] .footer-links a:hover {
+  transform: translateX(-4px);
+}
+
+[dir="rtl"] .bi-chevron-right::before {
+  content: "\f284"; /* bi-chevron-left in bootstrap icons */
+}
+
+[dir="rtl"] .bi-arrow-right::before {
+  content: "\f12f"; /* bi-arrow-left */
+}
+
+/* Dashboard RTL Adjustments */
+[dir="rtl"] .dashboard-sidebar {
+  border-right: none;
+  border-left: 1px solid var(--border-color);
+}
+
+@media (max-width: 991.98px) {
+  [dir="rtl"] .dashboard-sidebar {
+    left: auto;
+    right: -280px;
+    transition: right var(--transition-normal);
+  }
+
+  [dir="rtl"] .dashboard-sidebar.show {
+    right: 0;
+    left: auto;
+  }
+}
+
+[dir="rtl"] .timeline {
+  padding-left: 0;
+  padding-right: 2rem;
+}
+
+[dir="rtl"] .timeline::before {
+  left: auto;
+  right: 0.6rem;
+}
+
+[dir="rtl"] .timeline-marker {
+  left: auto;
+  right: -2rem;
+}
+
+/* Floating badge positioning */
+[dir="rtl"] .floating-badge {
+  left: auto;
+  right: 1.5rem;
+}
+
+/* Toast Notification */
+[dir="rtl"] .toast-container {
+  right: auto;
+  left: 20px;
+}
+
+/* Back to top */
+[dir="rtl"] .back-to-top {
+  right: auto;
+  left: 25px;
+}

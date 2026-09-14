@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Parent Dashboard — VetCare Pro</title>
+  <meta name="description" content="Manage your pet's healthcare, upcoming appointments, vaccinations, and prescription refills on the VetCare Pro Pet Portal.">
+  <link rel="canonical" href="dashboard.html">
+  <!-- Favicon and Brand Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Dashboard Backdrop for Mobile -->
+  <div class="dashboard-sidebar-backdrop"></div>
+
+  <div class="dashboard-wrapper">
+    <!-- DASHBOARD SIDEBAR -->
+    <aside class="dashboard-sidebar">
+      <div class="dashboard-sidebar-header d-flex align-items-center justify-content-between">
+        <a class="navbar-brand m-0" href="index.html">
+          <div class="brand-icon"><img src="assets/images/favicon.svg" alt="VetCare Pro Logo" class="brand-logo-img"></div>
+          <span>VetCare<span class="text-accent">Pro</span></span>
+        </a>
+      </div>
+
+      <!-- Pet Parent Quick Profile -->
+      <div class="p-3 border-bottom d-flex align-items-center gap-3">
+        <img src="assets/images/pets/pet-max.jpg" alt="User Pet Parent" class="user-avatar">
+        <div class="overflow-hidden">
+          <h6 class="mb-0 text-truncate">Sarah Jenkins</h6>
+          <span class="text-muted small">Max & Luna's Guardian</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="dashboard-nav">
+        <li class="dashboard-nav-item">
+          <a href="dashboard.html" class="dashboard-nav-link active">
+            <i class="bi bi-speedometer2"></i> Dashboard
+          </a>
+        </li>
+        <li class="dashboard-nav-item">
+          <a href="my-pets.html" class="dashboard-nav-link">
+            <i class="bi bi-hearts"></i> My Pets (2)
+          </a>
+        </li>
+        <li class="dashboard-nav-item">
+          <a href="appointments-history.html" class="dashboard-nav-link">
+            <i class="bi bi-calendar-event"></i> Appointments
+          </a>
+        </li>
+        <li class="dashboard-nav-item">
+          <a href="vaccination-records.html" class="dashboard-nav-link">
+            <i class="bi bi-patch-check"></i> Vaccine Records
+          </a>
+        </li>
+        <li class="dashboard-nav-item">
+          <a href="medical-history.html" class="dashboard-nav-link">
+            <i class="bi bi-clipboard2-pulse"></i> Medical History
+          </a>
+        </li>
+        <li class="dashboard-nav-item">
+          <a href="prescriptions.html" class="dashboard-nav-link">
+            <i class="bi bi-prescription2"></i> Prescriptions
+          </a>
+        </li>
+        <li class="dashboard-nav-item">
+          <a href="billing-history.html" class="dashboard-nav-link">
+            <i class="bi bi-receipt"></i> Billing & Invoices
+          </a>
+        </li>
+        <li class="dashboard-nav-item">
+          <a href="profile.html" class="dashboard-nav-link">
+            <i class="bi bi-person-gear"></i> Owner Profile
+          </a>
+        </li>
+        <li class="dashboard-nav-item mt-4 pt-3 border-top">
+          <a href="index.html" class="dashboard-nav-link text-danger">
+            <i class="bi bi-box-arrow-left text-danger"></i> Sign Out
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- DASHBOARD MAIN CONTENT -->
+    <div class="dashboard-content">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button type="button" class="btn btn-sm btn-light d-lg-none" id="sidebar-toggle-btn" aria-label="Toggle Sidebar">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+          <h4 class="mb-0 h5 d-none d-sm-block">Patient Healthcare Portal</h4>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <!-- Theme Toggle -->
+          <button class="nav-icon-btn theme-toggle-btn" type="button" aria-label="Toggle theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+
+          <!-- RTL Toggle -->
+          <button class="rtl-text-toggle" type="button" aria-label="Toggle language direction" title="Toggle RTL">RTL</button>
+
+          <!-- Book Visit Action -->
+          <a href="appointments.html" class="btn btn-sm btn-primary">
+            <i class="bi bi-plus-circle me-1"></i> Book Visit
+          </a>
+
+          <!-- Public Website Link -->
+          <a href="index.html" class="btn btn-sm btn-outline-primary d-none d-md-inline-flex">
+            <i class="bi bi-house"></i> Public Site
+          </a>
+        </div>
+      </header>
+
+      <!-- Dashboard Body -->
+      <div class="dashboard-body">
+        <!-- SECTION 1: UPCOMING VISIT ALERT & HERO -->
+        <div class="card bg-primary text-white p-4 rounded-4 shadow-sm border-0 mb-4" id="dash-hero-alert">
+          <div class="row align-items-center g-3">
+            <div class="col-lg-8">
+              <span class="badge bg-warning text-dark px-3 py-1 rounded-pill mb-2 fw-bold">
+                <i class="bi bi-bell-fill me-1"></i> Upcoming Visit Tomorrow
+              </span>
+              <h3 class="text-white mb-1">Max — Annual Preventive Wellness Checkup</h3>
+              <p class="text-white-50 small mb-0">Scheduled with <strong>Dr. Emily Carter</strong> on <strong>September 24 at 10:30 AM</strong> (Exam Room 3). Fasting is not required.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="appointments-history.html" class="btn btn-accent me-2">Manage Booking</a>
+              <a href="tel:5553827491" class="btn btn-outline-light">Call Clinic</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: HEALTH METRICS & STAT CARDS -->
+        <div class="row g-4 mb-4" id="dash-stat-cards">
+          <div class="col-xl-3 col-sm-6">
+            <div class="card p-3 border-0 shadow-xs h-100 bg-surface">
+              <div class="d-flex align-items-center gap-3">
+                <div class="icon-box icon-box-primary m-0"><i class="bi bi-hearts"></i></div>
+                <div>
+                  <span class="text-muted small d-block">Registered Pets</span>
+                  <h3 class="h4 mb-0">2 Companions</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-sm-6">
+            <div class="card p-3 border-0 shadow-xs h-100 bg-surface">
+              <div class="d-flex align-items-center gap-3">
+                <div class="icon-box icon-box-accent m-0"><i class="bi bi-patch-check"></i></div>
+                <div>
+                  <span class="text-muted small d-block">Vaccinations Due</span>
+                  <h3 class="h4 mb-0 text-success">All Up-to-Date</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-sm-6">
+            <div class="card p-3 border-0 shadow-xs h-100 bg-surface">
+              <div class="d-flex align-items-center gap-3">
+                <div class="icon-box icon-box-primary m-0"><i class="bi bi-capsule"></i></div>
+                <div>
+                  <span class="text-muted small d-block">Active Prescriptions</span>
+                  <h3 class="h4 mb-0">1 Medication</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-sm-6">
+            <div class="card p-3 border-0 shadow-xs h-100 bg-surface">
+              <div class="d-flex align-items-center gap-3">
+                <div class="icon-box icon-box-primary m-0"><i class="bi bi-receipt"></i></div>
+                <div>
+                  <span class="text-muted small d-block">Outstanding Balance</span>
+                  <h3 class="h4 mb-0 text-primary">$0.00</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: MY FAMILY PETS QUICK CARDS -->
+        <div class="row g-4 mb-4" id="dash-pets-overview">
+          <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="mb-0 text-main"><i class="bi bi-heart me-2 text-accent"></i> My Family Companions</h5>
+              <a href="my-pets.html" class="small text-accent fw-bold">Manage Pets <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Pet Card 1: Max -->
+          <div class="col-md-6">
+            <div class="card card-hover p-3 border shadow-xs bg-surface">
+              <div class="d-flex align-items-center gap-3">
+                <img src="assets/images/pets/pet-max.jpg" alt="Max Golden Retriever" class="pet-avatar">
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Max</h5>
+                    <span class="badge badge-subtle-accent">Healthy</span>
+                  </div>
+                  <span class="text-muted small d-block">Golden Retriever • 4 Years Old • 32 kg</span>
+                  <span class="small text-muted"><i class="bi bi-qr-code me-1"></i> Microchip: #9851410029</span>
+                </div>
+              </div>
+              <div class="d-flex gap-2 mt-3 pt-3 border-top">
+                <a href="pet-details.html" class="btn btn-sm btn-outline-primary w-100">View Medical Record</a>
+                <a href="vaccination-records.html" class="btn btn-sm btn-light">Vaccine Passport</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pet Card 2: Luna -->
+          <div class="col-md-6">
+            <div class="card card-hover p-3 border shadow-xs bg-surface">
+              <div class="d-flex align-items-center gap-3">
+                <img src="assets/images/pets/pet-luna.jpg" alt="Luna Siamese Cat" class="pet-avatar">
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Luna</h5>
+                    <span class="badge badge-subtle-accent">Healthy</span>
+                  </div>
+                  <span class="text-muted small d-block">Siamese Cat • 2 Years Old • 4.2 kg</span>
+                  <span class="small text-muted"><i class="bi bi-qr-code me-1"></i> Microchip: #9851410084</span>
+                </div>
+              </div>
+              <div class="d-flex gap-2 mt-3 pt-3 border-top">
+                <a href="pet-details.html" class="btn btn-sm btn-outline-primary w-100">View Medical Record</a>
+                <a href="vaccination-records.html" class="btn btn-sm btn-light">Vaccine Passport</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 4: RECENT CLINICAL NOTES & DOCTOR RECOMMENDATIONS -->
+        <div class="row g-4 mb-4" id="dash-notes">
+          <div class="col-lg-7">
+            <div class="card border shadow-xs h-100 bg-surface">
+              <div class="card-header bg-surface border-bottom d-flex justify-content-between align-items-center">
+                <h6 class="mb-0 fw-bold"><i class="bi bi-journal-medical me-2 text-accent"></i> Recent Doctor Clinical Summary</h6>
+                <span class="small text-muted">Visit Date: Aug 14, 2026</span>
+              </div>
+              <div class="card-body">
+                <h6 class="text-primary mb-1">Max — Orthopedic Follow-up Exam</h6>
+                <span class="small text-muted d-block mb-3">Attending Surgeon: Dr. Emily Carter, DVM, DACVS</span>
+                <p class="small text-muted mb-3">"Surgical incision from left stifle TPLO has healed cleanly with zero inflammation. Palpation of cranial drawer test confirms joint stability. Full weight bearing restored without antalgic gait. Max may gradually return to off-leash park walks over the next 4 weeks."</p>
+                <div class="p-3 bg-subtle rounded-3 small">
+                  <strong>Doctor Recommendations:</strong>
+                  <ul class="mb-0 ps-3 mt-1 text-muted">
+                    <li>Continue Omega-3 Joint Supplement (1 chew daily).</li>
+                    <li>Repeat radiographic evaluation in 6 months for baseline bone remodeling.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION 5: ACTIVE PHARMACY & QUICK REFILL -->
+          <div class="col-lg-5">
+            <div class="card border shadow-xs h-100 bg-surface">
+              <div class="card-header bg-surface border-bottom d-flex justify-content-between align-items-center">
+                <h6 class="mb-0 fw-bold"><i class="bi bi-capsule me-2 text-accent"></i> Active Medications</h6>
+                <a href="prescriptions.html" class="small text-accent">View All</a>
+              </div>
+              <div class="card-body">
+                <div class="p-3 bg-subtle rounded-3 mb-3">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <strong class="text-main">Simparica Trio® (Chewable)</strong>
+                    <span class="badge badge-subtle-accent">1 Refill Left</span>
+                  </div>
+                  <span class="small text-muted d-block">Monthly Flea, Tick & Heartworm Prevention</span>
+                  <span class="small text-muted">Patient: Max • Prescribed by Dr. Vance</span>
+                </div>
+
+                <div class="p-3 bg-subtle rounded-3 mb-3">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <strong class="text-main">Dasuquin Advanced Joint Chews</strong>
+                    <span class="badge badge-subtle-primary">Daily Supplement</span>
+                  </div>
+                  <span class="small text-muted d-block">Glucosamine & Chondroitin Complex</span>
+                  <span class="small text-muted">Patient: Max</span>
+                </div>
+
+                <a href="prescriptions.html" class="btn btn-outline-primary btn-sm w-100">
+                  <i class="bi bi-arrow-repeat me-1"></i> Request Pharmacy Refill
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 6: QUICK ACTION SHORTCUTS -->
+        <div class="card bg-subtle border-0 rounded-4 p-4 text-center" id="dash-quick-actions">
+          <h5 class="mb-3 text-main">Quick Pet Parent Actions</h5>
+          <div class="d-flex justify-content-center flex-wrap gap-2">
+            <a href="appointments.html" class="btn btn-sm btn-primary"><i class="bi bi-calendar-plus me-1"></i> Book New Exam</a>
+            <a href="vaccination-records.html" class="btn btn-sm btn-light"><i class="bi bi-printer me-1"></i> Print Vaccine Passports</a>
+            <a href="billing-history.html" class="btn btn-sm btn-light"><i class="bi bi-file-earmark-text me-1"></i> View Receipts</a>
+            <a href="contact.html" class="btn btn-sm btn-light"><i class="bi bi-chat-dots me-1"></i> Message Veterinary Team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Modular Vanilla JavaScript -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <!-- Floating 24/7 Emergency Care Quick Action Button at Bottom of Page -->
+  <aside class="floating-emergency-widget" aria-label="Emergency Care Hotline">
+    <a href="emergency-care.html" class="btn btn-emergency shadow-lg rounded-pill d-flex align-items-center gap-2 px-3 py-2 text-decoration-none">
+      <span class="emergency-pulse-ping"></span>
+      <i class="bi bi-hospital-fill fs-5"></i>
+      <span class="fw-bold">24/7 Emergency Care</span>
+    </a>
+  </aside>
+</body>
+</html>

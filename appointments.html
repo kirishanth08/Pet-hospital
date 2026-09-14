@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Veterinary Appointment — VetCare Pro</title>
+  <meta name="description" content="Schedule an appointment online with our veterinary surgeons and specialists at VetCare Pro Animal Hospital. Fast, stress-free booking.">
+  <link rel="canonical" href="appointments.html">
+  <!-- Favicon and Brand Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <!-- Global Header / Navbar -->
+  <header class="site-navbar">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg p-0" aria-label="Main Navigation">
+        <a class="navbar-brand" href="index.html">
+          <div class="brand-icon"><img src="assets/images/favicon.svg" alt="VetCare Pro Logo" class="brand-logo-img"></div>
+          <span>VetCare<span class="text-accent">Pro</span></span>
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+              <ul class="dropdown-menu nav-dropdown-menu">
+                <li><a class="dropdown-item" href="index.html"><i class="bi bi-heart-fill text-danger me-2"></i> Home 1 — Welcoming Care & Family</a></li>
+                <li><a class="dropdown-item" href="home-2.html"><i class="bi bi-hospital-fill text-primary me-2"></i> Home 2 — Specialized Clinical Services</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="vets.html">Vets</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+
+          <div class="nav-controls">
+            <!-- Theme Toggle -->
+            <button class="nav-icon-btn theme-toggle-btn" type="button" aria-label="Toggle light or dark theme" title="Toggle theme">
+              <i class="bi bi-moon-stars-fill"></i>
+            </button>
+
+            <!-- RTL / LTR Text Toggle -->
+            <button class="rtl-text-toggle" type="button" aria-label="Toggle language direction" title="Toggle RTL">RTL</button>
+
+            <!-- Dashboard Dropdown (User and Admin) -->
+            <div class="dropdown d-inline-block">
+              <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="Portal Dashboard">Dashboard</button>
+              <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                <li><h6 class="dropdown-header text-uppercase small">Portals</h6></li>
+                <li><a class="dropdown-item d-flex align-items-center gap-2" href="dashboard.html"><i class="bi bi-person-heart text-accent"></i> User Dashboard</a></li>
+                <li><a class="dropdown-item d-flex align-items-center gap-2" href="dashboard.html?role=admin"><i class="bi bi-shield-lock-fill text-primary"></i> Admin Dashboard</a></li>
+              </ul>
+            </div>
+
+            <!-- Pet Owner Portal Login -->
+            <a href="login.html" class="btn btn-sm btn-light" title="Pet Parent Portal">
+              <i class="bi bi-person-circle"></i> Login
+            </a>
+
+            <!-- Sign Up CTA -->
+            <a href="register.html" class="btn btn-sm btn-primary">
+              <i class="bi bi-person-plus-fill"></i> Sign Up
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: APPOINTMENTS HERO -->
+    <section class="section-py bg-subtle" id="appointment-hero">
+      <div class="container">
+        <nav aria-label="breadcrumb" class="mb-3">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Book Appointment</li>
+          </ol>
+        </nav>
+
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="section-tag"><i class="bi bi-calendar-heart"></i> Seamless Scheduling</span>
+            <h1 class="display-4 fw-extrabold mb-3">Schedule Your Pet’s Visit Online</h1>
+            <p class="lead mb-4">Book your companion's next wellness exam, booster vaccination, or surgical consultation in just a few clicks. Select your preferred clinician and convenient time.</p>
+            <div class="d-flex align-items-center gap-3 p-3 bg-surface rounded-3 border">
+              <i class="bi bi-info-circle-fill text-accent fs-4"></i>
+              <span class="small text-muted">Same-day appointments available for urgent conditions. For immediate life-threatening emergencies, call <strong class="text-danger">(555) 924-PETS</strong> directly.</span>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <img src="assets/images/hero/appointments-hero.jpg" alt="Pet parent scheduling a veterinary appointment on tablet" class="img-fluid rounded-4 shadow-lg">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTERACTIVE APPOINTMENT FORM -->
+    <section class="section-py bg-surface" id="booking-form-section">
+      <div class="container">
+        <div class="card shadow-lg border-0 rounded-4 overflow-hidden max-w-900 mx-auto">
+          <div class="card-header bg-primary text-white p-4">
+            <h3 class="h4 text-white mb-1"><i class="bi bi-calendar-event me-2"></i> Pet Appointment Reservation Form</h3>
+            <p class="text-white-50 small mb-0">Fill in the details below. You will receive an instant digital confirmation ticket.</p>
+          </div>
+
+          <div class="card-body p-4 p-md-5">
+            <!-- In-Page Appointment Success Message Alert -->
+            <div id="appointment-success-alert" class="alert alert-success border-0 rounded-4 p-4 shadow-sm mb-4 d-none" role="alert">
+              <div class="d-flex align-items-start gap-3">
+                <div class="rounded-circle bg-success text-white p-2 d-flex align-items-center justify-content-center flex-shrink-0" style="width: 44px; height: 44px;">
+                  <i class="bi bi-check-lg fs-4"></i>
+                </div>
+                <div class="flex-grow-1">
+                  <h4 class="alert-heading fw-bold mb-1">Appointment Confirmed Successfully!</h4>
+                  <p class="mb-2 text-dark">Thank you, <strong id="success-owner-name">Pet Parent</strong>! Your appointment has been booked into our hospital schedule.</p>
+                  <div class="p-3 bg-white bg-opacity-75 rounded-3 mb-3 border">
+                    <div class="row g-2 small text-dark">
+                      <div class="col-sm-6"><strong>Reference Ticket:</strong> <span class="badge bg-primary text-white" id="success-ticket">#VET-849201</span></div>
+                      <div class="col-sm-6"><strong>Patient:</strong> <span id="success-pet-name">Max (Canine)</span></div>
+                      <div class="col-sm-6"><strong>Service:</strong> <span id="success-service">General Wellness Exam</span></div>
+                      <div class="col-sm-6"><strong>Doctor:</strong> <span id="success-vet">First Available Clinician</span></div>
+                      <div class="col-sm-12"><strong>Scheduled Slot:</strong> <span id="success-datetime" class="fw-bold text-success">September 15, 2026 at 09:00 AM</span></div>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-wrap gap-2">
+                    <button type="button" class="btn btn-sm btn-success" onclick="window.print()"><i class="bi bi-printer me-1"></i> Print Ticket</button>
+                    <a href="appointments-history.html" class="btn btn-sm btn-outline-success"><i class="bi bi-card-checklist me-1"></i> View in Portal</a>
+                    <button type="button" class="btn btn-sm btn-link text-success text-decoration-none" id="btn-book-another"><i class="bi bi-plus-circle me-1"></i> Book Another Appointment</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <form id="appointment-booking-form" class="needs-validation" data-form-type="appointment-custom" novalidate>
+              <!-- Row 1: Pet Parent Details -->
+              <h5 class="border-bottom pb-2 mb-3 text-primary"><i class="bi bi-person me-1"></i> 1. Pet Parent Information</h5>
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <label for="owner-name" class="form-label">Full Name <span class="required">*</span></label>
+                  <input type="text" class="form-control" id="owner-name" placeholder="Jane Doe" required>
+                  <div class="invalid-feedback">Please provide your full name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="owner-phone" class="form-label">Phone Number <span class="required">*</span></label>
+                  <input type="tel" class="form-control" id="owner-phone" placeholder="(555) 000-0000" required>
+                  <div class="invalid-feedback">Please enter a reachable phone number.</div>
+                </div>
+                <div class="col-12">
+                  <label for="owner-email" class="form-label">Email Address <span class="required">*</span></label>
+                  <input type="email" class="form-control" id="owner-email" placeholder="jane.doe@example.com" required>
+                  <div class="invalid-feedback">A valid email is required for confirmation.</div>
+                </div>
+              </div>
+
+              <!-- Row 2: Patient Details -->
+              <h5 class="border-bottom pb-2 mb-3 text-primary"><i class="bi bi-heart-pulse me-1"></i> 2. Patient Information</h5>
+              <div class="row g-3 mb-4">
+                <div class="col-md-4">
+                  <label for="pet-name" class="form-label">Pet's Name <span class="required">*</span></label>
+                  <input type="text" class="form-control" id="pet-name" placeholder="e.g. Max" required>
+                  <div class="invalid-feedback">Please provide your pet's name.</div>
+                </div>
+                <div class="col-md-4">
+                  <label for="pet-type" class="form-label">Pet Species <span class="required">*</span></label>
+                  <select class="form-select" id="pet-type" required>
+                    <option value="" selected disabled>Select species...</option>
+                    <option value="Canine (Dog)">Canine (Dog)</option>
+                    <option value="Feline (Cat)">Feline (Cat)</option>
+                    <option value="Rabbit">Rabbit</option>
+                    <option value="Bird / Avian">Bird / Avian</option>
+                    <option value="Other Exotic">Other Exotic</option>
+                  </select>
+                  <div class="invalid-feedback">Please select species.</div>
+                </div>
+                <div class="col-md-4">
+                  <label for="pet-age" class="form-label">Pet Age / Breed</label>
+                  <input type="text" class="form-control" id="pet-age" placeholder="e.g. 4 Years / Golden Retriever">
+                </div>
+              </div>
+
+              <!-- Row 3: Appointment Service & Clinician -->
+              <h5 class="border-bottom pb-2 mb-3 text-primary"><i class="bi bi-hospital me-1"></i> 3. Clinical Service & Doctor</h5>
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <label for="appointment-service" class="form-label">Reason for Visit <span class="required">*</span></label>
+                  <select class="form-select" id="appointment-service" required>
+                    <option value="" selected disabled>Select service...</option>
+                    <option value="Annual Wellness & Physical Exam">Annual Wellness & Physical Exam</option>
+                    <option value="Vaccination & Booster Shots">Vaccination & Booster Shots</option>
+                    <option value="Dental Examination & Cleaning">Dental Examination & Cleaning</option>
+                    <option value="Surgical / Orthopedic Consultation">Surgical / Orthopedic Consultation</option>
+                    <option value="Diagnostic Ultrasound / Radiology">Diagnostic Ultrasound / Radiology</option>
+                    <option value="Skin Allergy & Dermatology">Skin Allergy & Dermatology</option>
+                    <option value="Sick Pet Consultation (Non-Emergency)">Sick Pet Consultation (Non-Emergency)</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a reason for visit.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="preferred-vet" class="form-label">Preferred Clinician</label>
+                  <select class="form-select" id="preferred-vet">
+                    <option value="First Available Clinician" selected>First Available Clinician</option>
+                    <option value="Dr. Emily Carter (Chief Surgeon)">Dr. Emily Carter (Chief Surgeon)</option>
+                    <option value="Dr. Marcus Vance (Internal Medicine)">Dr. Marcus Vance (Internal Medicine)</option>
+                    <option value="Dr. Sarah Jenkins (Dentistry)">Dr. Sarah Jenkins (Dentistry)</option>
+                    <option value="Dr. Rachel Patel (Dermatology)">Dr. Rachel Patel (Dermatology)</option>
+                    <option value="Dr. Brian O'Connor (Exotics)">Dr. Brian O'Connor (Exotics)</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Row 4: Date & Interactive Time Slot -->
+              <h5 class="border-bottom pb-2 mb-3 text-primary"><i class="bi bi-clock me-1"></i> 4. Date & Time Selection</h5>
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <label for="appointment-date" class="form-label">Preferred Date <span class="required">*</span></label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
+                    <input type="date" class="form-control" id="appointment-date" required>
+                  </div>
+                  <div class="invalid-feedback">Please select a preferred date.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Available Time Slots <span class="required">*</span></label>
+                  <input type="hidden" id="selected-time-slot" value="09:00 AM">
+                  <div class="d-flex flex-wrap gap-2">
+                    <button type="button" class="btn btn-sm btn-outline-primary time-slot-btn active btn-accent" data-time="09:00 AM">09:00 AM</button>
+                    <button type="button" class="btn btn-sm btn-outline-primary time-slot-btn" data-time="10:30 AM">10:30 AM</button>
+                    <button type="button" class="btn btn-sm btn-outline-primary time-slot-btn" data-time="01:15 PM">01:15 PM</button>
+                    <button type="button" class="btn btn-sm btn-outline-primary time-slot-btn" data-time="03:00 PM">03:00 PM</button>
+                    <button type="button" class="btn btn-sm btn-outline-primary time-slot-btn" data-time="04:30 PM">04:30 PM</button>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label for="appointment-notes" class="form-label">Additional Symptoms or Notes</label>
+                  <textarea class="form-control" id="appointment-notes" rows="3" placeholder="Describe any symptoms, previous medical history, or dietary questions..."></textarea>
+                </div>
+              </div>
+
+              <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-primary btn-lg"><i class="bi bi-check-circle me-1"></i> Confirm & Book Appointment</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: WHAT TO EXPECT DURING YOUR VISIT -->
+    <section class="section-py bg-subtle" id="visit-expectation">
+      <div class="container">
+        <div class="text-center section-title-wrap max-w-700 mx-auto">
+          <span class="section-tag"><i class="bi bi-door-open"></i> Fear-Free Atmosphere</span>
+          <h2 class="h1 mb-3">What to Expect During Your Pet’s Visit</h2>
+          <p class="lead">We have replaced stressful clinical waiting rooms with a calm, patient-first arrival experience.</p>
+        </div>
+
+        <div class="row g-4 text-center">
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 p-4 border-0 shadow-sm">
+              <div class="icon-box icon-box-primary mx-auto mb-3"><i class="bi bi-shield-check"></i></div>
+              <h5 class="mb-2">Zero-Wait Check-In</h5>
+              <p class="small text-muted mb-0">Check in online or at the kiosk. You will be escorted directly to a disinfected private exam room.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 p-4 border-0 shadow-sm">
+              <div class="icon-box icon-box-primary mx-auto mb-3"><i class="bi bi-hand-thumbs-up"></i></div>
+              <h5 class="mb-2">Gentle Acclimation</h5>
+              <p class="small text-muted mb-0">Our nurses use organic calming pheromones and tasty treats while your pet investigates the room.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 p-4 border-0 shadow-sm">
+              <div class="icon-box icon-box-primary mx-auto mb-3"><i class="bi bi-chat-left-heart"></i></div>
+              <h5 class="mb-2">Collaborative Review</h5>
+              <p class="small text-muted mb-0">The doctor examines your pet right in front of you, explaining every observation clearly.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 p-4 border-0 shadow-sm">
+              <div class="icon-box icon-box-primary mx-auto mb-3"><i class="bi bi-phone"></i></div>
+              <h5 class="mb-2">Instant Digital Summary</h5>
+              <p class="small text-muted mb-0">Exam notes, medication instructions, and vaccine certificates sync directly to your portal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: FAIR RESCHEDULING & CANCELLATION POLICY -->
+    <section class="section-py bg-surface" id="cancellation-policy">
+      <div class="container">
+        <div class="card bg-subtle p-4 p-md-5 rounded-4 border-0 max-w-900 mx-auto">
+          <div class="d-flex align-items-start gap-3">
+            <i class="bi bi-info-circle text-primary display-5 flex-shrink-0"></i>
+            <div>
+              <h4 class="mb-2">Fair & Respectful Scheduling Policy</h4>
+              <p class="text-muted small mb-2">We understand that life happens. If you need to reschedule or cancel your appointment, please give us at least <strong>24 hours notice</strong> so we can offer the slot to an animal in need of urgent care.</p>
+              <span class="small text-muted">You can reschedule with one click directly in your <a href="dashboard.html" class="text-accent fw-semibold">Pet Owner Dashboard</a> or by giving our reception team a quick call.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: TELEHEALTH VS IN-CLINIC VISITS -->
+    <section class="section-py bg-subtle" id="telehealth-compare">
+      <div class="container">
+        <div class="text-center section-title-wrap max-w-700 mx-auto">
+          <span class="section-tag"><i class="bi bi-camera-video"></i> Flexible Consultations</span>
+          <h2 class="h1 mb-3">Telehealth vs. In-Clinic Care</h2>
+          <p class="lead">Not sure if your pet needs an in-person exam? Here is how to decide.</p>
+        </div>
+
+        <div class="row g-4 max-w-900 mx-auto">
+          <div class="col-md-6">
+            <div class="card h-100 p-4 border-0 shadow-sm">
+              <span class="badge badge-subtle-accent mb-2">Virtual Telehealth</span>
+              <h5>Best for Guidance & Triage</h5>
+              <ul class="list-unstyled small text-muted mt-3">
+                <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> Minor behavioral or training inquiries</li>
+                <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> Diet & nutritional adjustments</li>
+                <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> Post-operative incision visual checks</li>
+                <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> Chronic medication refill evaluations</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card h-100 p-4 border-primary shadow-sm">
+              <span class="badge bg-primary text-white mb-2">In-Clinic Visit</span>
+              <h5>Required for Physical Diagnostics</h5>
+              <ul class="list-unstyled small text-muted mt-3">
+                <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Vaccinations & physical injections</li>
+                <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Ear infections & skin scrapings</li>
+                <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Bloodwork, ultrasound & X-rays</li>
+                <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i> Limping, lameness & abdominal pain</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: EMERGENCY NOTICE CALLOUT -->
+    <section class="section-py bg-primary text-white" id="emergency-alert">
+      <div class="container text-center max-w-800 mx-auto">
+        <div class="badge bg-danger text-white px-3 py-1 rounded-pill mb-3 fw-bold">Active Medical Emergency?</div>
+        <h3 class="display-6 text-white fw-bold mb-3">Do Not Wait for an Appointment</h3>
+        <p class="lead text-white-50 mb-4">If your pet is having difficulty breathing, severe bleeding, or has ingested poison, skip the form and call our emergency hospital directly.</p>
+        <a href="tel:5559247387" class="btn btn-emergency btn-lg fs-5">
+          <i class="bi bi-telephone-fill me-2"></i> Direct Trauma Line: (555) 924-PETS
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Appointment Booking Confirmation Modal -->
+  <div class="modal fade" id="appointmentConfirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title text-white" id="confirmationModalLabel"><i class="bi bi-check-circle-fill me-2 text-accent"></i> Appointment Confirmed!</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center p-4">
+          <div class="icon-box icon-box-accent mx-auto mb-3 fs-1 text-success">
+            <i class="bi bi-patch-check-fill"></i>
+          </div>
+          <h4 class="mb-1 text-main">We Look Forward to Seeing You!</h4>
+          <p class="text-muted small mb-4">A calendar invite and SMS reminder have been sent to your contact details.</p>
+
+          <div class="bg-subtle p-3 rounded-3 text-start small mb-4">
+            <div class="mb-2"><strong>Ticket ID:</strong> <span id="conf-ticket" class="text-primary fw-bold">VET-782910</span></div>
+            <div class="mb-2"><strong>Patient:</strong> <span id="conf-pet-name">Max</span></div>
+            <div class="mb-2"><strong>Service:</strong> <span id="conf-service">Annual Wellness Exam</span></div>
+            <div class="mb-2"><strong>Veterinarian:</strong> <span id="conf-vet">Dr. Emily Carter</span></div>
+            <div><strong>Date & Time:</strong> <span id="conf-datetime" class="text-accent fw-bold">Tomorrow at 10:30 AM</span></div>
+          </div>
+
+          <div class="d-flex gap-2">
+            <a href="dashboard.html" class="btn btn-primary w-100">View in Portal</a>
+            <button type="button" class="btn btn-light w-100" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Col 1: About & Logo -->
+        <div class="col-lg-4 col-md-6">
+          <a class="navbar-brand text-white mb-3" href="index.html">
+            <div class="brand-icon"><img src="assets/images/favicon.svg" alt="VetCare Pro Logo" class="brand-logo-img"></div>
+            <span class="text-white">VetCare<span class="text-accent">Pro</span></span>
+          </a>
+          <p class="mb-4">Compassionate, fear-free veterinary healthcare providing comprehensive wellness, advanced diagnostics, orthopedic surgery, and 24/7 critical trauma care.</p>
+          <div class="footer-emergency-card">
+            <span class="badge bg-danger mb-1">24/7 Emergency Care</span>
+            <span class="phone-link"><i class="bi bi-telephone-inbound-fill me-2"></i>(555) 924-PETS</span>
+            <small class="d-block mt-1 text-white-50">Trauma ICU & critical surgery always ready</small>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-2 col-md-6 col-6">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="bi bi-chevron-right"></i> Home</a></li>
+            <li><a href="about.html"><i class="bi bi-chevron-right"></i> About Us</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right"></i> Services</a></li>
+            <li><a href="vets.html"><i class="bi bi-chevron-right"></i> Our Vets</a></li>
+            <li><a href="emergency-care.html"><i class="bi bi-chevron-right text-emergency"></i> Emergency</a></li>
+            <li><a href="appointments.html"><i class="bi bi-chevron-right"></i> Appointments</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right"></i> Pricing</a></li>
+            <li><a href="blog.html"><i class="bi bi-chevron-right"></i> Health Blog</a></li>
+            <li><a href="contact.html"><i class="bi bi-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Veterinary Services -->
+        <div class="col-lg-3 col-md-6 col-6">
+          <h5>Clinical Care</h5>
+          <ul class="footer-links">
+            <li><a href="service-details.html"><i class="bi bi-chevron-right"></i> Routine Vaccinations</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right"></i> Soft Tissue Surgery</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right"></i> Digital Diagnostics</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right"></i> Pet Dental Hygiene</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right"></i> Preventive Checkups</a></li>
+            <li><a href="services.html"><i class="bi bi-chevron-right"></i> Senior Pet Care</a></li>
+            <li><a href="emergency-care.html"><i class="bi bi-chevron-right"></i> Critical Care ICU</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter & Contact Details -->
+        <div class="col-lg-3 col-md-6">
+          <h5>Stay Connected</h5>
+          <p class="small mb-3">Join our monthly newsletter for seasonal health advisories, vaccination alerts, and pet care tips.</p>
+          <form class="needs-validation mb-4" data-form-type="newsletter" novalidate>
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter your email" required aria-label="Email Address">
+              <button class="btn btn-accent" type="submit"><i class="bi bi-send-fill"></i></button>
+            </div>
+          </form>
+
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <i class="bi bi-geo-alt-fill text-accent"></i>
+            <span class="small">742 Evergreen Terrace, Medical Park</span>
+          </div>
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-envelope-fill text-accent"></i>
+            <span class="small">care@vetcarepro-hospital.com</span>
+          </div>
+
+          <div class="social-links">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook" title="Visit VetCare Pro on Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram" title="Visit VetCare Pro on Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube" title="Visit VetCare Pro on YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn" title="Visit VetCare Pro on LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center pt-4">
+        <div>
+          &copy; 2026 VetCare Pro Animal Hospital. All rights reserved. Built for ThemeForest & TemplateMonster.
+        </div>
+        <div class="d-flex gap-3 mt-2 mt-md-0">
+          <a href="contact.html" class="text-muted text-decoration-none small">Privacy Policy</a>
+          <a href="contact.html" class="text-muted text-decoration-none small">Terms of Service</a>
+          <a href="emergency-care.html" class="text-muted text-decoration-none small">Emergency Protocol</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="back-to-top" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Modular Vanilla JavaScript -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/appointments.js"></script>
+  <!-- Floating 24/7 Emergency Care Quick Action Button at Bottom of Page -->
+  <aside class="floating-emergency-widget" aria-label="Emergency Care Hotline">
+    <a href="emergency-care.html" class="btn btn-emergency shadow-lg rounded-pill d-flex align-items-center gap-2 px-3 py-2 text-decoration-none">
+      <span class="emergency-pulse-ping"></span>
+      <i class="bi bi-hospital-fill fs-5"></i>
+      <span class="fw-bold">24/7 Emergency Care</span>
+    </a>
+  </aside>
+</body>
+</html>

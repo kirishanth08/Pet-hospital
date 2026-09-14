@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Pets Directory — VetCare Pro Portal</title>
+  <meta name="description" content="View and manage all your family pets, medical profiles, vaccination statuses, and microchips on the VetCare Pro Pet Portal.">
+  <link rel="canonical" href="my-pets.html">
+  <!-- Favicon and Brand Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Dashboard Backdrop for Mobile -->
+  <div class="dashboard-sidebar-backdrop"></div>
+
+  <div class="dashboard-wrapper">
+    <!-- DASHBOARD SIDEBAR -->
+    <aside class="dashboard-sidebar">
+      <div class="dashboard-sidebar-header d-flex align-items-center justify-content-between">
+        <a class="navbar-brand m-0" href="index.html">
+          <div class="brand-icon"><img src="assets/images/favicon.svg" alt="VetCare Pro Logo" class="brand-logo-img"></div>
+          <span>VetCare<span class="text-accent">Pro</span></span>
+        </a>
+      </div>
+
+      <div class="p-3 border-bottom d-flex align-items-center gap-3">
+        <img src="assets/images/pets/pet-max.jpg" alt="User Pet Parent" class="user-avatar">
+        <div class="overflow-hidden">
+          <h6 class="mb-0 text-truncate">Sarah Jenkins</h6>
+          <span class="text-muted small">Max & Luna's Guardian</span>
+        </div>
+      </div>
+
+      <ul class="dashboard-nav">
+        <li class="dashboard-nav-item"><a href="dashboard.html" class="dashboard-nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+        <li class="dashboard-nav-item"><a href="my-pets.html" class="dashboard-nav-link active"><i class="bi bi-hearts"></i> My Pets (2)</a></li>
+        <li class="dashboard-nav-item"><a href="appointments-history.html" class="dashboard-nav-link"><i class="bi bi-calendar-event"></i> Appointments</a></li>
+        <li class="dashboard-nav-item"><a href="vaccination-records.html" class="dashboard-nav-link"><i class="bi bi-patch-check"></i> Vaccine Records</a></li>
+        <li class="dashboard-nav-item"><a href="medical-history.html" class="dashboard-nav-link"><i class="bi bi-clipboard2-pulse"></i> Medical History</a></li>
+        <li class="dashboard-nav-item"><a href="prescriptions.html" class="dashboard-nav-link"><i class="bi bi-prescription2"></i> Prescriptions</a></li>
+        <li class="dashboard-nav-item"><a href="billing-history.html" class="dashboard-nav-link"><i class="bi bi-receipt"></i> Billing & Invoices</a></li>
+        <li class="dashboard-nav-item"><a href="profile.html" class="dashboard-nav-link"><i class="bi bi-person-gear"></i> Owner Profile</a></li>
+        <li class="dashboard-nav-item mt-4 pt-3 border-top"><a href="index.html" class="dashboard-nav-link text-danger"><i class="bi bi-box-arrow-left text-danger"></i> Sign Out</a></li>
+      </ul>
+    </aside>
+
+    <!-- DASHBOARD MAIN CONTENT -->
+    <div class="dashboard-content">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button type="button" class="btn btn-sm btn-light d-lg-none" id="sidebar-toggle-btn" aria-label="Toggle Sidebar"><i class="bi bi-list fs-5"></i></button>
+          <h4 class="mb-0 h5">My Family Pets</h4>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <button class="nav-icon-btn theme-toggle-btn" type="button" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button class="rtl-text-toggle" type="button" aria-label="Toggle language direction" title="Toggle RTL">RTL</button>
+          <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addPetModal">
+            <i class="bi bi-plus-lg me-1"></i> Add New Pet
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard Body -->
+      <div class="dashboard-body">
+        <!-- SECTION 1: HEADER BANNER -->
+        <div class="card bg-subtle p-4 rounded-4 border-0 mb-4" id="pets-hero-banner">
+          <div class="row align-items-center g-3">
+            <div class="col-lg-8">
+              <span class="badge badge-subtle-primary mb-2">Patient Directory</span>
+              <h2 class="h3 text-main mb-1">Companion Profiles & Medical Passports</h2>
+              <p class="text-muted small mb-0">View biometric records, immunization status, and microchip numbers for all registered animals.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPetModal">
+                <i class="bi bi-plus-circle me-1"></i> Register Another Pet
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: SPECIES FILTER BUTTONS -->
+        <div class="d-flex gap-2 mb-4 filter-group" id="pets-filter-bar">
+          <button class="btn btn-sm btn-light filter-btn active btn-primary" data-filter="all">All Pets (2)</button>
+          <button class="btn btn-sm btn-light filter-btn" data-filter="canine">Canines</button>
+          <button class="btn btn-sm btn-light filter-btn" data-filter="feline">Felines</button>
+        </div>
+
+        <!-- SECTION 3: PETS CARDS GRID -->
+        <div class="row g-4 mb-5" id="pets-container-grid">
+          <!-- Pet 1: Max -->
+          <div class="col-lg-6" data-category="canine">
+            <div class="card h-100 card-hover p-4 border bg-surface">
+              <div class="d-flex align-items-start gap-3 mb-3">
+                <img src="assets/images/pets/pet-max.jpg" alt="Max Golden Retriever" class="pet-avatar-lg">
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <h4 class="mb-0">Max</h4>
+                    <span class="badge badge-subtle-accent">Healthy & Active</span>
+                  </div>
+                  <span class="text-muted small d-block">Golden Retriever • Canine (Male / Neutered)</span>
+                  <div class="small text-muted mt-1"><i class="bi bi-calendar3 me-1"></i> Age: 4 Years (DOB: May 14, 2022)</div>
+                  <div class="small text-muted"><i class="bi bi-qr-code me-1"></i> Microchip: <strong>#9851410029</strong></div>
+                </div>
+              </div>
+
+              <div class="p-3 bg-subtle rounded-3 mb-3">
+                <div class="row g-2 small">
+                  <div class="col-sm-4 col-6"><span class="text-muted d-block">Current Weight</span><strong>32.4 kg</strong></div>
+                  <div class="col-sm-4 col-6"><span class="text-muted d-block">Vaccinations</span><strong class="text-success">Up to Date</strong></div>
+                  <div class="col-sm-4 col-12"><span class="text-muted d-block">Next Visit</span><strong>Tomorrow (10:30 AM)</strong></div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2">
+                <a href="pet-details.html" class="btn btn-sm btn-outline-primary flex-grow-1">View Full Health File</a>
+                <a href="vaccination-records.html" class="btn btn-sm btn-light">Vaccines</a>
+                <a href="appointments.html" class="btn btn-sm btn-primary">Book Exam</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pet 2: Luna -->
+          <div class="col-lg-6" data-category="feline">
+            <div class="card h-100 card-hover p-4 border bg-surface">
+              <div class="d-flex align-items-start gap-3 mb-3">
+                <img src="assets/images/pets/pet-luna.jpg" alt="Luna Siamese Cat" class="pet-avatar-lg">
+                <div class="flex-grow-1">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <h4 class="mb-0">Luna</h4>
+                    <span class="badge badge-subtle-accent">Healthy</span>
+                  </div>
+                  <span class="text-muted small d-block">Siamese Cat • Feline (Female / Spayed)</span>
+                  <div class="small text-muted mt-1"><i class="bi bi-calendar3 me-1"></i> Age: 2 Years (DOB: Aug 02, 2024)</div>
+                  <div class="small text-muted"><i class="bi bi-qr-code me-1"></i> Microchip: <strong>#9851410084</strong></div>
+                </div>
+              </div>
+
+              <div class="p-3 bg-subtle rounded-3 mb-3">
+                <div class="row g-2 small">
+                  <div class="col-sm-4 col-6"><span class="text-muted d-block">Current Weight</span><strong>4.2 kg</strong></div>
+                  <div class="col-sm-4 col-6"><span class="text-muted d-block">Vaccinations</span><strong class="text-success">Up to Date</strong></div>
+                  <div class="col-sm-4 col-12"><span class="text-muted d-block">Next Visit</span><strong>Dec 18, 2026</strong></div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2">
+                <a href="pet-details.html" class="btn btn-sm btn-outline-primary flex-grow-1">View Full Health File</a>
+                <a href="vaccination-records.html" class="btn btn-sm btn-light">Vaccines</a>
+                <a href="appointments.html" class="btn btn-sm btn-primary">Book Exam</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 4: BIOMETRIC WEIGHT TRACKING OVERVIEW -->
+        <div class="card bg-surface p-4 rounded-4 border shadow-xs mb-4" id="biometrics-card">
+          <h5 class="mb-3 text-main"><i class="bi bi-speedometer2 me-2 text-accent"></i> Weight & Physical Growth Monitoring</h5>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="p-3 bg-subtle rounded-3">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <strong class="text-main">Max (Golden Retriever)</strong>
+                  <span class="badge badge-subtle-primary">Optimal Body Score: 5/9</span>
+                </div>
+                <div class="progress mb-2" style="height: 8px;">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <span class="small text-muted">Weight steady at 32.4 kg across 3 consecutive quarterly weigh-ins.</span>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="p-3 bg-subtle rounded-3">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <strong class="text-main">Luna (Siamese Cat)</strong>
+                  <span class="badge badge-subtle-primary">Optimal Body Score: 5/9</span>
+                </div>
+                <div class="progress mb-2" style="height: 8px;">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <span class="small text-muted">Weight steady at 4.2 kg. Recommended daily intake: 180 kcal.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 5: EMERGENCY PET CAREGIVER PROXY -->
+        <div class="card bg-subtle p-4 rounded-4 border-0 mb-4" id="guardian-proxy">
+          <div class="d-flex align-items-start gap-3">
+            <i class="bi bi-shield-shaded text-accent display-6 flex-shrink-0"></i>
+            <div>
+              <h5 class="mb-1">Designated Emergency Caregiver Proxy</h5>
+              <p class="small text-muted mb-2">If you are traveling or unreachable during a medical situation, authorized caregivers can consent to urgent diagnostic testing on your behalf.</p>
+              <div class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-surface rounded-pill border small">
+                <i class="bi bi-person-check text-success"></i> Primary Proxy: <strong>Robert Jenkins (Brother) — (555) 839-2018</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 6: RECORD EXPORT & PRINT -->
+        <div class="text-center py-3">
+          <button type="button" class="btn btn-outline-primary" id="btn-export-health-records">
+            <i class="bi bi-printer me-1"></i> Print Complete Patient Records for Boarding / Travel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADD PET MODAL (Bootstrap 5) -->
+  <div class="modal fade" id="addPetModal" tabindex="-1" aria-labelledby="addPetModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title text-white" id="addPetModalLabel"><i class="bi bi-plus-circle me-2"></i> Register a New Companion Animal</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="add-pet-form">
+            <div class="mb-3">
+              <label for="new-pet-name" class="form-label">Pet's Name <span class="required">*</span></label>
+              <input type="text" class="form-control" id="new-pet-name" placeholder="e.g. Charlie" required>
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col-6">
+                <label for="new-pet-species" class="form-label">Species <span class="required">*</span></label>
+                <select class="form-select" id="new-pet-species" required>
+                  <option value="Dog" selected>Dog (Canine)</option>
+                  <option value="Cat">Cat (Feline)</option>
+                  <option value="Rabbit">Rabbit</option>
+                  <option value="Bird">Bird</option>
+                  <option value="Other">Other Exotic</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <label for="new-pet-breed" class="form-label">Breed</label>
+                <input type="text" class="form-control" id="new-pet-breed" placeholder="e.g. French Bulldog">
+              </div>
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col-6">
+                <label for="new-pet-age" class="form-label">Age</label>
+                <input type="text" class="form-control" id="new-pet-age" placeholder="e.g. 1.5 Years">
+              </div>
+              <div class="col-6">
+                <label for="new-pet-weight" class="form-label">Weight</label>
+                <input type="text" class="form-control" id="new-pet-weight" placeholder="e.g. 11 kg">
+              </div>
+            </div>
+            <div class="mb-4">
+              <label for="new-pet-microchip" class="form-label">Microchip ID (If known)</label>
+              <input type="text" class="form-control" id="new-pet-microchip" placeholder="#985XXXXXXXXXXXX">
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary"><i class="bi bi-check2"></i> Add Pet to My Account</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Modular Vanilla JavaScript -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script src="assets/js/pets.js"></script>
+  <script src="assets/js/filters.js"></script>
+  <!-- Floating 24/7 Emergency Care Quick Action Button at Bottom of Page -->
+  <aside class="floating-emergency-widget" aria-label="Emergency Care Hotline">
+    <a href="emergency-care.html" class="btn btn-emergency shadow-lg rounded-pill d-flex align-items-center gap-2 px-3 py-2 text-decoration-none">
+      <span class="emergency-pulse-ping"></span>
+      <i class="bi bi-hospital-fill fs-5"></i>
+      <span class="fw-bold">24/7 Emergency Care</span>
+    </a>
+  </aside>
+</body>
+</html>

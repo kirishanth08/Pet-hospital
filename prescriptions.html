@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Pharmacy & Prescription Refills — VetCare Pro</title>
+  <meta name="description" content="Manage your pet's active medications, request prescription refills, and review dosage instructions on the VetCare Pro Pet Portal.">
+  <link rel="canonical" href="prescriptions.html">
+  <!-- Favicon and Brand Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Dashboard Backdrop for Mobile -->
+  <div class="dashboard-sidebar-backdrop"></div>
+
+  <div class="dashboard-wrapper">
+    <!-- DASHBOARD SIDEBAR -->
+    <aside class="dashboard-sidebar">
+      <div class="dashboard-sidebar-header d-flex align-items-center justify-content-between">
+        <a class="navbar-brand m-0" href="index.html">
+          <div class="brand-icon"><img src="assets/images/favicon.svg" alt="VetCare Pro Logo" class="brand-logo-img"></div>
+          <span>VetCare<span class="text-accent">Pro</span></span>
+        </a>
+      </div>
+
+      <div class="p-3 border-bottom d-flex align-items-center gap-3">
+        <img src="assets/images/pets/pet-max.jpg" alt="User Pet Parent" class="user-avatar">
+        <div class="overflow-hidden">
+          <h6 class="mb-0 text-truncate">Sarah Jenkins</h6>
+          <span class="text-muted small">Max & Luna's Guardian</span>
+        </div>
+      </div>
+
+      <ul class="dashboard-nav">
+        <li class="dashboard-nav-item"><a href="dashboard.html" class="dashboard-nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+        <li class="dashboard-nav-item"><a href="my-pets.html" class="dashboard-nav-link"><i class="bi bi-hearts"></i> My Pets (2)</a></li>
+        <li class="dashboard-nav-item"><a href="appointments-history.html" class="dashboard-nav-link"><i class="bi bi-calendar-event"></i> Appointments</a></li>
+        <li class="dashboard-nav-item"><a href="vaccination-records.html" class="dashboard-nav-link"><i class="bi bi-patch-check"></i> Vaccine Records</a></li>
+        <li class="dashboard-nav-item"><a href="medical-history.html" class="dashboard-nav-link"><i class="bi bi-clipboard2-pulse"></i> Medical History</a></li>
+        <li class="dashboard-nav-item"><a href="prescriptions.html" class="dashboard-nav-link active"><i class="bi bi-prescription2"></i> Prescriptions</a></li>
+        <li class="dashboard-nav-item"><a href="billing-history.html" class="dashboard-nav-link"><i class="bi bi-receipt"></i> Billing & Invoices</a></li>
+        <li class="dashboard-nav-item"><a href="profile.html" class="dashboard-nav-link"><i class="bi bi-person-gear"></i> Owner Profile</a></li>
+        <li class="dashboard-nav-item mt-4 pt-3 border-top"><a href="index.html" class="dashboard-nav-link text-danger"><i class="bi bi-box-arrow-left text-danger"></i> Sign Out</a></li>
+      </ul>
+    </aside>
+
+    <!-- DASHBOARD MAIN CONTENT -->
+    <div class="dashboard-content">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button type="button" class="btn btn-sm btn-light d-lg-none" id="sidebar-toggle-btn" aria-label="Toggle Sidebar"><i class="bi bi-list fs-5"></i></button>
+          <h4 class="mb-0 h5">Prescriptions & Pharmacy</h4>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <button class="nav-icon-btn theme-toggle-btn" type="button" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button class="rtl-text-toggle" type="button" aria-label="Toggle language direction" title="Toggle RTL">RTL</button>
+          <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#requestRefillModal">
+            <i class="bi bi-plus-circle me-1"></i> Request Medication Refill
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard Body -->
+      <div class="dashboard-body">
+        <!-- SECTION 1: PHARMACY BANNER -->
+        <div class="card bg-subtle p-4 rounded-4 border-0 mb-4" id="rx-banner">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+            <div>
+              <span class="badge badge-subtle-primary mb-1">On-Site Veterinary Pharmacy</span>
+              <h3 class="h4 text-main mb-1">Active Prescribed Medications</h3>
+              <p class="text-muted small mb-0">Refill requests submitted online are verified by our pharmacy technicians within 4 business hours.</p>
+            </div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#requestRefillModal">
+              <i class="bi bi-arrow-repeat me-1"></i> Request Refill
+            </button>
+          </div>
+        </div>
+
+        <!-- SECTION 2: ACTIVE PRESCRIPTION CARDS -->
+        <div class="row g-4 mb-4" id="active-rx-cards">
+          <!-- Medication 1 -->
+          <div class="col-lg-6">
+            <div class="card h-100 p-4 border bg-surface card-hover">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <div>
+                  <h5 class="mb-0 text-main">Simparica Trio® (Chewable)</h5>
+                  <span class="small text-muted">Sarolaner, Moxidectin & Pyrantel</span>
+                </div>
+                <span class="badge bg-success text-white">Active</span>
+              </div>
+              
+              <div class="p-3 bg-subtle rounded-3 my-3 small">
+                <div class="row g-2">
+                  <div class="col-6"><span class="text-muted">Dosage:</span> <strong>1 Chewable Monthly</strong></div>
+                  <div class="col-6"><span class="text-muted">Refills Left:</span> <strong class="text-primary">1 Refill</strong></div>
+                  <div class="col-6"><span class="text-muted">Patient:</span> <strong>Max (Canine)</strong></div>
+                  <div class="col-6"><span class="text-muted">Prescribed By:</span> <strong>Dr. Marcus Vance</strong></div>
+                </div>
+              </div>
+
+              <p class="small text-muted mb-3"><strong>Instructions:</strong> Administer orally with food on the 1st of every month. Protects against heartworm disease, ticks, and fleas.</p>
+              
+              <div class="d-flex gap-2">
+                <button type="button" class="btn btn-sm btn-primary w-100" data-bs-toggle="modal" data-bs-target="#requestRefillModal">
+                  <i class="bi bi-arrow-repeat me-1"></i> Request Refill Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Medication 2 -->
+          <div class="col-lg-6">
+            <div class="card h-100 p-4 border bg-surface card-hover">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <div>
+                  <h5 class="mb-0 text-main">Dasuquin Advanced Soft Chews</h5>
+                  <span class="small text-muted">Glucosamine, Chondroitin & ASU Complex</span>
+                </div>
+                <span class="badge badge-subtle-primary">Maintenance</span>
+              </div>
+              
+              <div class="p-3 bg-subtle rounded-3 my-3 small">
+                <div class="row g-2">
+                  <div class="col-6"><span class="text-muted">Dosage:</span> <strong>1 Soft Chew Daily</strong></div>
+                  <div class="col-6"><span class="text-muted">Refills Left:</span> <strong class="text-success">Unlimited (OTC)</strong></div>
+                  <div class="col-6"><span class="text-muted">Patient:</span> <strong>Max (Canine)</strong></div>
+                  <div class="col-6"><span class="text-muted">Recommended:</span> <strong>Dr. Emily Carter</strong></div>
+                </div>
+              </div>
+
+              <p class="small text-muted mb-3"><strong>Instructions:</strong> Give daily with breakfast. Continuous joint cartilage support following orthopedic stifle reconstruction.</p>
+              
+              <div class="d-flex gap-2">
+                <button type="button" class="btn btn-sm btn-primary w-100" data-bs-toggle="modal" data-bs-target="#requestRefillModal">
+                  <i class="bi bi-arrow-repeat me-1"></i> Re-order Supplement
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: COMPLETED MEDICATIONS ARCHIVE -->
+        <div class="card bg-surface rounded-4 border shadow-xs mb-4" id="past-rx-archive">
+          <div class="card-header bg-surface border-bottom">
+            <h6 class="mb-0 fw-bold"><i class="bi bi-archive me-2 text-accent"></i> Completed Medication Courses</h6>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover mb-0 small">
+              <thead>
+                <tr>
+                  <th>Medication</th>
+                  <th>Dosage / Purpose</th>
+                  <th>Prescribed Date</th>
+                  <th>Course Status</th>
+                  <th>Prescribing Doctor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Carprofen (Rimadyl) 75mg</strong></td>
+                  <td>1 tablet BID for 14 days (Post-TPLO analgesia)</td>
+                  <td>June 02, 2026</td>
+                  <td><span class="badge bg-secondary">Completed</span></td>
+                  <td>Dr. Emily Carter</td>
+                </tr>
+                <tr>
+                  <td><strong>Gabapentin 100mg Capsules</strong></td>
+                  <td>1 capsule BID as needed for mild anxiety</td>
+                  <td>June 02, 2026</td>
+                  <td><span class="badge bg-secondary">Completed</span></td>
+                  <td>Dr. Emily Carter</td>
+                </tr>
+                <tr>
+                  <td><strong>Clavamox 250mg Tablets</strong></td>
+                  <td>1 tablet BID for 10 days (Post-surgical antibiotic)</td>
+                  <td>June 02, 2026</td>
+                  <td><span class="badge bg-secondary">Completed</span></td>
+                  <td>Dr. Emily Carter</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SECTION 4: MEDICATION STORAGE & SAFETY GUIDANCE -->
+        <div class="card bg-subtle p-4 rounded-4 border-0 mb-4" id="rx-safety">
+          <h5 class="mb-2 text-main"><i class="bi bi-shield-exclamation text-warning me-2"></i> Veterinary Medication Safety Rules</h5>
+          <ul class="list-unstyled small text-muted mb-0">
+            <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> <strong>Store at Room Temperature:</strong> Keep tablets protected from excess humidity and direct sunlight unless refrigerated storage is explicitly noted.</li>
+            <li class="mb-2"><i class="bi bi-check2 text-accent me-2"></i> <strong>Complete Antibiotic Courses:</strong> Never stop antibiotic regimens early even if symptoms resolve to prevent resistant bacterial growth.</li>
+            <li><i class="bi bi-check2 text-accent me-2"></i> <strong>Never Share Between Pets:</strong> Feline patients lack specific liver enzymes that metabolize canine pharmaceuticals (e.g. Permethrin is fatal to cats).</li>
+          </ul>
+        </div>
+
+        <!-- SECTION 5: PHARMACY PICKUP & HOME DELIVERY -->
+        <div class="row g-4 mb-4" id="pharmacy-options">
+          <div class="col-md-6">
+            <div class="card p-3 border bg-surface h-100">
+              <h6 class="text-primary mb-1"><i class="bi bi-hospital me-2"></i> Rapid In-Clinic Pickup</h6>
+              <p class="small text-muted mb-0">Pick up your order directly from Hospital Bay 1 between 7:00 AM and 9:00 PM daily. Ready within 4 hours of approval.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card p-3 border bg-surface h-100">
+              <h6 class="text-primary mb-1"><i class="bi bi-truck me-2"></i> Home Delivery Service</h6>
+              <p class="small text-muted mb-0">Free 2-day doorstep shipping on all monthly heartworm, flea, and joint supplement recurring orders over $49.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 6: PHARMACY CONTACT ACTION -->
+        <div class="text-center py-2">
+          <span class="small text-muted">Need a compounded liquid formulation or special flavor? Call our pharmacy desk directly: <strong>(555) 382-7492</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRESCRIPTION REFILL MODAL (Bootstrap 5) -->
+  <div class="modal fade" id="requestRefillModal" tabindex="-1" aria-labelledby="refillModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title text-white" id="refillModalLabel"><i class="bi bi-prescription2 me-2"></i> Request Prescription Refill</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="prescription-refill-form">
+            <div class="mb-3">
+              <label for="refill-pet" class="form-label">Patient <span class="required">*</span></label>
+              <select class="form-select" id="refill-pet" required>
+                <option value="Max (Golden Retriever)" selected>Max (Golden Retriever)</option>
+                <option value="Luna (Siamese Cat)">Luna (Siamese Cat)</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="refill-med-name" class="form-label">Medication Name <span class="required">*</span></label>
+              <select class="form-select" id="refill-med-name" required>
+                <option value="Simparica Trio (Chewable)" selected>Simparica Trio® (Chewable)</option>
+                <option value="Dasuquin Advanced Joint Chews">Dasuquin Advanced Joint Chews</option>
+                <option value="Other / Special Formulation">Other / Special Formulation</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="refill-supply" class="form-label">Supply Quantity</label>
+              <select class="form-select" id="refill-supply">
+                <option value="3 Months" selected>3 Months Supply</option>
+                <option value="6 Months">6 Months Supply (10% Savings)</option>
+                <option value="12 Months">12 Months Supply (Free Delivery)</option>
+              </select>
+            </div>
+            <div class="mb-4">
+              <label for="refill-delivery" class="form-label">Fulfillment Preference <span class="required">*</span></label>
+              <select class="form-select" id="refill-delivery" required>
+                <option value="In-Clinic Pickup (Bay 1)" selected>In-Clinic Pickup (Bay 1)</option>
+                <option value="Home Delivery (Free Shipping)">Home Delivery (Free Shipping)</option>
+              </select>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary"><i class="bi bi-send-check"></i> Submit Refill Request</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Modular Vanilla JavaScript -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <!-- Floating 24/7 Emergency Care Quick Action Button at Bottom of Page -->
+  <aside class="floating-emergency-widget" aria-label="Emergency Care Hotline">
+    <a href="emergency-care.html" class="btn btn-emergency shadow-lg rounded-pill d-flex align-items-center gap-2 px-3 py-2 text-decoration-none">
+      <span class="emergency-pulse-ping"></span>
+      <i class="bi bi-hospital-fill fs-5"></i>
+      <span class="fw-bold">24/7 Emergency Care</span>
+    </a>
+  </aside>
+</body>
+</html>

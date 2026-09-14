@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing History & Invoices — VetCare Pro Portal</title>
+  <meta name="description" content="Access itemized invoices, payment receipts, pet insurance claim statements, and financial balances on the VetCare Pro Pet Portal.">
+  <link rel="canonical" href="billing-history.html">
+  <!-- Favicon and Brand Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Dashboard Backdrop for Mobile -->
+  <div class="dashboard-sidebar-backdrop"></div>
+
+  <div class="dashboard-wrapper">
+    <!-- DASHBOARD SIDEBAR -->
+    <aside class="dashboard-sidebar">
+      <div class="dashboard-sidebar-header d-flex align-items-center justify-content-between">
+        <a class="navbar-brand m-0" href="index.html">
+          <div class="brand-icon"><img src="assets/images/favicon.svg" alt="VetCare Pro Logo" class="brand-logo-img"></div>
+          <span>VetCare<span class="text-accent">Pro</span></span>
+        </a>
+      </div>
+
+      <div class="p-3 border-bottom d-flex align-items-center gap-3">
+        <img src="assets/images/pets/pet-max.jpg" alt="User Pet Parent" class="user-avatar">
+        <div class="overflow-hidden">
+          <h6 class="mb-0 text-truncate">Sarah Jenkins</h6>
+          <span class="text-muted small">Max & Luna's Guardian</span>
+        </div>
+      </div>
+
+      <ul class="dashboard-nav">
+        <li class="dashboard-nav-item"><a href="dashboard.html" class="dashboard-nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+        <li class="dashboard-nav-item"><a href="my-pets.html" class="dashboard-nav-link"><i class="bi bi-hearts"></i> My Pets (2)</a></li>
+        <li class="dashboard-nav-item"><a href="appointments-history.html" class="dashboard-nav-link"><i class="bi bi-calendar-event"></i> Appointments</a></li>
+        <li class="dashboard-nav-item"><a href="vaccination-records.html" class="dashboard-nav-link"><i class="bi bi-patch-check"></i> Vaccine Records</a></li>
+        <li class="dashboard-nav-item"><a href="medical-history.html" class="dashboard-nav-link"><i class="bi bi-clipboard2-pulse"></i> Medical History</a></li>
+        <li class="dashboard-nav-item"><a href="prescriptions.html" class="dashboard-nav-link"><i class="bi bi-prescription2"></i> Prescriptions</a></li>
+        <li class="dashboard-nav-item"><a href="billing-history.html" class="dashboard-nav-link active"><i class="bi bi-receipt"></i> Billing & Invoices</a></li>
+        <li class="dashboard-nav-item"><a href="profile.html" class="dashboard-nav-link"><i class="bi bi-person-gear"></i> Owner Profile</a></li>
+        <li class="dashboard-nav-item mt-4 pt-3 border-top"><a href="index.html" class="dashboard-nav-link text-danger"><i class="bi bi-box-arrow-left text-danger"></i> Sign Out</a></li>
+      </ul>
+    </aside>
+
+    <!-- DASHBOARD MAIN CONTENT -->
+    <div class="dashboard-content">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button type="button" class="btn btn-sm btn-light d-lg-none" id="sidebar-toggle-btn" aria-label="Toggle Sidebar"><i class="bi bi-list fs-5"></i></button>
+          <h4 class="mb-0 h5">Billing & Itemized Statements</h4>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <button class="nav-icon-btn theme-toggle-btn" type="button" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button class="rtl-text-toggle" type="button" aria-label="Toggle language direction" title="Toggle RTL">RTL</button>
+          <button type="button" class="btn btn-sm btn-outline-primary btn-print-invoice">
+            <i class="bi bi-printer me-1"></i> Print Statement
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard Body -->
+      <div class="dashboard-body">
+        <!-- SECTION 1: FINANCIAL OVERVIEW CARDS -->
+        <div class="row g-4 mb-4" id="billing-summary-cards">
+          <div class="col-xl-3 col-sm-6">
+            <div class="card p-3 border shadow-xs bg-surface h-100">
+              <span class="text-muted small">Current Balance Due</span>
+              <h3 class="h3 text-success my-1">$0.00</h3>
+              <span class="badge badge-subtle-accent">Account Current</span>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6">
+            <div class="card p-3 border shadow-xs bg-surface h-100">
+              <span class="text-muted small">Total Spent (2026 YTD)</span>
+              <h3 class="h3 text-primary my-1">$2,840.00</h3>
+              <span class="small text-muted">Includes TPLO Surgery</span>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6">
+            <div class="card p-3 border shadow-xs bg-surface h-100">
+              <span class="text-muted small">Active Wellness Plan</span>
+              <h3 class="h4 text-main my-1">Adult Companion</h3>
+              <span class="small text-muted">$49/mo (Auto-renewed)</span>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6">
+            <div class="card p-3 border shadow-xs bg-surface h-100">
+              <span class="text-muted small">Default Payment</span>
+              <h3 class="h4 text-main my-1">Visa •••• 4218</h3>
+              <span class="small text-muted">Expires 09/2028</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: INVOICE HISTORY TABLE -->
+        <div class="card bg-surface rounded-4 border shadow-xs mb-4" id="invoices-table-card">
+          <div class="card-header bg-surface border-bottom d-flex justify-content-between align-items-center">
+            <h6 class="mb-0 fw-bold"><i class="bi bi-receipt-cutoff me-2 text-accent"></i> Official Clinical Invoices</h6>
+            <span class="small text-muted">Tax ID #84-9182049</span>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover mb-0 small">
+              <thead>
+                <tr>
+                  <th>Invoice #</th>
+                  <th>Date</th>
+                  <th>Patient</th>
+                  <th>Clinical Scope / Services</th>
+                  <th>Total Amount</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#INV-2026-0841</strong></td>
+                  <td>Aug 14, 2026</td>
+                  <td>Max</td>
+                  <td>10-Wk Orthopedic Follow-up & 2-View Digital X-Ray</td>
+                  <td>$165.00</td>
+                  <td><span class="badge bg-success">Paid in Full</span></td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#invoiceModal">
+                      <i class="bi bi-eye"></i> View
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>#INV-2026-0612</strong></td>
+                  <td>June 02, 2026</td>
+                  <td>Max</td>
+                  <td>Left Stifle TPLO Surgery, Anesthesia & ICU Overnight</td>
+                  <td>$2,450.00</td>
+                  <td><span class="badge bg-success">Paid (Ins. Claimed)</span></td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#invoiceModal">
+                      <i class="bi bi-eye"></i> View
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>#INV-2026-0526</strong></td>
+                  <td>May 26, 2026</td>
+                  <td>Max</td>
+                  <td>Emergency Lameness Consult, Sedation & Radiography</td>
+                  <td>$225.00</td>
+                  <td><span class="badge bg-success">Paid in Full</span></td>
+                  <td>
+                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#invoiceModal">
+                      <i class="bi bi-eye"></i> View
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SECTION 3: INSURANCE CLAIMS & DIRECT BILLING -->
+        <div class="card bg-subtle p-4 rounded-4 border-0 mb-4" id="insurance-claims-guide">
+          <div class="row align-items-center g-3">
+            <div class="col-lg-8">
+              <h5 class="text-main mb-1"><i class="bi bi-shield-check text-primary me-2"></i> Submitting Claims to Pet Health Insurance</h5>
+              <p class="small text-muted mb-0">All VetCare Pro invoices contain the diagnosis code, veterinarian NPI/license, and itemized fee schedules required by Trupanion, Nationwide, Healthy Paws, and Lemonade for direct reimbursement.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#invoiceModal">
+                <i class="bi bi-download me-1"></i> Download Insurance Claim PDF
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 4: PAYMENT OPTIONS & FINANCING -->
+        <div class="row g-4 mb-4" id="payment-plans">
+          <div class="col-md-6">
+            <div class="card p-3 border bg-surface h-100">
+              <h6 class="text-primary mb-1">CareCredit® Promotional Credit</h6>
+              <p class="small text-muted mb-2">Manage unexpected surgical procedures with 6 or 12 months deferred-interest payment schedules.</p>
+              <span class="badge badge-subtle-accent">Active on Account</span>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card p-3 border bg-surface h-100">
+              <h6 class="text-primary mb-1">Direct Auto-Pay Settings</h6>
+              <p class="small text-muted mb-2">Annual wellness plan monthly installments ($49/mo) automatically charged on the 1st of each month.</p>
+              <a href="profile.html" class="small text-accent">Update Payment Methods</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 5: BILLING FAQ -->
+        <div class="card bg-surface rounded-4 border shadow-xs p-4 mb-4" id="billing-faq">
+          <h6 class="fw-bold mb-3"><i class="bi bi-question-circle me-2 text-accent"></i> Frequently Asked Billing Questions</h6>
+          <div class="row g-3 small text-muted">
+            <div class="col-md-6">
+              <strong class="text-main d-block mb-1">How soon do insurance claim forms get processed?</strong>
+              Our patient records department generates claim documentation within 24 hours of invoice closure.
+            </div>
+            <div class="col-md-6">
+              <strong class="text-main d-block mb-1">Can I split emergency invoices into installments?</strong>
+              Yes, emergency stabilization and critical surgery can be divided into equal payments through Scratchpay or CareCredit.
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 6: BILLING CONTACT ACTION -->
+        <div class="text-center py-2">
+          <span class="small text-muted">Questions regarding a specific charge? Reach our hospital billing desk: <strong>billing@vetcarepro.com</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ITEMIZED INVOICE MODAL (Bootstrap 5) -->
+  <div class="modal fade" id="invoiceModal" tabindex="-1" aria-labelledby="invoiceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title text-white" id="invoiceModalLabel"><i class="bi bi-receipt me-2"></i> Clinical Invoice Statement #INV-2026-0841</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="d-flex justify-content-between align-items-start border-bottom pb-3 mb-3">
+            <div>
+              <h5 class="text-primary mb-1">VetCare Pro Animal Hospital</h5>
+              <div class="small text-muted">742 Evergreen Terrace, Medical District</div>
+              <div class="small text-muted">Hospital License: #VT-48201 • Tax ID: #84-9182049</div>
+            </div>
+            <div class="text-end">
+              <span class="badge bg-success text-white mb-1">PAID IN FULL</span>
+              <div class="small text-muted">Date: August 14, 2026</div>
+              <div class="small text-muted">Payment: Visa •••• 4218</div>
+            </div>
+          </div>
+
+          <div class="row g-2 small mb-3">
+            <div class="col-6"><strong>Patient:</strong> Max (Golden Retriever)</div>
+            <div class="col-6"><strong>Owner:</strong> Sarah Jenkins</div>
+            <div class="col-6"><strong>Microchip:</strong> #9851410029</div>
+            <div class="col-6"><strong>Attending Vet:</strong> Dr. Emily Carter, DVM, DACVS</div>
+          </div>
+
+          <table class="table table-sm table-bordered small mb-3">
+            <thead class="table-light">
+              <tr>
+                <th>Description</th>
+                <th>Qty</th>
+                <th>Rate</th>
+                <th>Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Comprehensive Orthopedic Recheck Examination</td>
+                <td>1</td>
+                <td>$65.00</td>
+                <td>$65.00</td>
+              </tr>
+              <tr>
+                <td>Digital Radiography — Left Stifle (2 Orthogonal Views)</td>
+                <td>1</td>
+                <td>$100.00</td>
+                <td>$100.00</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th colspan="3" class="text-end">Subtotal:</th>
+                <th>$165.00</th>
+              </tr>
+              <tr>
+                <th colspan="3" class="text-end">Tax:</th>
+                <th>$0.00</th>
+              </tr>
+              <tr class="table-success">
+                <th colspan="3" class="text-end">Total Paid:</th>
+                <th>$165.00</th>
+              </tr>
+            </tfoot>
+          </table>
+
+          <div class="d-flex justify-content-end gap-2">
+            <button type="button" class="btn btn-outline-primary btn-sm btn-print-invoice" onclick="window.print()">
+              <i class="bi bi-printer me-1"></i> Print Invoice
+            </button>
+            <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Modular Vanilla JavaScript -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <!-- Floating 24/7 Emergency Care Quick Action Button at Bottom of Page -->
+  <aside class="floating-emergency-widget" aria-label="Emergency Care Hotline">
+    <a href="emergency-care.html" class="btn btn-emergency shadow-lg rounded-pill d-flex align-items-center gap-2 px-3 py-2 text-decoration-none">
+      <span class="emergency-pulse-ping"></span>
+      <i class="bi bi-hospital-fill fs-5"></i>
+      <span class="fw-bold">24/7 Emergency Care</span>
+    </a>
+  </aside>
+</body>
+</html>

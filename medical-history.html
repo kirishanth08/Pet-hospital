@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical History & Clinical Encounters — VetCare Pro Portal</title>
+  <meta name="description" content="View complete veterinary medical records, surgical histories, diagnostic lab panels, and doctor notes for your pets on VetCare Pro.">
+  <link rel="canonical" href="medical-history.html">
+  <!-- Favicon and Brand Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Dashboard Backdrop for Mobile -->
+  <div class="dashboard-sidebar-backdrop"></div>
+
+  <div class="dashboard-wrapper">
+    <!-- DASHBOARD SIDEBAR -->
+    <aside class="dashboard-sidebar">
+      <div class="dashboard-sidebar-header d-flex align-items-center justify-content-between">
+        <a class="navbar-brand m-0" href="index.html">
+          <div class="brand-icon"><img src="assets/images/favicon.svg" alt="VetCare Pro Logo" class="brand-logo-img"></div>
+          <span>VetCare<span class="text-accent">Pro</span></span>
+        </a>
+      </div>
+
+      <div class="p-3 border-bottom d-flex align-items-center gap-3">
+        <img src="assets/images/pets/pet-max.jpg" alt="User Pet Parent" class="user-avatar">
+        <div class="overflow-hidden">
+          <h6 class="mb-0 text-truncate">Sarah Jenkins</h6>
+          <span class="text-muted small">Max & Luna's Guardian</span>
+        </div>
+      </div>
+
+      <ul class="dashboard-nav">
+        <li class="dashboard-nav-item"><a href="dashboard.html" class="dashboard-nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+        <li class="dashboard-nav-item"><a href="my-pets.html" class="dashboard-nav-link"><i class="bi bi-hearts"></i> My Pets (2)</a></li>
+        <li class="dashboard-nav-item"><a href="appointments-history.html" class="dashboard-nav-link"><i class="bi bi-calendar-event"></i> Appointments</a></li>
+        <li class="dashboard-nav-item"><a href="vaccination-records.html" class="dashboard-nav-link"><i class="bi bi-patch-check"></i> Vaccine Records</a></li>
+        <li class="dashboard-nav-item"><a href="medical-history.html" class="dashboard-nav-link active"><i class="bi bi-clipboard2-pulse"></i> Medical History</a></li>
+        <li class="dashboard-nav-item"><a href="prescriptions.html" class="dashboard-nav-link"><i class="bi bi-prescription2"></i> Prescriptions</a></li>
+        <li class="dashboard-nav-item"><a href="billing-history.html" class="dashboard-nav-link"><i class="bi bi-receipt"></i> Billing & Invoices</a></li>
+        <li class="dashboard-nav-item"><a href="profile.html" class="dashboard-nav-link"><i class="bi bi-person-gear"></i> Owner Profile</a></li>
+        <li class="dashboard-nav-item mt-4 pt-3 border-top"><a href="index.html" class="dashboard-nav-link text-danger"><i class="bi bi-box-arrow-left text-danger"></i> Sign Out</a></li>
+      </ul>
+    </aside>
+
+    <!-- DASHBOARD MAIN CONTENT -->
+    <div class="dashboard-content">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button type="button" class="btn btn-sm btn-light d-lg-none" id="sidebar-toggle-btn" aria-label="Toggle Sidebar"><i class="bi bi-list fs-5"></i></button>
+          <h4 class="mb-0 h5">Clinical Medical History</h4>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <button class="nav-icon-btn theme-toggle-btn" type="button" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button class="rtl-text-toggle" type="button" aria-label="Toggle language direction" title="Toggle RTL">RTL</button>
+          <button type="button" class="btn btn-sm btn-outline-primary" onclick="window.print()">
+            <i class="bi bi-printer me-1"></i> Print Complete Medical File
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard Body -->
+      <div class="dashboard-body">
+        <!-- SECTION 1: HEADER & RECORD FILTER -->
+        <div class="card bg-subtle p-4 rounded-4 border-0 mb-4" id="med-history-header">
+          <div class="row align-items-center g-3">
+            <div class="col-lg-7">
+              <span class="badge badge-subtle-primary mb-1">Encounters & Diagnostics</span>
+              <h3 class="h4 text-main mb-1">Patient History: Max (Golden Retriever)</h3>
+              <p class="text-muted small mb-0">Microchip: #9851410029 • Record ID: #MED-94021</p>
+            </div>
+            <div class="col-lg-5">
+              <div class="d-flex gap-2">
+                <input type="text" class="form-control form-control-sm" placeholder="Search clinical notes (e.g. TPLO, X-ray)...">
+                <select class="form-select form-select-sm w-auto">
+                  <option selected>All Records</option>
+                  <option>Surgeries</option>
+                  <option>Diagnostics</option>
+                  <option>Dentistry</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: INTERACTIVE CLINICAL ENCOUNTER TIMELINE -->
+        <div class="card bg-surface rounded-4 border shadow-xs p-4 mb-4" id="clinical-timeline-card">
+          <h5 class="mb-4 text-main"><i class="bi bi-clock-history me-2 text-accent"></i> Chronological Visit Encounters</h5>
+          
+          <div class="timeline">
+            <!-- Visit 1: August 2026 -->
+            <div class="timeline-item">
+              <div class="timeline-marker bg-success"></div>
+              <div class="card border p-3 bg-subtle mb-2">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h6 class="mb-0 text-primary fw-bold">10-Week Post-TPLO Orthopedic Recheck</h6>
+                  <span class="small text-muted">August 14, 2026</span>
+                </div>
+                <div class="small text-muted mb-2"><strong>Attending Surgeon:</strong> Dr. Emily Carter, DVM, DACVS</div>
+                <p class="small text-muted mb-2">Patient is walking smoothly without lameness. Palpation demonstrates stable stifle without joint effusion or pain on hyperextension. Two-view digital orthogonal radiographs confirmed advanced bone union across the osteotomy line. Surgical bone plate and locking screws remain intact without migration.</p>
+                <div class="d-flex gap-2">
+                  <span class="badge badge-subtle-accent">Radiology Normal</span>
+                  <span class="badge badge-subtle-primary">Plate Intact</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visit 2: June 2026 -->
+            <div class="timeline-item">
+              <div class="timeline-marker bg-primary"></div>
+              <div class="card border p-3 bg-subtle mb-2">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h6 class="mb-0 text-primary fw-bold">Left Stifle TPLO Surgery & Overnight Hospitalization</h6>
+                  <span class="small text-muted">June 02, 2026</span>
+                </div>
+                <div class="small text-muted mb-2"><strong>Surgeon:</strong> Dr. Emily Carter • <strong>Anesthesiologist:</strong> Dr. Sarah Jenkins</div>
+                <p class="small text-muted mb-2">General anesthesia maintained with Isoflurane and continuous end-tidal CO2/ECG monitoring. Left cranial cruciate ligament rupture stabilized with 3.5mm titanium TPLO plate. Recovery uneventful in heated canine ICU ward with multimodal analgesia (Fentanyl transdermal, Carprofen, and Gabapentin).</p>
+                <div class="d-flex gap-2">
+                  <span class="badge bg-primary text-white">Surgical Procedure</span>
+                  <span class="badge badge-subtle-accent">ICU Discharge</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visit 3: May 2026 -->
+            <div class="timeline-item">
+              <div class="timeline-marker bg-warning"></div>
+              <div class="card border p-3 bg-subtle mb-2">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h6 class="mb-0 text-primary fw-bold">Acute Left Hind Lameness Consultation & Radiology</h6>
+                  <span class="small text-muted">May 26, 2026</span>
+                </div>
+                <div class="small text-muted mb-2"><strong>Examining Clinician:</strong> Dr. Marcus Vance, DACVIM</div>
+                <p class="small text-muted mb-2">Presented for acute non-weight bearing lameness after ball retrieval. Sedated orthogonal stifle radiographs revealed joint effusion, cranial tibial subluxation, and early osteophytosis consistent with complete cranial cruciate ligament tear. Referred to Dr. Carter for TPLO surgery.</p>
+                <span class="badge badge-subtle-warning text-dark">Orthopedic Referral</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: DIAGNOSTIC IMAGING ARCHIVE -->
+        <div class="card bg-surface rounded-4 border shadow-xs p-4 mb-4" id="imaging-archive">
+          <h5 class="mb-3 text-main"><i class="bi bi-film me-2 text-accent"></i> Digital Imaging Archive</h5>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="p-3 bg-subtle rounded-3 border">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <i class="bi bi-file-earmark-image text-primary fs-4"></i>
+                  <div>
+                    <strong class="d-block small">Left Stifle Post-Op X-Ray</strong>
+                    <span class="small text-muted">Aug 14, 2026 • 2 Views</span>
+                  </div>
+                </div>
+                <a href="#" class="btn btn-sm btn-outline-primary w-100"><i class="bi bi-eye me-1"></i> View Radiographs</a>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="p-3 bg-subtle rounded-3 border">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <i class="bi bi-file-earmark-image text-primary fs-4"></i>
+                  <div>
+                    <strong class="d-block small">Abdominal Baseline Ultrasound</strong>
+                    <span class="small text-muted">Jan 12, 2026 • Liver / Kidneys</span>
+                  </div>
+                </div>
+                <a href="#" class="btn btn-sm btn-outline-primary w-100"><i class="bi bi-eye me-1"></i> View Radiographs</a>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="p-3 bg-subtle rounded-3 border">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <i class="bi bi-file-earmark-image text-primary fs-4"></i>
+                  <div>
+                    <strong class="d-block small">Chest & Cardiac Radiograph</strong>
+                    <span class="small text-muted">June 02, 2026 • Pre-Surgical</span>
+                  </div>
+                </div>
+                <a href="#" class="btn btn-sm btn-outline-primary w-100"><i class="bi bi-eye me-1"></i> View Radiographs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 4: IN-HOUSE BLOOD CHEMISTRY & LAB LOGS -->
+        <div class="card bg-surface rounded-4 border shadow-xs mb-4" id="blood-chemistry">
+          <div class="card-header bg-surface border-bottom d-flex justify-content-between align-items-center">
+            <h6 class="mb-0 fw-bold"><i class="bi bi-eyedropper me-2 text-accent"></i> Blood Chemistry & CBC Reference Values (June 2026)</h6>
+            <span class="badge bg-success text-white">All Biomarkers Normal</span>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover mb-0 small">
+              <thead>
+                <tr>
+                  <th>Biomarker Test</th>
+                  <th>Observed Value</th>
+                  <th>Standard Reference Range</th>
+                  <th>Clinical Interpretation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>White Blood Cells (WBC)</strong></td>
+                  <td>8.4 x 10^3 / μL</td>
+                  <td>6.0 – 17.0 x 10^3 / μL</td>
+                  <td><span class="text-success fw-bold">Normal</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Red Blood Cells (RBC)</strong></td>
+                  <td>7.1 x 10^6 / μL</td>
+                  <td>5.5 – 8.5 x 10^6 / μL</td>
+                  <td><span class="text-success fw-bold">Normal</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Blood Urea Nitrogen (BUN)</strong></td>
+                  <td>18 mg / dL</td>
+                  <td>7 – 27 mg / dL</td>
+                  <td><span class="text-success fw-bold">Normal Kidney Function</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Creatinine</strong></td>
+                  <td>1.0 mg / dL</td>
+                  <td>0.5 – 1.8 mg / dL</td>
+                  <td><span class="text-success fw-bold">Normal Filtration</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Alanine Aminotransferase (ALT)</strong></td>
+                  <td>42 U / L</td>
+                  <td>10 – 125 U / L</td>
+                  <td><span class="text-success fw-bold">Normal Liver Function</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SECTION 5: CHRONIC CONDITION & REHABILITATION LOG -->
+        <div class="card bg-subtle p-4 rounded-4 border-0 mb-4" id="rehab-notes">
+          <h5 class="text-main mb-2"><i class="bi bi-water text-primary me-2"></i> Physical Rehabilitation & Mobility Notes</h5>
+          <p class="small text-muted mb-3">Underwater treadmill hydrotherapy sessions completed successfully in July 2026. Max regained 95% muscle circumference symmetry in left hindlimb compared to right limb.</p>
+          <div class="p-3 bg-surface rounded-3 border small">
+            <strong>Ongoing Recommendations:</strong> Controlled leash walks up to 30 minutes. Swimming permitted. High-impact agility jumping restricted until 6-month checkup.
+          </div>
+        </div>
+
+        <!-- SECTION 6: MEDICAL RECORD TRANSFER ACTION -->
+        <div class="text-center py-2">
+          <a href="contact.html" class="btn btn-outline-primary"><i class="bi bi-send me-1"></i> Transfer Official Medical Records to Another Clinic</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Modular Vanilla JavaScript -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <!-- Floating 24/7 Emergency Care Quick Action Button at Bottom of Page -->
+  <aside class="floating-emergency-widget" aria-label="Emergency Care Hotline">
+    <a href="emergency-care.html" class="btn btn-emergency shadow-lg rounded-pill d-flex align-items-center gap-2 px-3 py-2 text-decoration-none">
+      <span class="emergency-pulse-ping"></span>
+      <i class="bi bi-hospital-fill fs-5"></i>
+      <span class="fw-bold">24/7 Emergency Care</span>
+    </a>
+  </aside>
+</body>
+</html>

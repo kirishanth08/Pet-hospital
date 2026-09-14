@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment History & Visits — VetCare Pro Portal</title>
+  <meta name="description" content="Review upcoming veterinary visits, past clinical consultations, and manage appointment bookings on the VetCare Pro Pet Portal.">
+  <link rel="canonical" href="appointments-history.html">
+  <!-- Favicon and Brand Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+  <!-- Dashboard Backdrop for Mobile -->
+  <div class="dashboard-sidebar-backdrop"></div>
+
+  <div class="dashboard-wrapper">
+    <!-- DASHBOARD SIDEBAR -->
+    <aside class="dashboard-sidebar">
+      <div class="dashboard-sidebar-header d-flex align-items-center justify-content-between">
+        <a class="navbar-brand m-0" href="index.html">
+          <div class="brand-icon"><img src="assets/images/favicon.svg" alt="VetCare Pro Logo" class="brand-logo-img"></div>
+          <span>VetCare<span class="text-accent">Pro</span></span>
+        </a>
+      </div>
+
+      <div class="p-3 border-bottom d-flex align-items-center gap-3">
+        <img src="assets/images/pets/pet-max.jpg" alt="User Pet Parent" class="user-avatar">
+        <div class="overflow-hidden">
+          <h6 class="mb-0 text-truncate">Sarah Jenkins</h6>
+          <span class="text-muted small">Max & Luna's Guardian</span>
+        </div>
+      </div>
+
+      <ul class="dashboard-nav">
+        <li class="dashboard-nav-item"><a href="dashboard.html" class="dashboard-nav-link"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
+        <li class="dashboard-nav-item"><a href="my-pets.html" class="dashboard-nav-link"><i class="bi bi-hearts"></i> My Pets (2)</a></li>
+        <li class="dashboard-nav-item"><a href="appointments-history.html" class="dashboard-nav-link active"><i class="bi bi-calendar-event"></i> Appointments</a></li>
+        <li class="dashboard-nav-item"><a href="vaccination-records.html" class="dashboard-nav-link"><i class="bi bi-patch-check"></i> Vaccine Records</a></li>
+        <li class="dashboard-nav-item"><a href="medical-history.html" class="dashboard-nav-link"><i class="bi bi-clipboard2-pulse"></i> Medical History</a></li>
+        <li class="dashboard-nav-item"><a href="prescriptions.html" class="dashboard-nav-link"><i class="bi bi-prescription2"></i> Prescriptions</a></li>
+        <li class="dashboard-nav-item"><a href="billing-history.html" class="dashboard-nav-link"><i class="bi bi-receipt"></i> Billing & Invoices</a></li>
+        <li class="dashboard-nav-item"><a href="profile.html" class="dashboard-nav-link"><i class="bi bi-person-gear"></i> Owner Profile</a></li>
+        <li class="dashboard-nav-item mt-4 pt-3 border-top"><a href="index.html" class="dashboard-nav-link text-danger"><i class="bi bi-box-arrow-left text-danger"></i> Sign Out</a></li>
+      </ul>
+    </aside>
+
+    <!-- DASHBOARD MAIN CONTENT -->
+    <div class="dashboard-content">
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button type="button" class="btn btn-sm btn-light d-lg-none" id="sidebar-toggle-btn" aria-label="Toggle Sidebar"><i class="bi bi-list fs-5"></i></button>
+          <h4 class="mb-0 h5">Appointment Schedule & History</h4>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <button class="nav-icon-btn theme-toggle-btn" type="button" aria-label="Toggle theme"><i class="bi bi-moon-stars-fill"></i></button>
+          <button class="rtl-text-toggle" type="button" aria-label="Toggle language direction" title="Toggle RTL">RTL</button>
+          <a href="appointments.html" class="btn btn-sm btn-primary">
+            <i class="bi bi-plus-circle me-1"></i> Book New Visit
+          </a>
+        </div>
+      </header>
+
+      <!-- Dashboard Body -->
+      <div class="dashboard-body">
+        <!-- SECTION 1: HEADER & RESCHEDULE NOTICE -->
+        <div class="card bg-subtle p-4 rounded-4 border-0 mb-4" id="appt-manager-header">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+            <div>
+              <span class="badge badge-subtle-primary mb-1">Appointment Manager</span>
+              <h3 class="h4 text-main mb-1">Upcoming Visits & Encounter Logs</h3>
+              <p class="text-muted small mb-0">Manage visit reservations, check-in instructions, and historical doctor consultations.</p>
+            </div>
+            <a href="appointments.html" class="btn btn-primary">
+              <i class="bi bi-calendar2-plus me-1"></i> Reserve Appointment
+            </a>
+          </div>
+        </div>
+
+        <!-- SECTION 2: FILTER TABS -->
+        <div class="d-flex gap-2 mb-4 filter-group" id="appt-filter-tabs">
+          <button class="btn btn-sm btn-light filter-btn active btn-primary" data-filter="all">All Encounters (4)</button>
+          <button class="btn btn-sm btn-light filter-btn" data-filter="upcoming">Upcoming (1)</button>
+          <button class="btn btn-sm btn-light filter-btn" data-filter="past">Completed (3)</button>
+        </div>
+
+        <!-- SECTION 3: UPCOMING APPOINTMENT CARDS -->
+        <div class="row g-4 mb-4" id="upcoming-appt-section">
+          <div class="col-12" data-category="upcoming">
+            <div class="card p-4 border border-accent border-2 bg-surface rounded-4 shadow-sm appointment-card">
+              <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-3">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="icon-box icon-box-accent m-0 fs-3"><i class="bi bi-calendar2-check"></i></div>
+                  <div>
+                    <span class="badge bg-warning text-dark mb-1">Confirmed — Scheduled Tomorrow</span>
+                    <h5 class="mb-0 text-main">Max — Annual Preventive Wellness Examination</h5>
+                    <span class="small text-muted">Ticket #VET-782910 • Primary Doctor: Dr. Emily Carter</span>
+                  </div>
+                </div>
+                <div class="text-md-end">
+                  <h4 class="h5 text-primary mb-0">Sept 24, 2026</h4>
+                  <span class="small text-muted">10:30 AM (Exam Room 3)</span>
+                </div>
+              </div>
+
+              <div class="p-3 bg-subtle rounded-3 small mb-3">
+                <div class="row g-2">
+                  <div class="col-md-4"><strong>Arrival Protocol:</strong> Use Bay 1 Reception Desk.</div>
+                  <div class="col-md-4"><strong>Fasting:</strong> No dietary restrictions required.</div>
+                  <div class="col-md-4"><strong>Vaccines:</strong> Bordetella booster scheduled.</div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-end gap-2">
+                <a href="appointments.html" class="btn btn-sm btn-outline-primary">Reschedule</a>
+                <button type="button" class="btn btn-sm btn-light text-danger btn-cancel-appt">Cancel Appointment</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 4: HISTORICAL VISITS LOG TABLE -->
+        <div class="card bg-surface rounded-4 border shadow-xs mb-4" id="past-encounters-table">
+          <div class="card-header bg-surface border-bottom d-flex justify-content-between align-items-center">
+            <h6 class="mb-0 fw-bold"><i class="bi bi-archive me-2 text-accent"></i> Completed Clinical Visits</h6>
+            <span class="small text-muted">Showing 3 Past Visits</span>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-hover mb-0 small">
+              <thead>
+                <tr>
+                  <th>Date & Time</th>
+                  <th>Patient</th>
+                  <th>Service Rendered</th>
+                  <th>Doctor</th>
+                  <th>Outcome / Summary</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-category="past">
+                  <td><strong>Aug 14, 2026 (11:00 AM)</strong></td>
+                  <td>Max</td>
+                  <td>10-Week TPLO Radiographic Recheck</td>
+                  <td>Dr. Emily Carter</td>
+                  <td>Bone healed completely. Activity released.</td>
+                  <td><span class="badge bg-secondary">Completed</span></td>
+                  <td><a href="medical-history.html" class="btn btn-sm btn-light">View Notes</a></td>
+                </tr>
+                <tr data-category="past">
+                  <td><strong>June 02, 2026 (08:00 AM)</strong></td>
+                  <td>Max</td>
+                  <td>Left Stifle TPLO Stabilization Surgery</td>
+                  <td>Dr. Emily Carter</td>
+                  <td>Titanium plate successfully anchored.</td>
+                  <td><span class="badge bg-secondary">Completed</span></td>
+                  <td><a href="medical-history.html" class="btn btn-sm btn-light">View Notes</a></td>
+                </tr>
+                <tr data-category="past">
+                  <td><strong>Jan 12, 2026 (02:30 PM)</strong></td>
+                  <td>Luna</td>
+                  <td>Annual Feline Physical & Dental Prophylaxis</td>
+                  <td>Dr. Sarah Jenkins</td>
+                  <td>Calculus scaled. Gingiva healthy.</td>
+                  <td><span class="badge bg-secondary">Completed</span></td>
+                  <td><a href="medical-history.html" class="btn btn-sm btn-light">View Notes</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SECTION 5: CLINICAL CHECK-IN POLICY -->
+        <div class="card bg-subtle p-4 rounded-4 border-0 mb-4" id="checkin-guidance">
+          <div class="d-flex align-items-start gap-3">
+            <i class="bi bi-info-circle text-primary display-6 flex-shrink-0"></i>
+            <div>
+              <h5 class="mb-1">Stress-Free Check-In Reminders</h5>
+              <p class="small text-muted mb-0">Please arrive 5 minutes before your scheduled appointment. Canine companions must remain on a standard non-retractable leash; cats and small exotic pets must arrive in secure, ventilated carriers for their safety.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 6: SCHEDULE ACTION CTA -->
+        <div class="text-center py-2">
+          <a href="appointments.html" class="btn btn-primary"><i class="bi bi-calendar2-check me-1"></i> Book Next Routine Examination</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Modular Vanilla JavaScript -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+  <script src="assets/js/filters.js"></script>
+  <!-- Floating 24/7 Emergency Care Quick Action Button at Bottom of Page -->
+  <aside class="floating-emergency-widget" aria-label="Emergency Care Hotline">
+    <a href="emergency-care.html" class="btn btn-emergency shadow-lg rounded-pill d-flex align-items-center gap-2 px-3 py-2 text-decoration-none">
+      <span class="emergency-pulse-ping"></span>
+      <i class="bi bi-hospital-fill fs-5"></i>
+      <span class="fw-bold">24/7 Emergency Care</span>
+    </a>
+  </aside>
+</body>
+</html>
