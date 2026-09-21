@@ -96,31 +96,31 @@
           </div>
           <div class="col-md-6">
             <label for="reg-phone" class="form-label small fw-semibold">Mobile Phone <span class="text-danger">*</span></label>
-            <div class="input-group">
+            <div class="input-group has-validation">
               <span class="input-group-text"><i class="bi bi-telephone"></i></span>
-              <input type="tel" class="form-control" id="reg-phone" placeholder="(555) 321-7654" required>
+              <input type="tel" class="form-control" id="reg-phone" placeholder="(555) 321-7654" pattern="^[0-9+() \-]{7,20}$" inputmode="tel" required>
+              <div class="invalid-feedback">Please enter a valid telephone number with numbers only.</div>
             </div>
-            <div class="invalid-feedback">Please enter your phone number.</div>
           </div>
         </div>
 
         <div class="row g-3 mb-3">
           <div class="col-md-6">
             <label for="reg-password" class="form-label small fw-semibold">Password <span class="text-danger">*</span></label>
-            <div class="input-group">
+            <div class="input-group has-validation">
               <span class="input-group-text"><i class="bi bi-lock"></i></span>
               <input type="password" class="form-control" id="reg-password" minlength="6" placeholder="Min. 6 characters" required>
               <button class="btn btn-outline-secondary toggle-password-btn" type="button" aria-label="Toggle password visibility"><i class="bi bi-eye"></i></button>
+              <div class="invalid-feedback">Password must be at least 6 characters.</div>
             </div>
-            <div class="invalid-feedback">Password must be at least 6 characters.</div>
           </div>
           <div class="col-md-6">
             <label for="reg-confirm-password" class="form-label small fw-semibold">Confirm Password <span class="text-danger">*</span></label>
-            <div class="input-group">
+            <div class="input-group has-validation">
               <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
               <input type="password" class="form-control" id="reg-confirm-password" placeholder="Repeat password" required>
+              <div class="invalid-feedback" id="reg-confirm-feedback">Please confirm your password.</div>
             </div>
-            <div class="invalid-feedback">Please confirm your password.</div>
           </div>
         </div>
 
@@ -155,6 +155,7 @@
   <!-- Modular Vanilla JavaScript -->
   <script src="assets/js/theme.js"></script>
   <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
   <script src="assets/js/forms.js"></script>
 </body>
 </html>

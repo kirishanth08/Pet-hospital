@@ -117,8 +117,9 @@
                 <label for="prof-address" class="form-label">Residential Address</label>
                 <input type="text" class="form-control" id="prof-address" value="482 Maple Street, Springfield, IL 62704">
               </div>
-              <div class="col-12 text-end">
-                <button type="submit" class="btn btn-primary"><i class="bi bi-save me-1"></i> Save Contact Details</button>
+              <div class="col-12 d-flex justify-content-end align-items-center gap-2 pt-3 border-top mt-2">
+                <button type="reset" class="btn btn-outline-secondary px-3">Cancel</button>
+                <button type="submit" class="btn btn-primary px-4"><i class="bi bi-save me-1"></i> Save Contact Details</button>
               </div>
             </div>
           </form>
@@ -136,7 +137,9 @@
             <span class="small text-muted d-block">Phone: (555) 839-2018 • Relationship: Immediate Family</span>
             <span class="small text-muted">Permission: Emergency stabilization & medical diagnostic consent</span>
           </div>
-          <button type="button" class="btn btn-sm btn-outline-primary"><i class="bi bi-plus me-1"></i> Add Secondary Proxy</button>
+          <div class="d-flex">
+            <button type="button" class="btn btn-outline-primary rounded-pill px-4"><i class="bi bi-plus-circle me-1"></i> Add Secondary Proxy</button>
+          </div>
         </div>
 
         <!-- SECTION 4: NOTIFICATION PREFERENCES -->
@@ -167,22 +170,34 @@
         <!-- SECTION 5: SECURITY & PASSWORD MANAGEMENT -->
         <div class="card bg-surface rounded-4 border shadow-xs p-4 mb-4" id="security-card">
           <h5 class="mb-3 text-main"><i class="bi bi-lock me-2 text-accent"></i> Change Portal Password</h5>
-          <form class="needs-validation" novalidate onsubmit="event.preventDefault(); window.showToast('Password updated successfully!', 'success', 'Security');">
+          <form id="change-password-form" class="needs-validation" novalidate>
             <div class="row g-3">
               <div class="col-md-4">
-                <label for="curr-pass" class="form-label">Current Password</label>
-                <input type="password" class="form-control" id="curr-pass" required>
+                <label for="curr-pass" class="form-label">Current Password <span class="text-danger">*</span></label>
+                <div class="input-group has-validation">
+                  <input type="password" class="form-control" id="curr-pass" placeholder="Enter current password" required>
+                  <button class="btn btn-outline-secondary toggle-password-btn" type="button" aria-label="Toggle current password visibility"><i class="bi bi-eye"></i></button>
+                  <div class="invalid-feedback" id="curr-pass-feedback">Please enter your current password.</div>
+                </div>
               </div>
               <div class="col-md-4">
-                <label for="new-pass" class="form-label">New Password</label>
-                <input type="password" class="form-control" id="new-pass" minlength="6" required>
+                <label for="new-pass" class="form-label">New Password <span class="text-danger">*</span></label>
+                <div class="input-group has-validation">
+                  <input type="password" class="form-control" id="new-pass" minlength="6" placeholder="Min. 6 characters" required>
+                  <button class="btn btn-outline-secondary toggle-password-btn" type="button" aria-label="Toggle new password visibility"><i class="bi bi-eye"></i></button>
+                  <div class="invalid-feedback" id="new-pass-feedback">New password must be at least 6 characters.</div>
+                </div>
               </div>
               <div class="col-md-4">
-                <label for="conf-new-pass" class="form-label">Confirm New Password</label>
-                <input type="password" class="form-control" id="conf-new-pass" required>
+                <label for="conf-new-pass" class="form-label">Confirm New Password <span class="text-danger">*</span></label>
+                <div class="input-group has-validation">
+                  <input type="password" class="form-control" id="conf-new-pass" placeholder="Repeat new password" required>
+                  <button class="btn btn-outline-secondary toggle-password-btn" type="button" aria-label="Toggle confirm password visibility"><i class="bi bi-eye"></i></button>
+                  <div class="invalid-feedback" id="conf-new-pass-feedback">Please confirm your new password.</div>
+                </div>
               </div>
               <div class="col-12 text-end">
-                <button type="submit" class="btn btn-primary"><i class="bi bi-key me-1"></i> Update Password</button>
+                <button type="submit" class="btn btn-primary" id="btn-update-password"><i class="bi bi-key me-1"></i> Update Password</button>
               </div>
             </div>
           </form>
@@ -208,6 +223,7 @@
   <script src="assets/js/rtl.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/dashboard.js"></script>
+  <script src="assets/js/forms.js"></script>
   <!-- Floating 24/7 Emergency Care Quick Action Button at Bottom of Page -->
   <aside class="floating-emergency-widget" aria-label="Emergency Care Hotline">
     <a href="emergency-care.html" class="btn btn-emergency shadow-lg rounded-pill d-flex align-items-center gap-2 px-3 py-2 text-decoration-none">

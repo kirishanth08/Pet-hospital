@@ -44,7 +44,71 @@
 
 /* Mirrored icons in list items */
 [dir="rtl"] .footer-links a:hover {
-  transform: translateX(-4px);
+  transform: none;
+}
+[dir="rtl"] .footer-links a:hover .bi-chevron-right {
+  transform: translateX(-3px);
+}
+
+/* FAQ Accordion RTL Chevron Positioning (Issue 12) */
+[dir="rtl"] .accordion-button {
+  text-align: right;
+}
+[dir="rtl"] .accordion-button::after {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Pagination Ordering in RTL (Issue 21) */
+[dir="rtl"] .pagination {
+  direction: ltr;
+  justify-content: center;
+}
+
+/* Punctuation & Sentence Direction in RTL (Preserves trailing punctuation like '.', '?', '!' in English & mixed text) */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] .h1,
+[dir="rtl"] .h2,
+[dir="rtl"] .h3,
+[dir="rtl"] .h4,
+[dir="rtl"] .h5,
+[dir="rtl"] .h6,
+[dir="rtl"] p,
+[dir="rtl"] .card-body,
+[dir="rtl"] .card-body p,
+[dir="rtl"] .lead,
+[dir="rtl"] .small,
+[dir="rtl"] li,
+[dir="rtl"] dt,
+[dir="rtl"] dd,
+[dir="rtl"] blockquote,
+[dir="rtl"] figcaption,
+[dir="rtl"] label,
+[dir="rtl"] .form-label,
+[dir="rtl"] .card-title,
+[dir="rtl"] .card-text,
+[dir="rtl"] .section-tag,
+[dir="rtl"] .accordion-button,
+[dir="rtl"] .accordion-body,
+[dir="rtl"] .nav-link,
+[dir="rtl"] .alert,
+[dir="rtl"] .toast-body,
+[dir="rtl"] .form-check-label {
+  unicode-bidi: plaintext;
+  text-align: right;
+}
+
+[dir="rtl"] span,
+[dir="rtl"] a,
+[dir="rtl"] strong,
+[dir="rtl"] em,
+[dir="rtl"] .badge {
+  unicode-bidi: isolate;
 }
 
 [dir="rtl"] .bi-chevron-right::before {

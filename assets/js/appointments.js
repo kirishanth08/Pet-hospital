@@ -39,14 +39,107 @@
       });
     }
 
+    // Reschedule Query Parameter Handler
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('reschedule')) {
+      const ticket = urlParams.get('reschedule');
+      const rescheduleNotice = document.createElement('div');
+      rescheduleNotice.className = 'alert alert-warning border-warning d-flex align-items-center gap-2 mb-4';
+      rescheduleNotice.innerHTML = `<i class="bi bi-calendar-range-fill fs-5"></i> <div><strong>Rescheduling Visit #${ticket}:</strong> Please select your updated preferred date, time slot, and confirm details below.</div>`;
+      bookingForm.prepend(rescheduleNotice);
+    }
+
+    // Phone input validation - strictly reject alphabets and require valid digits
+    const phoneInput = document.getElementById('owner-phone');
+    const phoneFeedback = phoneInput?.parentElement?.querySelector('.invalid-feedback') || document.getElementById('owner-phone-feedback');
+
+    function validateAppointmentPhone(showErrorImmediately = false) {
+      if (!phoneInput) return true;
+      const val = phoneInput.value;
+      const hasLetters = /[a-zA-Z]/.test(val);
+      const digits = val.replace(/\D/g, '');
+
+      if (hasLetters) {
+        phoneInput.value = val.replace(/[a-zA-Z]/g, '');
+        phoneInput.classList.add('is-invalid');
+        phoneInput.setCustomValidity('Letters are not allowed in telephone numbers.');
+        if (phoneFeedback) {
+          phoneFeedback.textContent = 'Letters are not allowed. Please enter numbers only.';
+          phoneFeedback.style.display = 'block';
+        }
+        return false;
+      }
+
+      if (val.trim() === '' && phoneInput.hasAttribute('required')) {
+        if (showErrorImmediately) {
+          phoneInput.classList.add('is-invalid');
+          phoneInput.setCustomValidity('Please enter your phone number.');
+          if (phoneFeedback) {
+            phoneFeedback.textContent = 'Please enter your phone number.';
+            phoneFeedback.style.display = 'block';
+          }
+        }
+        return false;
+      }
+
+      if (digits.length < 7) {
+        phoneInput.setCustomValidity('Please enter a valid phone number with at least 7 digits.');
+        if (showErrorImmediately || val.length > 0) {
+          phoneInput.classList.add('is-invalid');
+          if (phoneFeedback) {
+            phoneFeedback.textContent = 'Please enter a valid phone number with at least 7 digits.';
+            phoneFeedback.style.display = 'block';
+          }
+        }
+        return false;
+      }
+
+      // Valid phone
+      phoneInput.classList.remove('is-invalid');
+      phoneInput.setCustomValidity('');
+      if (phoneFeedback) {
+        phoneFeedback.style.display = '';
+        phoneFeedback.textContent = 'Please enter a valid telephone number with numbers only.';
+      }
+      return true;
+    }
+
+    if (phoneInput) {
+      // Disallow typing alphabets
+      phoneInput.addEventListener('keydown', (e) => {
+        if (['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Enter', 'Home', 'End'].includes(e.key) ||
+            e.ctrlKey || e.metaKey) {
+          return;
+        }
+        if (/[a-zA-Z]/.test(e.key)) {
+          e.preventDefault();
+          phoneInput.classList.add('is-invalid');
+          if (phoneFeedback) {
+            phoneFeedback.textContent = 'Letters are not allowed. Please enter numbers only.';
+            phoneFeedback.style.display = 'block';
+          }
+        }
+      });
+
+      phoneInput.addEventListener('input', () => {
+        validateAppointmentPhone(false);
+      });
+
+      phoneInput.addEventListener('blur', () => {
+        validateAppointmentPhone(true);
+      });
+    }
+
     // Form Submission
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      if (!bookingForm.checkValidity()) {
+      const isPhoneValid = validateAppointmentPhone(true);
+
+      if (!bookingForm.checkValidity() || !isPhoneValid) {
         bookingForm.classList.add('was-validated');
         if (window.showToast) {
-          window.showToast('Please fill out all required fields before booking.', 'warning', 'Missing Details');
+          window.showToast('Please correct errors and provide a valid phone number before booking.', 'warning', 'Validation Error');
         }
         return;
       }

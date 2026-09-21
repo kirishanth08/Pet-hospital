@@ -167,8 +167,8 @@
                 </div>
                 <div class="col-md-6">
                   <label for="owner-phone" class="form-label">Phone Number <span class="required">*</span></label>
-                  <input type="tel" class="form-control" id="owner-phone" placeholder="(555) 000-0000" required>
-                  <div class="invalid-feedback">Please enter a reachable phone number.</div>
+                  <input type="tel" class="form-control" id="owner-phone" placeholder="(555) 000-0000" pattern="^[0-9+() \-]{7,20}$" inputmode="tel" required>
+                  <div class="invalid-feedback">Please enter a valid telephone number with numbers only.</div>
                 </div>
                 <div class="col-12">
                   <label for="owner-email" class="form-label">Email Address <span class="required">*</span></label>
@@ -182,7 +182,7 @@
               <div class="row g-3 mb-4">
                 <div class="col-md-4">
                   <label for="pet-name" class="form-label">Pet's Name <span class="required">*</span></label>
-                  <input type="text" class="form-control" id="pet-name" placeholder="e.g. Max" required>
+                  <input type="text" class="form-control" id="pet-name" placeholder="e.g. Max" minlength="2" required>
                   <div class="invalid-feedback">Please provide your pet's name.</div>
                 </div>
                 <div class="col-md-4">
@@ -421,9 +421,9 @@
       <div class="row g-5">
         <!-- Col 1: About & Logo -->
         <div class="col-lg-4 col-md-6">
-          <a class="navbar-brand text-white mb-3" href="index.html">
+          <a class="navbar-brand mb-3" href="index.html">
             <div class="brand-icon"><img src="assets/images/favicon.svg" alt="VetCare Pro Logo" class="brand-logo-img"></div>
-            <span class="text-white">VetCare<span class="text-accent">Pro</span></span>
+            <span>VetCare<span class="text-accent">Pro</span></span>
           </a>
           <p class="mb-4">Compassionate, fear-free veterinary healthcare providing comprehensive wellness, advanced diagnostics, orthopedic surgery, and 24/7 critical trauma care.</p>
           <div class="footer-emergency-card">

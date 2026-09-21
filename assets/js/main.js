@@ -8,15 +8,15 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     // 1. Sticky Navbar
-    const navbar = document.querySelector('.site-navbar');
-    if (navbar) {
+    const stickyHeader = document.querySelector('.site-navbar, .dashboard-topbar');
+    if (stickyHeader) {
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 40) {
-          navbar.classList.add('scrolled');
+        if (window.scrollY > 20) {
+          stickyHeader.classList.add('scrolled');
         } else {
-          navbar.classList.remove('scrolled');
+          stickyHeader.classList.remove('scrolled');
         }
-      });
+      }, { passive: true });
     }
 
     // 2. Active Page Link Detection

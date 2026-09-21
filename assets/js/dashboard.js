@@ -75,5 +75,22 @@
         }
       });
     });
+
+    // 5. Sign Out Handler
+    document.addEventListener('click', (e) => {
+      const signoutBtn = e.target.closest('.btn-signout, a[href="index.html"].text-danger');
+      if (signoutBtn) {
+        e.preventDefault();
+        try {
+          localStorage.removeItem('vetcare_current_user');
+        } catch (err) {}
+        if (window.showToast) {
+          window.showToast('You have been signed out successfully.', 'info', 'Signed Out');
+        }
+        setTimeout(() => {
+          window.location.href = 'login.html';
+        }, 400);
+      }
+    });
   });
 })();
