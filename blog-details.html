@@ -65,15 +65,10 @@
             <!-- RTL / LTR Text Toggle -->
             <button class="rtl-text-toggle" type="button" aria-label="Toggle language direction" title="Toggle RTL">RTL</button>
 
-            <!-- Dashboard Dropdown (User and Admin) -->
-            <div class="dropdown d-inline-block">
-              <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" title="Portal Dashboard">Dashboard</button>
-              <ul class="dropdown-menu dropdown-menu-end shadow-sm">
-                <li><h6 class="dropdown-header text-uppercase small">Portals</h6></li>
-                <li><a class="dropdown-item d-flex align-items-center gap-2" href="dashboard.html"><i class="bi bi-person-heart text-accent"></i> User Dashboard</a></li>
-                <li><a class="dropdown-item d-flex align-items-center gap-2" href="dashboard.html?role=admin"><i class="bi bi-shield-lock-fill text-primary"></i> Admin Dashboard</a></li>
-              </ul>
-            </div>
+            <!-- User Dashboard -->
+            <a href="dashboard.html" class="btn btn-sm btn-outline-primary" title="User Dashboard">
+              <i class="bi bi-speedometer2"></i> Dashboard
+            </a>
 
             <!-- Pet Owner Portal Login -->
             <a href="login.html" class="btn btn-sm btn-light" title="Pet Parent Portal">

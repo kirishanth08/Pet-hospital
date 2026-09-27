@@ -17,6 +17,26 @@
       }
     };
 
+    // Helper: Display in-form alert notice (for static auth forms)
+    function showFormAlert(form, message, type = 'success') {
+      if (!form) return;
+      let alertBox = form.querySelector('.auth-form-alert');
+      if (!alertBox) {
+        alertBox = document.createElement('div');
+        alertBox.className = 'auth-form-alert mb-3';
+        form.prepend(alertBox);
+      }
+      alertBox.style.display = 'block';
+      const icon = type === 'success' ? 'bi-check-circle-fill text-success' : type === 'danger' ? 'bi-exclamation-triangle-fill text-danger' : 'bi-info-circle-fill text-primary';
+      alertBox.innerHTML = `
+        <div class="alert alert-${type} d-flex align-items-center gap-2 shadow-sm py-2 px-3 mb-0" role="alert">
+          <i class="bi ${icon} fs-5"></i>
+          <div>${message}</div>
+        </div>
+      `;
+      alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
     // Helper: Find invalid-feedback associated with an input
     function getFeedbackElement(input) {
       if (!input) return null;
@@ -237,7 +257,7 @@
       // Password matches or general portal demo authentication
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Authenticating...';
+        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Signing In...';
       }
 
       try {
@@ -253,11 +273,20 @@
       }
 
       setTimeout(() => {
-        safeToast('Welcome back! Redirecting to your Pet Health Portal...', 'success', 'Login Successful');
-        setTimeout(() => {
-          window.location.href = 'dashboard.html';
-        }, 500);
-      }, 600);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('btn-primary');
+          submitBtn.classList.add('btn-success');
+          submitBtn.innerHTML = '<i class="bi bi-check-circle-fill me-1"></i> Logged In Successfully';
+          setTimeout(() => {
+            submitBtn.classList.remove('btn-success');
+            submitBtn.classList.add('btn-primary');
+            submitBtn.innerHTML = originalText;
+          }, 3500);
+        }
+        showFormAlert(form, '<strong>Login successful!</strong> Welcome back to VetCare Pro.', 'success');
+        safeToast('Login successful! Welcome back.', 'success', 'Login Successful');
+      }, 500);
     }
 
     // Register Form Handler
@@ -286,6 +315,7 @@
             confFeedback.style.display = 'block';
           }
         }
+        showFormAlert(form, 'Passwords do not match. Please verify and try again.', 'danger');
         safeToast('Passwords do not match. Please verify and try again.', 'danger', 'Validation Error');
         return;
       }
@@ -343,16 +373,26 @@
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalText;
         }
+        showFormAlert(form, 'An error occurred while saving your account. Please try again.', 'danger');
         safeToast('An error occurred while saving your account. Please try again.', 'danger', 'System Error');
         return;
       }
 
       setTimeout(() => {
-        safeToast(`Account created successfully! Welcome to VetCare Pro, ${name}.`, 'success', 'Registration Complete');
-        setTimeout(() => {
-          window.location.href = 'dashboard.html';
-        }, 500);
-      }, 600);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('btn-primary');
+          submitBtn.classList.add('btn-success');
+          submitBtn.innerHTML = '<i class="bi bi-check-circle-fill me-1"></i> Sign Up Successful';
+          setTimeout(() => {
+            submitBtn.classList.remove('btn-success');
+            submitBtn.classList.add('btn-primary');
+            submitBtn.innerHTML = originalText;
+          }, 3500);
+        }
+        showFormAlert(form, `<strong>Sign up successful!</strong> Account created successfully for ${name || 'Pet Parent'}.`, 'success');
+        safeToast(`Sign up successful! Welcome to VetCare Pro, ${name || 'Pet Parent'}.`, 'success', 'Registration Complete');
+      }, 500);
     }
 
     // Portal Password Change Handler (Dashboard Profile)
@@ -557,6 +597,7 @@
     googleBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
         const originalText = btn.innerHTML;
+        const isRegister = btn.id === 'btnGoogleRegister';
         btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Connecting Google Account...';
         btn.disabled = true;
         setTimeout(() => {
@@ -570,11 +611,15 @@
             localStorage.setItem('vetcare_user_password', 'Password123');
           } catch (e) {}
 
-          safeToast('Google authentication verified! Redirecting to Pet Portal...', 'success', 'Google Sign-In');
-          setTimeout(() => {
-            window.location.href = 'dashboard.html';
-          }, 600);
-        }, 600);
+          const form = btn.closest('.auth-card')?.querySelector('form');
+          const successMsg = isRegister ? 'Sign up successful! Account connected with Google.' : 'Login successful! Welcome back.';
+          if (form) {
+            showFormAlert(form, `<strong>${isRegister ? 'Sign up successful!' : 'Login successful!'}</strong> ${successMsg}`, 'success');
+          }
+          safeToast(successMsg, 'success', isRegister ? 'Google Sign-Up' : 'Google Sign-In');
+          btn.disabled = false;
+          btn.innerHTML = originalText;
+        }, 500);
       });
     });
 
@@ -582,6 +627,7 @@
     appleBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
         const originalText = btn.innerHTML;
+        const isRegister = btn.id === 'btnAppleRegister';
         btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Connecting Apple ID...';
         btn.disabled = true;
         setTimeout(() => {
@@ -595,11 +641,15 @@
             localStorage.setItem('vetcare_user_password', 'Password123');
           } catch (e) {}
 
-          safeToast('Apple ID verified! Redirecting to Pet Portal...', 'success', 'Apple Sign-In');
-          setTimeout(() => {
-            window.location.href = 'dashboard.html';
-          }, 600);
-        }, 600);
+          const form = btn.closest('.auth-card')?.querySelector('form');
+          const successMsg = isRegister ? 'Sign up successful! Account connected with Apple.' : 'Login successful! Welcome back.';
+          if (form) {
+            showFormAlert(form, `<strong>${isRegister ? 'Sign up successful!' : 'Login successful!'}</strong> ${successMsg}`, 'success');
+          }
+          safeToast(successMsg, 'success', isRegister ? 'Apple Sign-Up' : 'Apple Sign-In');
+          btn.disabled = false;
+          btn.innerHTML = originalText;
+        }, 500);
       });
     });
   });
