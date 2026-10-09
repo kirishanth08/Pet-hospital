@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-bs-theme="light" dir="ltr">
 <head>
   <meta charset="UTF-8">
@@ -65,14 +65,14 @@
             <!-- RTL / LTR Text Toggle -->
             <button class="rtl-text-toggle" type="button" aria-label="Toggle language direction" title="Toggle RTL">RTL</button>
 
-            <!-- User Dashboard -->
-            <a href="dashboard.html" class="btn btn-sm btn-outline-primary" title="User Dashboard">
-              <i class="bi bi-speedometer2"></i> Dashboard
+            <!-- User Dashboard Profile Avatar -->
+            <a href="dashboard.html" class="nav-icon-btn nav-avatar-btn" title="User Dashboard" aria-label="User Dashboard">
+              <i class="bi bi-person-circle"></i>
             </a>
 
             <!-- Pet Owner Portal Login -->
             <a href="login.html" class="btn btn-sm btn-light" title="Pet Parent Portal">
-              <i class="bi bi-person-circle"></i> Login
+              <i class="bi bi-box-arrow-in-right"></i> Login
             </a>
 
             <!-- Sign Up CTA -->
@@ -102,7 +102,9 @@
         
         <div class="article-meta-bar">
           <div class="d-flex align-items-center gap-3">
-            <img src="assets/images/vets/vet-marcus.jpg" alt="Dr. Marcus Vance" class="rounded-circle shadow-sm" style="width: 46px; height: 46px; object-fit: cover; border: 2px solid var(--accent);">
+            <div class="rounded-circle d-flex align-items-center justify-content-center text-white fw-bold shadow-sm" style="width: 46px; height: 46px; background-color: var(--primary); border: 2px solid var(--accent); font-size: 1.1rem;">
+              <i class="bi bi-person-fill"></i>
+            </div>
             <div>
               <h6 class="mb-0 fw-bold">Dr. Marcus Vance, DACVIM</h6>
               <span class="small text-muted">Published on September 12, 2026 • 6 Min Read</span>
@@ -187,7 +189,10 @@
         <div class="mt-5" id="author-bio">
           <div class="article-author-card p-4 p-md-4 rounded-4">
             <div class="d-flex flex-column flex-sm-row align-items-center gap-4">
-              <img src="assets/images/vets/vet-marcus.jpg" alt="Dr. Marcus Vance" class="rounded-4 shadow-sm" style="width: 100px; height: 100px; object-fit: cover; flex-shrink: 0;">
+              <div class="rounded-4 bg-primary text-white d-flex flex-column align-items-center justify-content-center shadow-sm text-center p-2" style="width: 100px; height: 100px; flex-shrink: 0;">
+                <i class="bi bi-person-fill-check fs-1 text-accent"></i>
+                <span class="small fw-bold mt-1 text-nowrap" style="font-size: 0.72rem;">Dr. Vance</span>
+              </div>
               <div>
                 <div class="badge badge-subtle-primary mb-1">Author & Clinical Specialist</div>
                 <h4 class="h5 mb-1">Dr. Marcus Vance</h4>
@@ -208,26 +213,26 @@
         <div class="row g-4">
           <div class="col-md-6">
             <div class="card h-100 card-hover overflow-hidden">
-              <img src="assets/images/blog/blog-5.jpg" class="card-img-top" alt="Chronic kidney disease in cats" style="height: 190px; object-fit: cover;">
+              <img src="assets/images/blog/blog-8.jpg" class="card-img-top" alt="Surgical sterile safety protocols in veterinary hospital" style="height: 190px; object-fit: cover;">
               <div class="card-body p-4 d-flex flex-column justify-content-between">
                 <div>
-                  <span class="badge badge-subtle-accent mb-2">Clinical Nutrition</span>
-                  <h5 class="mb-2">Dietary Protocols for Feline Renal Disease</h5>
-                  <p class="small text-muted mb-3">Learn how phosphorus binders and omega-3 supplements protect functioning nephrons.</p>
+                  <span class="badge badge-subtle-primary mb-2">Surgical Safety</span>
+                  <h5 class="mb-2">Sterile Operating Protocols & Anesthesia Monitoring</h5>
+                  <p class="small text-muted mb-3">Learn how continuous multi-parameter telemetry and positive-pressure air filtration safeguard surgical patients.</p>
                 </div>
-                <a href="blog-details.html?id=renal-nutrition" class="btn btn-sm btn-outline-primary mt-auto">Read Article <i class="bi bi-arrow-right ms-1"></i></a>
+                <a href="blog-details.html?id=surgical-safety" class="btn btn-sm btn-outline-primary mt-auto">Read Article <i class="bi bi-arrow-right ms-1"></i></a>
               </div>
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="card h-100 card-hover overflow-hidden">
-              <img src="assets/images/blog/blog-3.jpg" class="card-img-top" alt="Senior pet dental health" style="height: 190px; object-fit: cover;">
+              <img src="assets/images/clinical/dental-oral-care.jpg" class="card-img-top" alt="Preventing periodontal disease in senior canines" style="height: 190px; object-fit: cover;">
               <div class="card-body p-4 d-flex flex-column justify-content-between">
                 <div>
-                  <span class="badge badge-subtle-primary mb-2">Dentistry</span>
-                  <h5 class="mb-2">Periodontal Pathology in Senior Pets</h5>
-                  <p class="small text-muted mb-3">How subgingival bacteria cause unnoticed tooth root abscesses and chronic pain.</p>
+                  <span class="badge badge-subtle-accent mb-2">Dentistry & Oral Health</span>
+                  <h5 class="mb-2">Preventing Periodontal Disease in Senior Canines</h5>
+                  <p class="small text-muted mb-3">Over 80% of adult dogs exhibit periodontal pathology. Discover how digital dental x-rays and ultrasonic scaling safeguard heart and kidney health.</p>
                 </div>
                 <a href="blog-details.html?id=senior-dental" class="btn btn-sm btn-outline-primary mt-auto">Read Article <i class="bi bi-arrow-right ms-1"></i></a>
               </div>
@@ -243,7 +248,7 @@
         <h2 class="display-6 text-white fw-bold mb-3">Suspect Your Cat Is in Pain?</h2>
         <p class="lead text-white-50 mb-4">Never administer human pain medications (like Tylenol or Advil), which are lethal to cats. Schedule a gentle, fear-free mobility consultation with our medical team.</p>
         <div class="d-flex justify-content-center flex-wrap gap-3">
-          <a href="appointments.html" class="btn btn-accent btn-lg"><i class="bi bi-calendar-check"></i> Book Feline Examination</a>
+          <a href="appointments.html" class="btn btn-primary btn-lg"><i class="bi bi-calendar-check"></i> Book Feline Examination</a>
           <a href="blog.html" class="btn btn-outline-light btn-lg"><i class="bi bi-arrow-left"></i> Back to Journal</a>
         </div>
       </div>

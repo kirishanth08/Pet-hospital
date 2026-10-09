@@ -18,29 +18,141 @@
   }
 }
 
-/* Large Tablets & Small Laptops (992px - 1199px) */
-@media (max-width: 1199.98px) {
+/* ==========================================================================
+   Large Tablets & Desktop (992px - 1199.98px / 1024px Viewport)
+   Fixes: Navbar menu links alignment and client stories container overflow
+   ========================================================================== */
+@media (min-width: 992px) and (max-width: 1199.98px) {
   .hero-title {
     font-size: 2.8rem;
   }
-  .dashboard-sidebar {
-    width: 250px;
+
+  /* 1024px Navbar menu links alignment issue fix */
+  .site-navbar {
+    padding: 0.5rem 0;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+    gap: 0.45rem !important;
+  }
+
+  .navbar-brand .brand-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.825rem;
+    padding: 0.42rem 0.48rem;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-controls {
+    gap: 0.35rem;
+  }
+
+  .nav-controls .btn-sm {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .nav-controls .nav-icon-btn,
+  .nav-controls .rtl-text-toggle {
+    width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
+  }
+
+  /* 1024px About Page Client Stories Out of Container Fix */
+  #about-testimonials .container {
+    overflow: hidden;
+  }
+
+  #about-testimonials .row {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+
+  #about-testimonials .row > [class*="col-"] {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  #about-testimonials .about-testimonial-card {
+    padding: 1.25rem !important;
+    overflow: hidden;
+  }
+
+  #about-testimonials .testimonial-profile-row {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  #about-testimonials .testimonial-profile-row > div {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  #about-testimonials .testimonial-profile-row .badge {
+    white-space: normal !important;
+    text-align: left;
+    line-height: 1.35;
+    word-break: break-word;
+    font-size: 0.75rem;
+  }
+
+  #about-testimonials .testimonial-profile-img {
+    width: 44px;
+    height: 44px;
+  }
+
+  #about-testimonials .testimonial-content h5 {
+    font-size: 0.95rem;
+  }
+
+  #about-testimonials .testimonial-content p {
+    font-size: 0.825rem;
+  }
+
+  /* 1024px Matrix Table Clinical Fees layout */
+  .matrix-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
-/* Medium Tablets (768px - 991.98px) */
+/* ==========================================================================
+   Medium Tablets & Mobile Nav Collapse (max-width: 991.98px / 768px Viewport)
+   Fixes: Hamburger pushing hero down, dashboard sidebar sticky overlap, topbar alignment
+   ========================================================================== */
 @media (max-width: 991.98px) {
   .site-navbar {
     padding: 0.75rem 0;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1080 !important;
   }
 
-  .navbar-collapse {
+  .site-navbar .container {
+    position: relative;
+  }
+
+  /* Hamburger opens as overlay drawer — DOES NOT push hero section downwards */
+  .site-navbar .navbar-collapse {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 12px;
+    right: 12px;
     background-color: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     padding: 1.25rem;
-    margin-top: 1rem;
+    margin-top: 0;
     box-shadow: var(--shadow-lg);
+    z-index: 1090;
+    max-height: calc(100vh - 85px);
+    overflow-y: auto;
   }
 
   .navbar-nav {
@@ -51,6 +163,8 @@
     justify-content: flex-start;
     padding-top: 0.75rem;
     border-top: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    gap: 0.5rem;
   }
 
   .section-py {
@@ -61,19 +175,36 @@
     margin-top: 2.5rem;
   }
 
-  /* Dashboard mobile sidebar layout */
+  /* Dashboard mobile sidebar layout — fixed drawer so it NEVER breaks page layout */
+  .dashboard-wrapper {
+    overflow-x: hidden;
+    position: relative;
+  }
+
   .dashboard-sidebar {
-    position: fixed;
-    top: 0;
-    left: -280px;
-    height: 100vh;
-    z-index: 1050;
+    position: fixed !important;
+    top: 0 !important;
+    left: -290px !important;
+    width: 280px !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    z-index: 1050 !important;
     box-shadow: var(--shadow-lg);
     transition: left var(--transition-normal);
   }
 
   .dashboard-sidebar.show {
-    left: 0;
+    left: 0 !important;
+  }
+
+  [dir="rtl"] .dashboard-sidebar {
+    left: auto !important;
+    right: -290px !important;
+    transition: right var(--transition-normal);
+  }
+
+  [dir="rtl"] .dashboard-sidebar.show {
+    right: 0 !important;
   }
 
   .dashboard-sidebar-backdrop {
@@ -92,8 +223,35 @@
     display: block;
   }
 
+  .dashboard-content {
+    width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 100% !important;
+  }
+
+  /* 768px Dashboard Topbar and Prescription Section alignment */
   .dashboard-topbar {
-    padding: 0.75rem 1.25rem;
+    padding: 0.75rem 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.5rem !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .dashboard-topbar h4 {
+    font-size: 1.05rem !important;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 240px;
+  }
+
+  .dashboard-topbar .d-flex {
+    align-items: center;
+    gap: 0.45rem !important;
+    flex-shrink: 0;
   }
 
   .dashboard-body {
@@ -101,7 +259,10 @@
   }
 }
 
-/* Phones & Small Devices (max-width: 767.98px) */
+/* ==========================================================================
+   Phones & Small Devices (max-width: 767.98px / 360px - 768px Viewports)
+   Fixes: About & Pricing hero CTA layout, clinical fees table, dashboard alignment
+   ========================================================================== */
 @media (max-width: 767.98px) {
   h1, .h1 {
     font-size: 2rem;
@@ -131,6 +292,73 @@
   .floating-badge {
     position: static;
     margin-top: 1rem;
+  }
+
+  /* 360px About & Pricing Hero CTA layout issue fix */
+  #about-hero .d-flex.gap-3,
+  #pricing-hero .d-flex.gap-3,
+  #clinical-hero .d-flex.gap-3,
+  #home-hero .d-flex.gap-3,
+  .hero-cta-group {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+
+  #about-hero .d-flex.gap-3 .btn,
+  #pricing-hero .d-flex.gap-3 .btn,
+  #clinical-hero .d-flex.gap-3 .btn,
+  #home-hero .d-flex.gap-3 .btn,
+  .hero-cta-group .btn {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  /* 360px Dashboard alignment and topbar fixes */
+  .dashboard-topbar h4 {
+    font-size: 0.95rem !important;
+    max-width: 140px;
+  }
+
+  .dashboard-topbar .btn {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.78rem;
+  }
+
+  .dashboard-body {
+    padding: 1.25rem 0.75rem !important;
+  }
+
+  #dash-hero-alert .row > div {
+    width: 100%;
+  }
+
+  #dash-hero-alert .d-flex.justify-content-lg-end {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #dash-hero-alert .d-flex.justify-content-lg-end .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 360px Transparent clinical fees table layout fix */
+  .matrix-table {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    width: 100%;
+    border-radius: var(--border-radius);
+  }
+
+  .matrix-table table {
+    min-width: 760px !important;
+  }
+
+  .matrix-table thead th,
+  .matrix-table tbody td {
+    padding: 0.85rem 0.95rem;
+    font-size: 0.825rem;
   }
 
   /* Clinical hero full cover mobile adjustments */
@@ -182,10 +410,20 @@
     padding-left: 1.5rem;
   }
 
+  [dir="rtl"] .timeline {
+    padding-left: 0 !important;
+    padding-right: 1.5rem !important;
+  }
+
   .timeline-marker {
     left: -1.5rem;
     width: 16px;
     height: 16px;
+  }
+
+  [dir="rtl"] .timeline-marker {
+    left: auto !important;
+    right: -1.5rem !important;
   }
 
   .footer-bottom {
@@ -196,40 +434,41 @@
     text-align: center !important;
     margin-top: 0.5rem;
   }
-
-  .dashboard-topbar {
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
 }
 
-/* Extra Small Phones (max-width: 414px down to 320px) */
+/* ==========================================================================
+   Extra Small Phones (max-width: 414px down to 320px)
+   ========================================================================== */
 @media (max-width: 414px) {
   .navbar-brand {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .brand-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 1.1rem;
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
   }
 
   .btn {
-    padding: 0.65rem 1.25rem;
+    padding: 0.65rem 1.15rem;
     font-size: 0.875rem;
   }
 
   .card-body {
-    padding: 1.25rem;
+    padding: 1.15rem;
   }
 
-  .nav-controls {
-    flex-wrap: wrap;
+  .dashboard-topbar {
+    padding: 0.6rem 0.75rem !important;
+  }
+
+  .dashboard-topbar h4 {
+    display: none;
   }
 }
 
-/* Ensure no horizontal scrollbar occurs on any viewport without breaking position: sticky */
+/* Global viewport safeguard — no accidental horizontal scrollbars */
 html, body {
   max-width: 100vw;
   overflow-x: clip;

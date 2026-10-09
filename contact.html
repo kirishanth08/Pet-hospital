@@ -20,6 +20,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
+  <!-- Leaflet CSS for Real Interactive Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
   <!-- Custom Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
@@ -65,14 +68,14 @@
             <!-- RTL / LTR Text Toggle -->
             <button class="rtl-text-toggle" type="button" aria-label="Toggle language direction" title="Toggle RTL">RTL</button>
 
-            <!-- User Dashboard -->
-            <a href="dashboard.html" class="btn btn-sm btn-outline-primary" title="User Dashboard">
-              <i class="bi bi-speedometer2"></i> Dashboard
+            <!-- User Dashboard Profile Avatar -->
+            <a href="dashboard.html" class="nav-icon-btn nav-avatar-btn" title="User Dashboard" aria-label="User Dashboard">
+              <i class="bi bi-person-circle"></i>
             </a>
 
             <!-- Pet Owner Portal Login -->
             <a href="login.html" class="btn btn-sm btn-light" title="Pet Parent Portal">
-              <i class="bi bi-person-circle"></i> Login
+              <i class="bi bi-box-arrow-in-right"></i> Login
             </a>
 
             <!-- Sign Up CTA -->
@@ -102,8 +105,8 @@
             <h1 class="display-4 fw-extrabold mb-3">Get in Touch with Our Veterinary Care Team</h1>
             <p class="lead mb-4">Have questions about an upcoming surgical procedure, dietary management, or records transfer? Our client care coordinators are here to assist you seven days a week.</p>
             <div class="d-flex flex-wrap gap-3">
-              <a href="#contact-form-section" class="btn btn-primary"><i class="bi bi-envelope"></i> Send a Message</a>
-              <a href="appointments.html" class="btn btn-outline-primary"><i class="bi bi-calendar2-check"></i> Book Visit</a>
+              <a href="#contact-form-section" class="btn btn-primary btn-lg"><i class="bi bi-envelope"></i> Send a Message</a>
+              <a href="appointments.html" class="btn btn-outline-primary btn-lg"><i class="bi bi-calendar2-check"></i> Book Visit</a>
             </div>
           </div>
 
@@ -124,7 +127,9 @@
               <div class="icon-box icon-box-primary mx-auto mb-3"><i class="bi bi-hospital"></i></div>
               <h5 class="mb-1">Hospital Address</h5>
               <p class="small text-muted mb-0">742 Evergreen Terrace, Medical District, Springfield</p>
-              <span class="small text-accent fw-bold mt-2 d-block">Free Patient Parking Bay 1–4</span>
+              <a href="#location-guide" class="small text-accent fw-bold mt-2 d-inline-block text-decoration-none">
+                <i class="bi bi-geo-alt-fill me-1"></i> View on Campus Map
+              </a>
             </div>
           </div>
 
@@ -244,18 +249,68 @@
                 </div>
               </div>
             </div>
+
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a href="https://maps.google.com/?q=742+Evergreen+Terrace,+Springfield" target="_blank" rel="noopener" class="btn btn-primary">
+                <i class="bi bi-cursor-fill me-1"></i> Open in Maps App
+              </a>
+              <a href="tel:5553827491" class="btn btn-outline-primary">
+                <i class="bi bi-telephone me-1"></i> Call Reception Desk
+              </a>
+            </div>
           </div>
 
           <div class="col-lg-6">
-            <!-- Professional map visual placeholder / embed container -->
-            <div class="card p-2 bg-subtle rounded-4 border shadow-sm">
-              <div class="p-5 text-center bg-surface rounded-3 border d-flex flex-column align-items-center justify-content-center" style="min-height: 280px;">
-                <i class="bi bi-pin-map-fill text-primary display-4 mb-2"></i>
-                <h5 class="mb-1">VetCare Pro Animal Hospital Campus</h5>
-                <span class="small text-muted mb-3">742 Evergreen Terrace, Springfield</span>
-                <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-sm btn-outline-primary">
-                  <i class="bi bi-box-arrow-up-right me-1"></i> Open in Google Maps
-                </a>
+            <!-- Real Interactive Hospital Campus Map (Leaflet) -->
+            <div class="hospital-map-wrapper">
+              <!-- Top Controls: Status Badge & Layer Switcher -->
+              <div class="map-top-bar">
+                <div class="map-badge-tag">
+                  <span class="badge bg-danger p-1"><i class="bi bi-broadcast"></i></span>
+                  <span>Live GPS • Campus View</span>
+                </div>
+
+                <div class="map-layer-selector">
+                  <button type="button" class="map-layer-btn active" id="map-btn-streets" title="Switch to Street Map">Streets</button>
+                  <button type="button" class="map-layer-btn" id="map-btn-satellite" title="Switch to Satellite Imagery">Satellite</button>
+                  <button type="button" class="map-layer-btn" id="map-btn-osm" title="Switch to OpenStreetMap">OSM</button>
+                  <button type="button" class="map-layer-btn" id="map-btn-recenter" title="Recenter on Hospital"><i class="bi bi-crosshair"></i></button>
+                </div>
+              </div>
+
+              <!-- Map Viewport -->
+              <div id="hospital-map" role="region" aria-label="Interactive map showing VetCare Pro Animal Hospital location">
+                <!-- Fallback real OSM iframe if JS is disabled -->
+                <noscript>
+                  <iframe 
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-72.595%2C42.100%2C-72.580%2C42.110&amp;layer=mapnik&amp;marker=42.1055%2C-72.5875" 
+                    width="100%" 
+                    height="440" 
+                    style="border:0;" 
+                    title="OpenStreetMap Hospital Location">
+                  </iframe>
+                </noscript>
+              </div>
+
+              <!-- Bottom Action Ribbon -->
+              <div class="map-bottom-ribbon">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="icon-box icon-box-primary flex-shrink-0" style="width: 34px; height: 34px; font-size: 0.9rem;">
+                    <i class="bi bi-hospital-fill"></i>
+                  </div>
+                  <div>
+                    <strong class="d-block text-dark small" style="line-height: 1.2;">VetCare Pro Animal Hospital</strong>
+                    <small class="text-muted" style="font-size: 0.75rem;">742 Evergreen Terrace, Springfield</small>
+                  </div>
+                </div>
+                <div class="d-flex gap-2">
+                  <a href="https://maps.google.com/?q=742+Evergreen+Terrace,+Springfield" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+                    <i class="bi bi-compass me-1"></i> Directions
+                  </a>
+                  <a href="tel:5559247387" class="btn btn-sm btn-outline-danger">
+                    <i class="bi bi-telephone me-1"></i> ER Hotline
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -321,7 +376,7 @@
         <h2 class="display-5 text-white fw-bold mb-3">Ready to Schedule Your Pet’s Care?</h2>
         <p class="lead text-white-50 mb-4">Book your visit online with immediate confirmation, or contact our friendly team directly.</p>
         <div class="d-flex justify-content-center flex-wrap gap-3">
-          <a href="appointments.html" class="btn btn-accent btn-lg"><i class="bi bi-calendar-check"></i> Book an Appointment Online</a>
+          <a href="appointments.html" class="btn btn-primary btn-lg"><i class="bi bi-calendar-check"></i> Book an Appointment Online</a>
           <a href="tel:5559247387" class="btn btn-emergency btn-lg"><i class="bi bi-telephone"></i> 24/7 ER Hotline</a>
         </div>
       </div>
@@ -431,6 +486,9 @@
   <script src="assets/js/rtl.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/forms.js"></script>
+  <!-- Leaflet Map JS and Campus Map Initializer -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="assets/js/contact-map.js"></script>
   <!-- Floating 24/7 Emergency Care Quick Action Button at Bottom of Page -->
   <aside class="floating-emergency-widget" aria-label="Emergency Care Hotline">
     <a href="emergency-care.html" class="btn btn-emergency shadow-lg rounded-pill d-flex align-items-center gap-2 px-3 py-2 text-decoration-none">

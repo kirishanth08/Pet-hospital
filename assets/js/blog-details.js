@@ -134,7 +134,7 @@ const BLOG_ARTICLES_DATA = {
       bio: 'Dr. Jenkins has dedicated 8 years to canine and feline periodontics, digital dental radiography, subgingival ultrasonic therapy, and oral surgical reconstructions.',
       profileLink: 'vets.html'
     },
-    heroImage: 'assets/images/blog/blog-3.jpg',
+    heroImage: 'assets/images/clinical/dental-oral-care.jpg',
     lead: 'Over 80% of dogs over three years of age show active signs of periodontal pathology. Left untreated, chronic bacterial colonization under the gumline enters the bloodstream, directly accelerating chronic kidney disease, hepatic inflammation, and cardiac endocarditis.',
     contentHtml: `
       <h3 class="mb-3">1. The Invisible Danger: Subgingival Pathology</h3>
@@ -572,7 +572,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctaText = ctaSection.querySelector('p.lead');
     if (ctaText) ctaText.textContent = article.cta.text;
 
-    const ctaBtn = ctaSection.querySelector('a.btn-accent');
+    const ctaBtn = ctaSection.querySelector('a.btn-primary, a.btn-accent');
     if (ctaBtn) {
       ctaBtn.href = article.cta.btnLink;
       ctaBtn.innerHTML = `<i class="bi bi-calendar-check me-1"></i> ${article.cta.btnText}`;

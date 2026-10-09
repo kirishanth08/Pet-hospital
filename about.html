@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-bs-theme="light" dir="ltr">
 <head>
   <meta charset="UTF-8">
@@ -65,14 +65,14 @@
             <!-- RTL / LTR Text Toggle -->
             <button class="rtl-text-toggle" type="button" aria-label="Toggle language direction" title="Toggle RTL">RTL</button>
 
-            <!-- User Dashboard -->
-            <a href="dashboard.html" class="btn btn-sm btn-outline-primary" title="User Dashboard">
-              <i class="bi bi-speedometer2"></i> Dashboard
+            <!-- User Dashboard Profile Avatar -->
+            <a href="dashboard.html" class="nav-icon-btn nav-avatar-btn" title="User Dashboard" aria-label="User Dashboard">
+              <i class="bi bi-person-circle"></i>
             </a>
 
             <!-- Pet Owner Portal Login -->
             <a href="login.html" class="btn btn-sm btn-light" title="Pet Parent Portal">
-              <i class="bi bi-person-circle"></i> Login
+              <i class="bi bi-box-arrow-in-right"></i> Login
             </a>
 
             <!-- Sign Up CTA -->
@@ -102,8 +102,8 @@
             <h1 class="display-4 fw-extrabold mb-3">Our Commitment to Companion Animal Care</h1>
             <p class="lead mb-4">Founded by veterinary surgeons who believed medical excellence should always be delivered with warmth, empathy, and fear-free handling techniques.</p>
             <div class="d-flex gap-3">
-              <a href="vets.html" class="btn btn-primary"><i class="bi bi-people"></i> Meet Our Clinicians</a>
-              <a href="contact.html" class="btn btn-outline-primary"><i class="bi bi-geo-alt"></i> Tour Our Hospital</a>
+              <a href="vets.html" class="btn btn-primary btn-lg"><i class="bi bi-people"></i> Meet Our Clinicians</a>
+              <a href="contact.html" class="btn btn-outline-primary btn-lg"><i class="bi bi-geo-alt"></i> Tour Our Hospital</a>
             </div>
           </div>
           <div class="col-lg-6">
@@ -118,7 +118,7 @@
       <div class="container">
         <div class="row align-items-center g-5">
           <div class="col-lg-6">
-            <img src="assets/images/services/service-diagnostics.jpg" alt="Veterinary diagnostics laboratory and patient review" class="img-fluid rounded-4 shadow-md">
+            <img src="assets/images/facilities/facility-diagnostics.jpg" alt="Veterinary diagnostics laboratory and patient review" class="img-fluid rounded-4 shadow-md">
           </div>
           <div class="col-lg-6">
             <span class="section-tag"><i class="bi bi-journal-check"></i> 14-Year Clinical Journey</span>
@@ -224,60 +224,57 @@
           </div>
 
           <div class="col-lg-6">
-            <img src="assets/images/services/service-surgery.jpg" alt="Modern veterinary operating room with sterile surgical equipment" class="img-fluid rounded-4 shadow-lg">
+            <img src="assets/images/facilities/facility-surgery.jpg" alt="Modern veterinary operating room with sterile surgical equipment" class="img-fluid rounded-4 shadow-lg">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: CLINICAL DIRECTORS & TEAM -->
+    <!-- SECTION 5: CHIEF DOCTORS & LEADERSHIP -->
     <section class="section-py bg-subtle" id="leadership-team">
       <div class="container">
         <div class="text-center section-title-wrap max-w-700 mx-auto">
-          <span class="section-tag"><i class="bi bi-people"></i> Compassionate Leadership</span>
-          <h2 class="h1 mb-3">Meet Our Clinical Directors</h2>
-          <p class="lead">Guided by dedicated clinicians with over 50 combined years of veterinary surgical, medical, and emergency experience.</p>
+          <span class="section-tag"><i class="bi bi-award"></i> Hospital Leadership</span>
+          <h2 class="h1 mb-3">Our Chief Medical Officers</h2>
+          <p class="lead">Experienced clinicians leading our surgical, internal medicine, and emergency departments.</p>
         </div>
 
-        <div class="row g-4">
+        <div class="row g-4 justify-content-center">
+          <!-- Chief Doctor 1: Dr. Emily Carter -->
           <div class="col-lg-4 col-md-6">
-            <div class="card h-100 card-hover">
-              <img src="assets/images/vets/vet-emily.jpg" class="card-img-top" alt="Dr. Emily Carter, DVM, DACVS">
-              <div class="card-body p-4 d-flex flex-column justify-content-between">
-                <div>
-                  <h5 class="mb-1">Dr. Emily Carter</h5>
-                  <p class="text-muted small mb-2">DVM, DACVS • Hospital Co-Founder</p>
-                  <p class="small text-muted mb-4">Specialist in canine orthopedics, TPLO cruciate ligament reconstruction, and reconstructive soft tissue surgery.</p>
-                </div>
-                <a href="vets.html" class="btn btn-sm btn-outline-primary w-100 mt-auto">Meet Our Team <i class="bi bi-arrow-right ms-1"></i></a>
+            <div class="card h-100 card-hover border-0 shadow-sm rounded-4 overflow-hidden text-center">
+              <div class="position-relative overflow-hidden" style="height: 320px;">
+                <img src="assets/images/vets/vet-emily.jpg" alt="Dr. Emily Carter, Chief Medical Officer & Chief of Surgery" class="w-100 h-100" style="object-fit: cover; object-position: top center;">
+              </div>
+              <div class="card-body p-4">
+                <h4 class="h5 mb-1 text-primary">Dr. Emily Carter</h4>
+                <p class="text-accent fw-semibold mb-0">Chief Medical Officer & Chief of Surgery</p>
               </div>
             </div>
           </div>
 
+          <!-- Chief Doctor 2: Dr. Marcus Vance -->
           <div class="col-lg-4 col-md-6">
-            <div class="card h-100 card-hover">
-              <img src="assets/images/vets/vet-marcus.jpg" class="card-img-top" alt="Dr. Marcus Vance, BVSc">
-              <div class="card-body p-4 d-flex flex-column justify-content-between">
-                <div>
-                  <h5 class="mb-1">Dr. Marcus Vance</h5>
-                  <p class="text-muted small mb-2">BVSc, DACVIM • Head of Internal Medicine</p>
-                  <p class="small text-muted mb-4">Focusing on complex endocrine disorders, gastrointestinal endoscopy, and non-invasive abdominal ultrasound.</p>
-                </div>
-                <a href="vets.html" class="btn btn-sm btn-outline-primary w-100 mt-auto">Meet Our Team <i class="bi bi-arrow-right ms-1"></i></a>
+            <div class="card h-100 card-hover border-0 shadow-sm rounded-4 overflow-hidden text-center">
+              <div class="position-relative overflow-hidden" style="height: 320px;">
+                <img src="assets/images/vets/vet-marcus.jpg" alt="Dr. Marcus Vance, Chief of Internal Medicine" class="w-100 h-100" style="object-fit: cover; object-position: top center;">
+              </div>
+              <div class="card-body p-4">
+                <h4 class="h5 mb-1 text-primary">Dr. Marcus Vance</h4>
+                <p class="text-accent fw-semibold mb-0">Chief of Internal Medicine</p>
               </div>
             </div>
           </div>
 
+          <!-- Chief Doctor 3: Dr. David Kim -->
           <div class="col-lg-4 col-md-6">
-            <div class="card h-100 card-hover">
-              <img src="assets/images/vets/vet-david.jpg" class="card-img-top" alt="Dr. David Kim, DVM">
-              <div class="card-body p-4 d-flex flex-column justify-content-between">
-                <div>
-                  <h5 class="mb-1">Dr. David Kim</h5>
-                  <p class="text-muted small mb-2">DVM, VECCS • Director of Emergency Medicine</p>
-                  <p class="small text-muted mb-4">Leading our 24/7 emergency response team with expertise in resuscitation, trauma resuscitation, and critical stabilization.</p>
-                </div>
-                <a href="vets.html" class="btn btn-sm btn-outline-primary w-100 mt-auto">Meet Our Team <i class="bi bi-arrow-right ms-1"></i></a>
+            <div class="card h-100 card-hover border-0 shadow-sm rounded-4 overflow-hidden text-center">
+              <div class="position-relative overflow-hidden" style="height: 320px;">
+                <img src="assets/images/vets/vet-david.jpg" alt="Dr. David Kim, Chief of Emergency Medicine & Critical Care" class="w-100 h-100" style="object-fit: cover; object-position: top center;">
+              </div>
+              <div class="card-body p-4">
+                <h4 class="h5 mb-1 text-primary">Dr. David Kim</h4>
+                <p class="text-accent fw-semibold mb-0">Chief of Emergency Medicine & Critical Care</p>
               </div>
             </div>
           </div>
@@ -396,7 +393,7 @@
               <p class="lead text-white-50 mb-0">Through our PawsForward foundation, we provide subsidized sterilization for rescue shelters, partner with local animal rescues, and offer emergency care grants for families facing unexpected medical hardship.</p>
             </div>
             <div class="col-lg-4 text-lg-end">
-              <a href="appointments.html" class="btn btn-accent btn-lg"><i class="bi bi-calendar-check"></i> Book Your First Visit</a>
+              <a href="appointments.html" class="btn btn-primary btn-lg"><i class="bi bi-calendar-check"></i> Book Your First Visit</a>
             </div>
           </div>
         </div>

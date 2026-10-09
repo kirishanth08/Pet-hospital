@@ -1,5 +1,6 @@
 /* ==========================================================================
-   VETCARE PRO — RTL STYLESHEET (Arabic, Hebrew & RTL Locales)
+   VETCARE PRO — ENHANCED RTL STYLESHEET
+   Comprehensive RTL Layout, Punctuation Protection, Spacing & Mobile Support
    ========================================================================== */
 
 [dir="rtl"] {
@@ -9,63 +10,15 @@
 
 [dir="rtl"] body {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-}
-
-[dir="rtl"] .navbar-nav {
-  padding-right: 0;
-}
-
-[dir="rtl"] .dropdown-menu {
   text-align: right;
+  direction: rtl;
 }
 
-[dir="rtl"] .nav-dropdown-menu .dropdown-item {
-  text-align: right;
-}
-
-/* Mirrored margin and paddings */
-[dir="rtl"] .ms-auto {
-  margin-right: auto !important;
-  margin-left: 0 !important;
-}
-
-[dir="rtl"] .me-auto {
-  margin-left: auto !important;
-  margin-right: 0 !important;
-}
-
-[dir="rtl"] .text-end {
-  text-align: left !important;
-}
-
-[dir="rtl"] .text-start {
-  text-align: right !important;
-}
-
-/* Mirrored icons in list items */
-[dir="rtl"] .footer-links a:hover {
-  transform: none;
-}
-[dir="rtl"] .footer-links a:hover .bi-chevron-right {
-  transform: translateX(-3px);
-}
-
-/* FAQ Accordion RTL Chevron Positioning (Issue 12) */
-[dir="rtl"] .accordion-button {
-  text-align: right;
-}
-[dir="rtl"] .accordion-button::after {
-  margin-left: 0 !important;
-  margin-right: auto !important;
-}
-
-/* Pagination Ordering in RTL (Issue 21) */
-[dir="rtl"] .pagination {
-  direction: ltr;
-  justify-content: center;
-}
-
-/* Punctuation & Sentence Direction in RTL (Preserves trailing punctuation like '.', '?', '!' in English & mixed text) */
+/* ==========================================================================
+   PUNCTUATION, SYMBOLS & QUESTION MARKS PRESERVATION
+   Fixes: Trailing '.', '?', '!', ':', phone numbers, currency, and symbols
+   jumping to the beginning/left of sentences in RTL mode.
+   ========================================================================== */
 [dir="rtl"] h1,
 [dir="rtl"] h2,
 [dir="rtl"] h3,
@@ -78,41 +31,233 @@
 [dir="rtl"] .h4,
 [dir="rtl"] .h5,
 [dir="rtl"] .h6,
+[dir="rtl"] .display-1,
+[dir="rtl"] .display-2,
+[dir="rtl"] .display-3,
+[dir="rtl"] .display-4,
+[dir="rtl"] .display-5,
+[dir="rtl"] .display-6,
 [dir="rtl"] p,
-[dir="rtl"] .card-body,
-[dir="rtl"] .card-body p,
 [dir="rtl"] .lead,
 [dir="rtl"] .small,
-[dir="rtl"] li,
+[dir="rtl"] small,
 [dir="rtl"] dt,
 [dir="rtl"] dd,
 [dir="rtl"] blockquote,
 [dir="rtl"] figcaption,
 [dir="rtl"] label,
 [dir="rtl"] .form-label,
+[dir="rtl"] .form-check-label,
 [dir="rtl"] .card-title,
 [dir="rtl"] .card-text,
 [dir="rtl"] .section-tag,
 [dir="rtl"] .accordion-button,
 [dir="rtl"] .accordion-body,
-[dir="rtl"] .nav-link,
 [dir="rtl"] .alert,
 [dir="rtl"] .toast-body,
-[dir="rtl"] .form-check-label {
-  unicode-bidi: plaintext;
+[dir="rtl"] td,
+[dir="rtl"] th,
+[dir="rtl"] .nav-link,
+[dir="rtl"] .footer-links a,
+[dir="rtl"] .breadcrumb-item,
+[dir="rtl"] .phone-link {
+  direction: ltr !important;
+  text-align: right !important;
+  unicode-bidi: isolate !important;
+}
+
+/* List Items & Checked Items in RTL Mode */
+[dir="rtl"] li {
+  text-align: right !important;
+}
+
+[dir="rtl"] .list-unstyled li,
+[dir="rtl"] ul.list-unstyled li,
+[dir="rtl"] .companion-category-card ul li {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  text-align: right !important;
+  direction: rtl !important;
+  gap: 0.5rem !important;
+}
+
+[dir="rtl"] .list-unstyled li > i,
+[dir="rtl"] ul.list-unstyled li > i,
+[dir="rtl"] .companion-category-card ul li > i {
+  flex-shrink: 0 !important;
+  margin-top: 0.22rem !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Preserve inline element layout without text inversion */
+[dir="rtl"] span,
+[dir="rtl"] strong,
+[dir="rtl"] b,
+[dir="rtl"] em,
+[dir="rtl"] a,
+[dir="rtl"] .badge {
+  unicode-bidi: isolate !important;
+}
+
+/* Numeric, Phone, and Price Tags formatting */
+[dir="rtl"] .phone-link,
+[dir="rtl"] [class*="phone"],
+[dir="rtl"] .price,
+[dir="rtl"] .badge {
+  direction: ltr !important;
+  display: inline-block !important;
+  text-align: right !important;
+}
+
+/* ==========================================================================
+   BOOTSTRAP 5 SPACING MIRRORING IN RTL (Margins, Paddings & Borders)
+   ========================================================================== */
+[dir="rtl"] .ms-auto { margin-right: auto !important; margin-left: 0 !important; }
+[dir="rtl"] .me-auto { margin-left: auto !important; margin-right: 0 !important; }
+
+[dir="rtl"] .ms-0 { margin-right: 0 !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-1 { margin-right: 0.25rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-2 { margin-right: 0.5rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-3 { margin-right: 1rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-4 { margin-right: 1.5rem !important; margin-left: 0 !important; }
+[dir="rtl"] .ms-5 { margin-right: 3rem !important; margin-left: 0 !important; }
+
+[dir="rtl"] .me-0 { margin-left: 0 !important; margin-right: 0 !important; }
+[dir="rtl"] .me-1 { margin-left: 0.25rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-2 { margin-left: 0.5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-3 { margin-left: 1rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-4 { margin-left: 1.5rem !important; margin-right: 0 !important; }
+[dir="rtl"] .me-5 { margin-left: 3rem !important; margin-right: 0 !important; }
+
+[dir="rtl"] .ps-0 { padding-right: 0 !important; padding-left: 0 !important; }
+[dir="rtl"] .ps-1 { padding-right: 0.25rem !important; padding-left: 0 !important; }
+[dir="rtl"] .ps-2 { padding-right: 0.5rem !important; padding-left: 0 !important; }
+[dir="rtl"] .ps-3 { padding-right: 1rem !important; padding-left: 0 !important; }
+[dir="rtl"] .ps-4 { padding-right: 1.5rem !important; padding-left: 0 !important; }
+[dir="rtl"] .ps-5 { padding-right: 3rem !important; padding-left: 0 !important; }
+
+[dir="rtl"] .pe-0 { padding-left: 0 !important; padding-right: 0 !important; }
+[dir="rtl"] .pe-1 { padding-left: 0.25rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pe-2 { padding-left: 0.5rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pe-3 { padding-left: 1rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pe-4 { padding-left: 1.5rem !important; padding-right: 0 !important; }
+[dir="rtl"] .pe-5 { padding-left: 3rem !important; padding-right: 0 !important; }
+
+[dir="rtl"] .text-end { text-align: left !important; }
+[dir="rtl"] .text-start { text-align: right !important; }
+
+/* Borders & Rounded corners */
+[dir="rtl"] .border-start {
+  border-right: 1px solid var(--bs-border-color) !important;
+  border-left: 0 !important;
+}
+[dir="rtl"] .border-end {
+  border-left: 1px solid var(--bs-border-color) !important;
+  border-right: 0 !important;
+}
+
+[dir="rtl"] blockquote,
+[dir="rtl"] .blockquote {
+  border-right: 3px solid var(--accent) !important;
+  border-left: 0 !important;
+  padding-right: 1rem !important;
+  padding-left: 0 !important;
+}
+
+[dir="rtl"] .rounded-start {
+  border-top-right-radius: var(--border-radius) !important;
+  border-bottom-right-radius: var(--border-radius) !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+[dir="rtl"] .rounded-end {
+  border-top-left-radius: var(--border-radius) !important;
+  border-bottom-left-radius: var(--border-radius) !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+/* ==========================================================================
+   INPUT GROUP & FOOTER NEWSLETTER CAPSULE IN RTL
+   ========================================================================== */
+[dir="rtl"] .input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating) {
+  border-top-right-radius: var(--border-radius) !important;
+  border-bottom-right-radius: var(--border-radius) !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+[dir="rtl"] .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  border-top-left-radius: var(--border-radius) !important;
+  border-bottom-left-radius: var(--border-radius) !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  margin-right: -1px;
+  margin-left: 0;
+}
+
+/* Footer newsletter specific pill container in RTL */
+[dir="rtl"] .site-footer form[data-form-type="newsletter"] .input-group {
+  flex-direction: row-reverse !important;
+  border-radius: 50px !important;
+  padding: 4px;
+}
+
+[dir="rtl"] .site-footer form[data-form-type="newsletter"] .form-control {
+  text-align: right !important;
+  direction: ltr !important;
+  padding-right: 1.15rem !important;
+  padding-left: 0.5rem !important;
+}
+
+[dir="rtl"] .site-footer form[data-form-type="newsletter"] .btn-accent,
+[dir="rtl"] .site-footer form[data-form-type="newsletter"] button[type="submit"] {
+  border-radius: 50px !important;
+}
+
+/* ==========================================================================
+   NAVIGATION, ACCORDION & COMPONENT RTL ADJUSTMENTS
+   ========================================================================== */
+[dir="rtl"] .navbar-nav {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+[dir="rtl"] .dropdown-menu {
   text-align: right;
 }
 
-[dir="rtl"] span,
-[dir="rtl"] a,
-[dir="rtl"] strong,
-[dir="rtl"] em,
-[dir="rtl"] .badge {
-  unicode-bidi: isolate;
+[dir="rtl"] .nav-dropdown-menu .dropdown-item {
+  text-align: right;
+}
+
+[dir="rtl"] .accordion-button {
+  text-align: right;
+}
+
+[dir="rtl"] .accordion-button::after {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+[dir="rtl"] .pagination {
+  direction: ltr;
+  justify-content: center;
+}
+
+/* Mirrored icons */
+[dir="rtl"] .footer-links a:hover {
+  transform: none;
+}
+
+[dir="rtl"] .footer-links a:hover .bi-chevron-right {
+  transform: translateX(-3px);
 }
 
 [dir="rtl"] .bi-chevron-right::before {
-  content: "\f284"; /* bi-chevron-left in bootstrap icons */
+  content: "\f284"; /* bi-chevron-left */
 }
 
 [dir="rtl"] .bi-arrow-right::before {
@@ -123,19 +268,6 @@
 [dir="rtl"] .dashboard-sidebar {
   border-right: none;
   border-left: 1px solid var(--border-color);
-}
-
-@media (max-width: 991.98px) {
-  [dir="rtl"] .dashboard-sidebar {
-    left: auto;
-    right: -280px;
-    transition: right var(--transition-normal);
-  }
-
-  [dir="rtl"] .dashboard-sidebar.show {
-    right: 0;
-    left: auto;
-  }
 }
 
 [dir="rtl"] .timeline {
@@ -153,20 +285,127 @@
   right: -2rem;
 }
 
-/* Floating badge positioning */
 [dir="rtl"] .floating-badge {
   left: auto;
   right: 1.5rem;
 }
 
-/* Toast Notification */
 [dir="rtl"] .toast-container {
   right: auto;
   left: 20px;
 }
 
-/* Back to top */
 [dir="rtl"] .back-to-top {
   right: auto;
   left: 25px;
+}
+
+[dir="rtl"] .floating-emergency-widget {
+  left: auto !important;
+  right: 24px !important;
+}
+
+[dir="rtl"] .dashboard-wrapper ~ .floating-emergency-widget,
+[dir="rtl"] body:has(.dashboard-wrapper) .floating-emergency-widget {
+  left: 28px !important;
+  right: auto !important;
+}
+
+/* ==========================================================================
+   MOBILE VIEW RTL PADDING & SAFEGUARDS (≤ 991.98px & ≤ 767.98px)
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  [dir="rtl"] .site-navbar .navbar-collapse {
+    left: 12px !important;
+    right: 12px !important;
+    text-align: right !important;
+  }
+
+  [dir="rtl"] .site-navbar .navbar-nav .nav-link {
+    text-align: right !important;
+  }
+
+  [dir="rtl"] .nav-controls {
+    justify-content: flex-end !important;
+  }
+
+  [dir="rtl"] .dashboard-sidebar {
+    left: auto !important;
+    right: -290px !important;
+    transition: right var(--transition-normal);
+  }
+
+  [dir="rtl"] .dashboard-sidebar.show {
+    right: 0 !important;
+    left: auto !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  [dir="rtl"] .container,
+  [dir="rtl"] .container-fluid {
+    padding-right: 1.25rem !important;
+    padding-left: 1.25rem !important;
+  }
+
+  [dir="rtl"] .section-py {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  [dir="rtl"] .card {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  [dir="rtl"] .card-body {
+    padding: 1.25rem !important;
+  }
+
+  [dir="rtl"] .floating-emergency-widget {
+    left: auto !important;
+    right: 16px !important;
+    bottom: 16px !important;
+  }
+
+  [dir="rtl"] .back-to-top {
+    right: auto !important;
+    left: 16px !important;
+    bottom: 16px !important;
+  }
+
+  [dir="rtl"] .timeline {
+    padding-left: 0 !important;
+    padding-right: 1.5rem !important;
+  }
+
+  [dir="rtl"] .timeline-marker {
+    left: auto !important;
+    right: -1.5rem !important;
+  }
+
+  [dir="rtl"] .footer-emergency-card {
+    text-align: right !important;
+    padding: 1.25rem !important;
+  }
+
+  [dir="rtl"] .footer-emergency-card .phone-link {
+    text-align: right !important;
+  }
+}
+
+@media (max-width: 480px) {
+  [dir="rtl"] .container {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+
+  [dir="rtl"] .card-body {
+    padding: 1rem !important;
+  }
+
+  [dir="rtl"] .btn {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
 }

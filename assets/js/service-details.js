@@ -18,8 +18,8 @@ const SERVICES_DATA = {
     overviewTag: '<i class="bi bi-shield-plus"></i> Evidence-Based Protection',
     overviewHeading: 'Understanding Core vs. Lifestyle Vaccines',
     overviewDesc: 'Veterinary medicine categorizes vaccines into two primary groups: <strong>Core vaccines</strong>, vital for all companion animals regardless of indoor/outdoor exposure, and <strong>Non-Core (Lifestyle) vaccines</strong>, recommended based on geographic risk, boarding frequency, and outdoor exposure.',
-    overviewImage: 'assets/images/clinical/dept-preventive.jpg',
-    overviewImgAlt: 'Veterinary preventive care and puppy examination',
+    overviewImage: 'assets/images/services/details-vaccine-overview.jpg',
+    overviewImgAlt: 'Veterinary clinical immunization preparation station with labeled canine and feline vaccine vials, sterile syringe, and health passport',
     protocolBox1: {
       title: '<i class="bi bi-check-circle-fill text-accent me-2"></i> Canine Protocols:',
       items: [
@@ -117,8 +117,8 @@ const SERVICES_DATA = {
     overviewTag: '<i class="bi bi-hospital"></i> Gold-Standard Operating Suites',
     overviewHeading: 'Sterile Operating Theatres & Dedicated Anesthesia',
     overviewDesc: 'Every surgical patient at VetCare Pro is assigned a dedicated licensed veterinary technician whose sole clinical focus is managing anesthesia depth, continuous vitals, and thermal patient warming throughout the entire procedure.',
-    overviewImage: 'assets/images/clinical/dept-surgery.jpg',
-    overviewImgAlt: 'High-tech surgical suite with positive pressure HEPA filtration',
+    overviewImage: 'assets/images/services/details-surgery-overview.jpg',
+    overviewImgAlt: 'Sterile surgical suite with dedicated anesthesia technician monitoring multi-parameter vitals telemetry during surgery',
     protocolBox1: {
       title: '<i class="bi bi-check-circle-fill text-accent me-2"></i> Orthopedic Capabilities:',
       items: [
@@ -216,8 +216,8 @@ const SERVICES_DATA = {
     overviewTag: '<i class="bi bi-display"></i> 15-Minute Laboratory Results',
     overviewHeading: 'Point-of-Care Laboratory & Instant Tele-Radiology',
     overviewDesc: 'Waiting days for critical lab results causes undue stress. Our hospital features a full clinical pathology suite capable of evaluating organ function, electrolytes, blood counts, and infectious antigens while you wait in our comfortable lounge.',
-    overviewImage: 'assets/images/clinical/dept-diagnostics.jpg',
-    overviewImgAlt: 'Veterinary clinical laboratory with automated analyzers',
+    overviewImage: 'assets/images/services/details-diagnostics-overview.jpg',
+    overviewImgAlt: 'Veterinary clinical laboratory pathologist operating automated blood analyzers alongside digital radiograph monitors',
     protocolBox1: {
       title: '<i class="bi bi-check-circle-fill text-accent me-2"></i> In-House Laboratory Capabilities:',
       items: [
@@ -315,8 +315,8 @@ const SERVICES_DATA = {
     overviewTag: '<i class="bi bi-shield-shaded"></i> Complete Oral Health',
     overviewHeading: 'Full-Mouth Dental Radiography & Ultrasonic Hygiene',
     overviewDesc: 'Over 60% of a pet’s tooth structure lies hidden beneath the gum line. Without intraoral digital radiographs, tooth root abscesses, bone loss, and feline resorptive lesions (FORLs) go completely undetected and cause silent chronic pain.',
-    overviewImage: 'assets/images/clinical/dept-dental.jpg',
-    overviewImgAlt: 'Modern veterinary dental suite with intraoral digital X-ray machine',
+    overviewImage: 'assets/images/services/details-dental-overview.jpg',
+    overviewImgAlt: 'Veterinary dental suite with intraoral digital X-ray radiograph display and ultrasonic scaling instrumentation',
     protocolBox1: {
       title: '<i class="bi bi-check-circle-fill text-accent me-2"></i> Diagnostic Dental Standards:',
       items: [
@@ -414,8 +414,8 @@ const SERVICES_DATA = {
     overviewTag: '<i class="bi bi-hospital-fill"></i> Immediate Triage',
     overviewHeading: 'Zero-Wait Emergency Triage & ICU Support',
     overviewDesc: 'Unlike appointments, emergencies do not wait. Any arriving patient displaying respiratory distress, cardiovascular collapse, traumatic bleeding, or sudden paralysis is immediately whisked to our crash resuscitation bay for instant veterinary intervention.',
-    overviewImage: 'assets/images/hero/emergency-hero.jpg',
-    overviewImgAlt: 'Veterinarians stabilizing a critically injured dog in trauma suite',
+    overviewImage: 'assets/images/services/details-emergency-overview.jpg',
+    overviewImgAlt: 'Veterinary emergency ICU with Snyder oxygen therapy chamber, crash cart, and real-time telemetry monitoring',
     protocolBox1: {
       title: '<i class="bi bi-check-circle-fill text-danger me-2"></i> Acute Trauma Protocols:',
       items: [
@@ -513,8 +513,8 @@ const SERVICES_DATA = {
     overviewTag: '<i class="bi bi-heart-fill text-danger"></i> Nose-to-Tail Clinical Rigor',
     overviewHeading: 'Whole-Body Clinical Assessment & Unhurried Conversations',
     overviewDesc: 'We dedicate 30 to 45 minutes to every wellness consultation. Our clinicians examine every organ system, listen attentively to your lifestyle observations, and formulate proactive wellness plans customized to your pet’s exact age and breed risks.',
-    overviewImage: 'assets/images/clinical/dept-preventive.jpg',
-    overviewImgAlt: 'Friendly veterinarian examining a dog’s eyes and ears in bright exam suite',
+    overviewImage: 'assets/images/services/details-wellness-overview.jpg',
+    overviewImgAlt: 'Compassionate veterinarian performing otoscopic ear examination on a calm dog with pet parent in modern exam room',
     protocolBox1: {
       title: '<i class="bi bi-check-circle-fill text-accent me-2"></i> Physical Exam Checklist:',
       items: [
@@ -605,15 +605,15 @@ const SERVICES_DATA = {
     badge: '<i class="bi bi-heart-pulse"></i> Specialized Care',
     title: 'Internal Medicine & Chronic Disease Management',
     lead: 'Chronic systemic diseases require advanced clinical acumen, precision diagnostics, and compassionate lifelong partnership. Led by Dr. Marcus Vance, DACVIM, our internal medicine service specializes in endocrine, renal, gastrointestinal, and immune-mediated disorders.',
-    heroImage: 'assets/images/services/service-dermatology.jpg',
-    heroAlt: 'Board-certified veterinary internist evaluating patient diagnostics',
+    heroImage: 'assets/images/clinical/exam-consultation.jpg',
+    heroAlt: 'Board-certified veterinary internist evaluating patient diagnostics and vitals',
     heroCtaText: 'Consult with an Internist',
     appointmentDept: 'internal',
     overviewTag: '<i class="bi bi-capsule"></i> Board-Certified Medical Expertise',
     overviewHeading: 'Systematic Staging for Complex Medical Conditions',
     overviewDesc: 'When symptoms are elusive or standard treatments fall short, internal medicine specialists delve deeper. We utilize advanced endocrine curves, renal IRIS staging, GI endoscopy, and allergy immunotherapy to restore quality of life.',
-    overviewImage: 'assets/images/clinical/dept-internal.jpg',
-    overviewImgAlt: 'Veterinary internist examining patient with ultrasound and ECG diagnostics',
+    overviewImage: 'assets/images/services/details-internal-overview.jpg',
+    overviewImgAlt: 'Veterinary internist consulting with pet owner while reviewing continuous glucose curves, endocrine panels, and ultrasound',
     protocolBox1: {
       title: '<i class="bi bi-check-circle-fill text-accent me-2"></i> Endocrine & Renal Focus:',
       items: [
@@ -711,8 +711,8 @@ const SERVICES_DATA = {
     overviewTag: '<i class="bi bi-activity"></i> Non-Invasive Cellular Healing',
     overviewHeading: 'Photobiomodulation & Targeted Joint Therapy',
     overviewDesc: 'Class IV Deep Tissue Laser Therapy delivers near-infrared photons deep into damaged tissues, accelerating ATP cellular energy production, reducing localized inflammation, and releasing natural endorphins without medications or side effects.',
-    overviewImage: 'assets/images/services/service-dermatology.jpg',
-    overviewImgAlt: 'Veterinary physical rehabilitation room with therapy balance equipment',
+    overviewImage: 'assets/images/services/details-rehab-overview.jpg',
+    overviewImgAlt: 'Certified veterinary rehabilitation therapist administering Class IV photobiomodulation laser therapy to dog wearing protective eye Doggles',
     protocolBox1: {
       title: '<i class="bi bi-check-circle-fill text-accent me-2"></i> Modalities & Equipment:',
       items: [

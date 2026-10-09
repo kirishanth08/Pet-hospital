@@ -40,13 +40,16 @@
     // Update text toggler buttons
     const togglers = document.querySelectorAll('.rtl-text-toggle');
     togglers.forEach((btn) => {
-      btn.textContent = 'RTL';
       if (dir === 'rtl') {
+        btn.textContent = 'LTR';
         btn.classList.add('active');
-        btn.setAttribute('title', 'Switch to LTR');
+        btn.setAttribute('title', 'Switch to LTR text direction');
+        btn.setAttribute('aria-label', 'Switch to LTR text direction');
       } else {
+        btn.textContent = 'RTL';
         btn.classList.remove('active');
-        btn.setAttribute('title', 'Switch to RTL');
+        btn.setAttribute('title', 'Switch to RTL text direction');
+        btn.setAttribute('aria-label', 'Switch to RTL text direction');
       }
     });
 

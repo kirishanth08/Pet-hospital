@@ -47,7 +47,7 @@ pet-hospital/
 ├── vet-details.html              # Individual Profile — Dr. Emily Carter, DACVS
 ├── emergency-care.html           # 24/7 Emergency Care, Triage & First Aid
 ├── appointments.html             # Multi-step Interactive Appointment Booking
-├── pricing.html                  # Transparent Wellness Plans & Fee Schedule
+├── pricing.html                  # Transparent Hospital Care Packages & Clinical Fee Schedule
 ├── blog.html                     # Pet Health Knowledge Hub, Search & Filters
 ├── blog-details.html             # Clinical Article — Feline Pain Recognition
 ├── contact.html                  # Hospital Campus Location, Hours & Inquiry Form

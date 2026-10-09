@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-bs-theme="light" dir="ltr">
 <head>
   <meta charset="UTF-8">
@@ -65,14 +65,14 @@
             <!-- RTL / LTR Text Toggle -->
             <button class="rtl-text-toggle" type="button" aria-label="Toggle language direction" title="Toggle RTL">RTL</button>
 
-            <!-- User Dashboard -->
-            <a href="dashboard.html" class="btn btn-sm btn-outline-primary" title="User Dashboard">
-              <i class="bi bi-speedometer2"></i> Dashboard
+            <!-- User Dashboard Profile Avatar -->
+            <a href="dashboard.html" class="nav-icon-btn nav-avatar-btn" title="User Dashboard" aria-label="User Dashboard">
+              <i class="bi bi-person-circle"></i>
             </a>
 
             <!-- Pet Owner Portal Login -->
             <a href="login.html" class="btn btn-sm btn-light" title="Pet Parent Portal">
-              <i class="bi bi-person-circle"></i> Login
+              <i class="bi bi-box-arrow-in-right"></i> Login
             </a>
 
             <!-- Sign Up CTA -->
@@ -86,49 +86,45 @@
   </header>
 
   <main>
-    <!-- SECTION 1: CLINICAL HERO (FULL COVER BACKGROUND) -->
+    <!-- SECTION 1: SPECIALTY SURGICAL & REFERRAL CENTER HERO -->
     <section class="section-py text-white" id="clinical-hero">
       <div class="container position-relative" style="z-index: 2;">
         <div class="text-center max-w-900 mx-auto mb-5">
           <span class="section-tag mb-3 d-inline-flex align-items-center gap-2">
-            <i class="bi bi-hospital-fill text-accent"></i> Multi-Disciplinary Clinical Excellence
+            <i class="bi bi-hospital-fill text-accent"></i> Veterinary Specialty Center & Surgical Practice
           </span>
-          <h1 class="display-3 fw-extrabold mb-3 text-white">Advanced Veterinary Medicine & Specialized Clinical Services</h1>
-          <p class="lead mb-4 mx-auto" style="max-width: 860px;">From complex laparoscopic and orthopedic surgery to in-house molecular blood chemistry, 360° digital dental radiology, internal medicine, and round-the-clock ICU critical care — our accredited hospital delivers rigorous, full-spectrum veterinary medicine under one roof.</p>
+          <h1 class="display-3 fw-extrabold mb-3 text-white">Tertiary Surgical Interventions, Complex Internal Medicine & Referral Care</h1>
+          <p class="lead mb-4 mx-auto" style="max-width: 860px;">Partnering with regional family veterinarians and dedicated pet families for advanced orthopedic reconstruction, minimally invasive laparoscopy, oncological surgery, and round-the-clock intensive critical telemetry.</p>
           
           <div class="d-flex justify-content-center flex-wrap gap-3 mb-4">
-            <a href="#clinical-departments" class="btn btn-accent btn-lg">
-              <i class="bi bi-grid-3x3-gap-fill me-1"></i> Explore Clinical Specialties
+            <a href="appointments.html" class="btn btn-primary btn-lg">
+              <i class="bi bi-calendar2-check-fill me-1"></i> Request Specialty Consultation
             </a>
-            <a href="#pricing-matrix" class="btn btn-outline-light btn-lg">
-              <i class="bi bi-table me-1"></i> Specifications & Estimates
-            </a>
-            <a href="emergency-care.html" class="btn btn-emergency btn-lg">
-              <i class="bi bi-lightning-charge-fill me-1"></i> 24/7 Trauma Triage
+            <a href="#referral-pathway" class="btn btn-outline-light btn-lg">
+              <i class="bi bi-file-earmark-medical me-1"></i> Referring Vet Portal & Transfer
             </a>
           </div>
 
           <!-- Service Quick-Jump Navigation Bar -->
-          <nav class="service-quicknav-bar mx-auto mt-4" aria-label="Clinical Departments Quick Navigation">
-            <a href="#dept-surgery" class="service-quicknav-link"><i class="bi bi-bandaid"></i> Surgery & Orthopedics</a>
-            <a href="#dept-diagnostics" class="service-quicknav-link"><i class="bi bi-cpu"></i> In-House Lab & Imaging</a>
-            <a href="#dept-dental" class="service-quicknav-link"><i class="bi bi-emoji-smile"></i> Dental Suite</a>
-            <a href="#dept-internal" class="service-quicknav-link"><i class="bi bi-heart-pulse"></i> Internal Medicine</a>
-            <a href="#dept-preventive" class="service-quicknav-link"><i class="bi bi-shield-check"></i> Preventive Wellness</a>
-            <a href="#dept-emergency" class="service-quicknav-link"><i class="bi bi-hospital text-danger"></i> 24/7 Critical Care</a>
-            <a href="#dept-rehab" class="service-quicknav-link"><i class="bi bi-lightning"></i> Physical Rehab</a>
+          <nav class="service-quicknav-bar mx-auto mt-4" aria-label="Clinical Specialties Quick Navigation">
+            <a href="#referral-pathway" class="service-quicknav-link"><i class="bi bi-arrow-left-right"></i> Referral Pathway</a>
+            <a href="#clinical-departments" class="service-quicknav-link"><i class="bi bi-bandaid"></i> Surgical Specialties</a>
+            <a href="#clinical-board" class="service-quicknav-link"><i class="bi bi-people"></i> Grand Rounds Board</a>
+            <a href="#equipment-specs" class="service-quicknav-link"><i class="bi bi-cpu"></i> Surgical Instrumentation</a>
+            <a href="#pricing-matrix" class="service-quicknav-link"><i class="bi bi-table"></i> Procedural Packages</a>
+            <a href="#service-cta" class="service-quicknav-link"><i class="bi bi-send-check"></i> Consult Intake</a>
           </nav>
         </div>
 
-        <!-- 4 Key Clinical Trust Pillars -->
+        <!-- 4 Key Specialty Metrics (Distinct from Home 1) -->
         <div class="row g-3 pt-4 border-top border-white border-opacity-25 mt-4">
           <div class="col-lg-3 col-sm-6">
             <div class="clinical-hero-stat-card">
               <div class="d-flex align-items-center gap-3">
-                <i class="bi bi-patch-check-fill fs-2 text-accent"></i>
+                <i class="bi bi-award-fill fs-2 text-accent"></i>
                 <div>
-                  <strong class="d-block text-white">AAHA Accredited</strong>
-                  <span class="small text-white-50">Sterile Surgical Suites</span>
+                  <strong class="d-block text-white">Board-Certified Faculty</strong>
+                  <span class="small text-white-50">Diplomates in DACVS & DACVIM</span>
                 </div>
               </div>
             </div>
@@ -137,10 +133,10 @@
           <div class="col-lg-3 col-sm-6">
             <div class="clinical-hero-stat-card">
               <div class="d-flex align-items-center gap-3">
-                <i class="bi bi-cpu fs-2 text-accent"></i>
+                <i class="bi bi-shield-lock-fill fs-2 text-accent"></i>
                 <div>
-                  <strong class="d-block text-white">15-Min Diagnostics</strong>
-                  <span class="small text-white-50">In-House Lab & Imaging</span>
+                  <strong class="d-block text-white">Closed-Circuit Anesthesia</strong>
+                  <span class="small text-white-50">Continuous Arterial Telemetry</span>
                 </div>
               </div>
             </div>
@@ -149,10 +145,10 @@
           <div class="col-lg-3 col-sm-6">
             <div class="clinical-hero-stat-card">
               <div class="d-flex align-items-center gap-3">
-                <i class="bi bi-mortarboard-fill fs-2 text-accent"></i>
+                <i class="bi bi-arrow-repeat fs-2 text-accent"></i>
                 <div>
-                  <strong class="d-block text-white">Board-Certified</strong>
-                  <span class="small text-white-50">Surgery & Internal Medicine</span>
+                  <strong class="d-block text-white">Rapid Referral Intake</strong>
+                  <span class="small text-white-50">Same-Day DICOM & Lab Review</span>
                 </div>
               </div>
             </div>
@@ -161,10 +157,10 @@
           <div class="col-lg-3 col-sm-6">
             <div class="clinical-hero-stat-card">
               <div class="d-flex align-items-center gap-3">
-                <i class="bi bi-lightning-charge-fill fs-2 text-danger"></i>
+                <i class="bi bi-activity fs-2 text-danger"></i>
                 <div>
-                  <strong class="d-block text-white">24/7 Trauma ICU</strong>
-                  <span class="small text-white-50">Always Staffed Critical Care</span>
+                  <strong class="d-block text-white">1:2 Inpatient Telemetry</strong>
+                  <span class="small text-white-50">Dedicated Critical Care Nursing</span>
                 </div>
               </div>
             </div>
@@ -173,185 +169,264 @@
       </div>
     </section>
 
-    <!-- SECTION 2: COMPREHENSIVE CLINICAL DEPARTMENTS DIRECTORY (SIMPLIFIED CLEAN UI) -->
+    <!-- SECTION 2: DEDICATED REFERRING VETERINARIAN & SECOND OPINION INTAKE -->
+    <section class="section-py bg-surface border-bottom" id="referral-pathway">
+      <div class="container">
+        <div class="text-center section-title-wrap max-w-800 mx-auto mb-5">
+          <span class="section-tag"><i class="bi bi-arrow-left-right"></i> Collaborative Referral Hub</span>
+          <h2 class="h1 mb-3">Veterinary Referral Coordination & Second Opinion Pathway</h2>
+          <p class="lead">We work in close partnership with regional primary care veterinarians and concerned pet families to deliver clear diagnostic clarity and complex surgical intervention.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Referral Card 1 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 card-hover p-4 border-0 shadow-sm rounded-4 bg-subtle">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-box-primary">
+                  <i class="bi bi-file-earmark-medical-fill"></i>
+                </div>
+                <div>
+                  <span class="badge badge-subtle-primary">Primary Doctor Portal</span>
+                  <h5 class="mb-0 mt-1">Doctor-to-Doctor Referral</h5>
+                </div>
+              </div>
+              <p class="small text-muted mb-3 flex-grow-1">Seamless peer-to-peer case handoff for general practice clinicians. Submit digital DICOM x-rays, IDEXX lab panels, and clinical chart notes. We guarantee specialist review within 24 hours.</p>
+              <ul class="list-unstyled small text-muted mb-4">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i> Direct peer telephone consults before admission</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i> Comprehensive post-op surgical reports in &lt;12 hrs</li>
+                <li><i class="bi bi-check-circle-fill text-accent me-2"></i> Complete return to primary clinic for routine follow-up</li>
+              </ul>
+              <a href="appointments.html" class="btn btn-sm btn-outline-primary w-100 mt-auto">Submit Referral Case <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+
+          <!-- Referral Card 2 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card h-100 card-hover p-4 border-0 shadow-sm rounded-4 bg-subtle">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-box-primary">
+                  <i class="bi bi-chat-left-quote-fill"></i>
+                </div>
+                <div>
+                  <span class="badge badge-subtle-accent">Pet Family Intake</span>
+                  <h5 class="mb-0 mt-1">Surgical Second Opinions</h5>
+                </div>
+              </div>
+              <p class="small text-muted mb-3 flex-grow-1">For families facing an ambiguous diagnosis, complex orthopedic injury, or high-grade tumor. Our board-certified specialists provide in-depth staging reviews and clear, evidence-based options.</p>
+              <ul class="list-unstyled small text-muted mb-4">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i> Objective review of existing radiographic studies</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i> Non-surgical vs. minimally invasive alternatives</li>
+                <li><i class="bi bi-check-circle-fill text-accent me-2"></i> Upfront itemized surgical cost breakdowns</li>
+              </ul>
+              <a href="appointments.html" class="btn btn-sm btn-outline-primary w-100 mt-auto">Request Second Opinion <i class="bi bi-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+
+          <!-- Referral Card 3 -->
+          <div class="col-lg-4 col-md-12">
+            <div class="card h-100 card-hover p-4 border-0 shadow-sm rounded-4 bg-subtle">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-box-primary">
+                  <i class="bi bi-truck-front-fill"></i>
+                </div>
+                <div>
+                  <span class="badge badge-subtle-emergency">Urgent Transfer</span>
+                  <h5 class="mb-0 mt-1">Direct Inpatient Hospital Transfer</h5>
+                </div>
+              </div>
+              <p class="small text-muted mb-3 flex-grow-1">Rapid ambulance or direct clinician transfer for unstable patients requiring immediate surgical theatre access, blood transfusion, or continuous high-flow oxygen telemetry.</p>
+              <ul class="list-unstyled small text-muted mb-4">
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i> Dedicated surgical bay prep while in transit</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-accent me-2"></i> Heated Snyder oxygen chamber immediately ready</li>
+                <li><i class="bi bi-check-circle-fill text-accent me-2"></i> Emergency trauma surgeon scrubbed upon arrival</li>
+              </ul>
+              <a href="tel:5559247387" class="btn btn-sm btn-outline-primary w-100 mt-auto">Call Referral Hotline <i class="bi bi-telephone-fill ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TERTIARY SURGICAL SPECIALTIES & ADVANCED DISCIPLINES -->
     <section class="section-py bg-surface" id="clinical-departments">
       <div class="container">
         <div class="text-center section-title-wrap max-w-800 mx-auto mb-4">
-          <span class="section-tag"><i class="bi bi-diagram-3-fill"></i> Clinical Directory</span>
-          <h2 class="h1 mb-3">Specialized Clinical Departments</h2>
-          <p class="lead">Explore our specialized clinical divisions, modern medical instrumentation, and evidence-based treatment capabilities.</p>
+          <span class="section-tag"><i class="bi bi-diagram-3-fill"></i> Surgical & Specialty Scope</span>
+          <h2 class="h1 mb-3">Specialized Surgical Disciplines & Advanced Inpatient Units</h2>
+          <p class="lead">Focusing strictly on complex clinical procedures, advanced surgical instrumentation, and tertiary veterinary therapies beyond standard outpatient care.</p>
         </div>
 
         <!-- 6 Specialty Clinical Cards Grid -->
         <div class="row g-4">
-          <!-- Card 1: Surgery & Orthopedics -->
+          <!-- Card 1: Orthopedics & Neuro-Spinal -->
           <div class="col-lg-4 col-md-6" id="dept-surgery">
             <div class="simple-dept-card">
               <div class="simple-dept-img-wrap">
-                <img src="assets/images/clinical/dept-surgery.jpg" alt="Surgery & Orthopedics" class="simple-dept-img">
+                <img src="assets/images/clinical/dept-surgery.jpg" alt="Orthopedic and Neuro-Spinal Surgery Suite" class="simple-dept-img">
                 <span class="badge bg-primary text-white simple-dept-badge">
-                  <i class="bi bi-bandaid me-1"></i> Surgical Suite
+                  <i class="bi bi-bandaid me-1"></i> Orthopedic & Spine
                 </span>
               </div>
               <div class="p-4 d-flex flex-column justify-content-between flex-grow-1 dept-body">
                 <div>
-                  <h4 class="h5 mb-2">Surgery & Orthopedics</h4>
-                  <p class="small text-muted mb-3 dept-desc">Positive-pressure surgical suite equipped with continuous telemetry, laparoscopic instruments, and thermal patient warming.</p>
+                  <h4 class="h5 mb-2">Orthopedics & Neuro-Spine Center</h4>
+                  <p class="small text-muted mb-3 dept-desc">Positive-pressure surgical theatre dedicated to complex biomechanical repair, joint reconstruction, and spinal decompression.</p>
                   <ul class="list-unstyled small text-muted mb-4">
-                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> TPLO cruciate ligament stabilization</li>
-                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Laparoscopic spay & gastropexy</li>
-                    <li><i class="bi bi-check2 text-accent me-1"></i> SurgiVet multi-parameter telemetry</li>
+                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> TPLO cruciate ligament stabilization & Arthrex plates</li>
+                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Rigid bone plating osteosynthesis & fracture repair</li>
+                    <li><i class="bi bi-check2 text-accent me-1"></i> Hemilaminectomy spinal decompression for acute IVDD</li>
                   </ul>
                 </div>
                 <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                  <span class="small text-muted">Dr. Emily Carter, DACVS</span>
+                  <span class="small text-muted fw-semibold">Dr. Emily Carter, DACVS</span>
                   <a href="service-details.html?id=surgery" class="btn btn-sm btn-outline-primary">
-                    View Details <i class="bi bi-arrow-right ms-1"></i>
+                    Procedural Scope <i class="bi bi-arrow-right ms-1"></i>
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Card 2: Diagnostics & Imaging -->
+          <!-- Card 2: Minimally Invasive Laparoscopy -->
           <div class="col-lg-4 col-md-6" id="dept-diagnostics">
             <div class="simple-dept-card">
               <div class="simple-dept-img-wrap">
-                <img src="assets/images/clinical/dept-diagnostics.jpg" alt="Diagnostic Laboratory & Imaging" class="simple-dept-img">
+                <img src="assets/images/clinical/dept-diagnostics.jpg" alt="Minimally Invasive Video Laparoscopy & Endoscopy" class="simple-dept-img">
                 <span class="badge bg-primary text-white simple-dept-badge">
-                  <i class="bi bi-cpu me-1"></i> Diagnostics & Lab
+                  <i class="bi bi-camera-video me-1"></i> Minimally Invasive
                 </span>
               </div>
               <div class="p-4 d-flex flex-column justify-content-between flex-grow-1 dept-body">
                 <div>
-                  <h4 class="h5 mb-2">Diagnostic Lab & Imaging</h4>
-                  <p class="small text-muted mb-3 dept-desc">In-house point-of-care laboratory and low-radiation digital radiology delivering definitive test results in 15 minutes.</p>
+                  <h4 class="h5 mb-2">Laparoscopy & Video Endoscopy</h4>
+                  <p class="small text-muted mb-3 dept-desc">Rigid and flexible Karl Storz endoscopes for high-definition diagnostic imaging and surgical interventions through micro-incisions.</p>
                   <ul class="list-unstyled small text-muted mb-4">
-                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> 15-min CBC & chemistry profiles</li>
-                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Sound-Eklin digital X-ray & tele-read</li>
-                    <li><i class="bi bi-check2 text-accent me-1"></i> Color Doppler ultrasound & cytology</li>
+                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Laparoscopic prophylactic gastropexy & organ biopsies</li>
+                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Upper & lower GI flexible mucosal endoscopy</li>
+                    <li><i class="bi bi-check2 text-accent me-1"></i> Non-surgical foreign body retrieval via endoscopy</li>
                   </ul>
                 </div>
                 <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                  <span class="small text-muted">Dr. David Kim, VECCS</span>
+                  <span class="small text-muted fw-semibold">Dr. David Kim, VECCS</span>
                   <a href="service-details.html?id=diagnostics" class="btn btn-sm btn-outline-primary">
-                    View Details <i class="bi bi-arrow-right ms-1"></i>
+                    Procedural Scope <i class="bi bi-arrow-right ms-1"></i>
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Card 3: Comprehensive Dental Suite -->
+          <!-- Card 3: Advanced Oral & Maxillofacial -->
           <div class="col-lg-4 col-md-6" id="dept-dental">
             <div class="simple-dept-card">
               <div class="simple-dept-img-wrap">
-                <img src="assets/images/clinical/dept-dental.jpg" alt="Comprehensive Dental Suite" class="simple-dept-img">
+                <img src="assets/images/clinical/dept-dental.jpg" alt="Advanced Maxillofacial Oral Surgery Suite" class="simple-dept-img">
                 <span class="badge bg-primary text-white simple-dept-badge">
-                  <i class="bi bi-emoji-smile me-1"></i> Dental Suite
+                  <i class="bi bi-emoji-smile me-1"></i> Maxillofacial Suite
                 </span>
               </div>
               <div class="p-4 d-flex flex-column justify-content-between flex-grow-1 dept-body">
                 <div>
-                  <h4 class="h5 mb-2">Dental Suite & Oral Surgery</h4>
-                  <p class="small text-muted mb-3 dept-desc">Complete Oral Health Assessment & Treatment (COHAT) including digital dental radiography, scaling, and tooth extractions.</p>
+                  <h4 class="h5 mb-2">Maxillofacial & Advanced Oral Surgery</h4>
+                  <p class="small text-muted mb-3 dept-desc">Specialized dental surgical suite equipped for reconstructive jaw surgery, oncological resection, and endodontics.</p>
                   <ul class="list-unstyled small text-muted mb-4">
-                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> 360° intraoral digital dental X-rays</li>
-                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Ultrasonic scaling & fluoride sealant</li>
-                    <li><i class="bi bi-check2 text-accent me-1"></i> Surgical extractions with nerve blocks</li>
+                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Mandibular & maxillary fracture repair</li>
+                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Odontogenic tumor resection with reconstructive margins</li>
+                    <li><i class="bi bi-check2 text-accent me-1"></i> Full-mouth extractions with infraorbital & mental blocks</li>
                   </ul>
                 </div>
                 <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                  <span class="small text-muted">Dr. Sophia Martinez, DVM</span>
+                  <span class="small text-muted fw-semibold">Dr. Sophia Martinez, DAVDC</span>
                   <a href="service-details.html?id=dental" class="btn btn-sm btn-outline-primary">
-                    View Details <i class="bi bi-arrow-right ms-1"></i>
+                    Procedural Scope <i class="bi bi-arrow-right ms-1"></i>
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Card 4: Internal Medicine -->
+          <!-- Card 4: Internal Medicine & Oncology -->
           <div class="col-lg-4 col-md-6" id="dept-internal">
             <div class="simple-dept-card">
               <div class="simple-dept-img-wrap">
-                <img src="assets/images/clinical/dept-internal.jpg" alt="Internal Medicine" class="simple-dept-img">
+                <img src="assets/images/clinical/dept-internal.jpg" alt="Internal Medicine and Oncology Staging" class="simple-dept-img">
                 <span class="badge bg-primary text-white simple-dept-badge">
-                  <i class="bi bi-heart-pulse me-1"></i> Internal Medicine
+                  <i class="bi bi-heart-pulse me-1"></i> Internal Medicine & Oncology
                 </span>
               </div>
               <div class="p-4 d-flex flex-column justify-content-between flex-grow-1 dept-body">
                 <div>
-                  <h4 class="h5 mb-2">Internal Medicine & Chronic Care</h4>
-                  <p class="small text-muted mb-3 dept-desc">Systematic staging and therapy for complex endocrine, kidney, gastrointestinal, and cardiovascular disorders.</p>
+                  <h4 class="h5 mb-2">Complex Internal Medicine & Oncology</h4>
+                  <p class="small text-muted mb-3 dept-desc">In-depth staging, chemotherapy administration, and multi-system medical management for severe metabolic pathology.</p>
                   <ul class="list-unstyled small text-muted mb-4">
-                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Diabetes mellitus & Cushing's therapy</li>
-                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> IRIS renal disease staging & fluid plans</li>
-                    <li><i class="bi bi-check2 text-accent me-1"></i> Cardiology ECG & allergy immunotherapy</li>
+                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> IRIS renal disease staging & fluid hemodynamic plans</li>
+                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Multi-agent chemotherapy protocols & oncology staging</li>
+                    <li><i class="bi bi-check2 text-accent me-1"></i> Color Doppler abdominal sonography & guided cytology</li>
                   </ul>
                 </div>
                 <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                  <span class="small text-muted">Dr. Marcus Vance, DACVIM</span>
+                  <span class="small text-muted fw-semibold">Dr. Marcus Vance, DACVIM</span>
                   <a href="service-details.html?id=internal-medicine" class="btn btn-sm btn-outline-primary">
-                    View Details <i class="bi bi-arrow-right ms-1"></i>
+                    Procedural Scope <i class="bi bi-arrow-right ms-1"></i>
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Card 5: Preventive Health -->
-          <div class="col-lg-4 col-md-6" id="dept-preventive">
+          <!-- Card 5: Inpatient Critical ICU & Recovery -->
+          <div class="col-lg-4 col-md-6" id="dept-inpatient-icu">
             <div class="simple-dept-card">
               <div class="simple-dept-img-wrap">
-                <img src="assets/images/clinical/dept-preventive.jpg" alt="Preventive Health" class="simple-dept-img">
+                <img src="assets/images/clinical/dept-icu.jpg" alt="Inpatient Critical Care and Recovery Telemetry Ward" class="simple-dept-img">
                 <span class="badge bg-primary text-white simple-dept-badge">
-                  <i class="bi bi-shield-check me-1"></i> Preventive Health
+                  <i class="bi bi-hospital me-1"></i> Inpatient ICU Ward
                 </span>
               </div>
               <div class="p-4 d-flex flex-column justify-content-between flex-grow-1 dept-body">
                 <div>
-                  <h4 class="h5 mb-2">Preventive & Life-Stage Care</h4>
-                  <p class="small text-muted mb-3 dept-desc">Individualized proactive health protocols, core and lifestyle immunizations, parasite prevention, and senior panels.</p>
+                  <h4 class="h5 mb-2">Inpatient Telemetry & Recovery Ward</h4>
+                  <p class="small text-muted mb-3 dept-desc">Heated post-operative patient bays with continuous vital sign telemetry, direct IV syringe pumps, and constant nurse oversight.</p>
                   <ul class="list-unstyled small text-muted mb-4">
-                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Core & lifestyle vaccine titering</li>
-                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Annual 4Dx vector disease screening</li>
-                    <li><i class="bi bi-check2 text-accent me-1"></i> Senior SDMA renal biomarkers & nutrition</li>
+                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Snyder heated intensive oxygen concentration cages</li>
+                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Continuous arterial line pressure & SpO2 monitoring</li>
+                    <li><i class="bi bi-check2 text-accent me-1"></i> 24/7 dedicated inpatient nurse-to-patient ratio 1:2</li>
                   </ul>
                 </div>
                 <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                  <span class="small text-muted">Dr. James Wilson, DVM</span>
-                  <a href="service-details.html?id=vaccinations" class="btn btn-sm btn-outline-primary">
-                    View Details <i class="bi bi-arrow-right ms-1"></i>
+                  <span class="small text-muted fw-semibold">Nurse Alisha Brooks, VTS</span>
+                  <a href="service-details.html?id=emergency" class="btn btn-sm btn-outline-primary">
+                    Procedural Scope <i class="bi bi-arrow-right ms-1"></i>
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Card 6: Physical Rehabilitation -->
+          <!-- Card 6: Physical Rehab & Hydrotherapy -->
           <div class="col-lg-4 col-md-6" id="dept-rehab">
             <div class="simple-dept-card">
               <div class="simple-dept-img-wrap">
-                <img src="assets/images/clinical/dept-rehab.jpg" alt="Physical Rehabilitation" class="simple-dept-img">
+                <img src="assets/images/clinical/dept-rehab.jpg" alt="Canine Physical Rehabilitation and Hydrotherapy Center" class="simple-dept-img">
                 <span class="badge bg-primary text-white simple-dept-badge">
-                  <i class="bi bi-lightning me-1"></i> Physical Rehab
+                  <i class="bi bi-water me-1"></i> Hydrotherapy & Mobility
                 </span>
               </div>
               <div class="p-4 d-flex flex-column justify-content-between flex-grow-1 dept-body">
                 <div>
-                  <h4 class="h5 mb-2">Physical Rehab & Laser Therapy</h4>
-                  <p class="small text-muted mb-3 dept-desc">Non-invasive photobiomodulation and targeted joint protocols to relieve arthritis pain and speed surgical recovery.</p>
+                  <h4 class="h5 mb-2">Canine Hydrotherapy & Mobility Rehab</h4>
+                  <p class="small text-muted mb-3 dept-desc">Accelerating orthopedic and neurological recovery through buoyancy-assisted aquatic treadmill exercise and deep laser therapy.</p>
                   <ul class="list-unstyled small text-muted mb-4">
-                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Class IV deep tissue laser therapy</li>
-                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Adequan joint viscosupplementation</li>
-                    <li><i class="bi bi-check2 text-accent me-1"></i> Proprioceptive & spinal rehabilitation</li>
+                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Heated underwater treadmill aquatic exercise</li>
+                    <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Class IV photobiomodulation deep-tissue laser</li>
+                    <li><i class="bi bi-check2 text-accent me-1"></i> Post-TPLO & post-spinal gait retraining protocols</li>
                   </ul>
                 </div>
                 <div class="d-flex justify-content-between align-items-center pt-3 border-top">
-                  <span class="small text-muted">Nurse Alisha Brooks, CCRVN</span>
+                  <span class="small text-muted fw-semibold">Certified Canine Rehab Team</span>
                   <a href="service-details.html?id=rehab" class="btn btn-sm btn-outline-primary">
-                    View Details <i class="bi bi-arrow-right ms-1"></i>
+                    Procedural Scope <i class="bi bi-arrow-right ms-1"></i>
                   </a>
                 </div>
               </div>
@@ -361,71 +436,62 @@
       </div>
     </section>
 
-    <!-- SECTION 3: 5-STAGE CLINICAL TREATMENT PATHWAY -->
-    <section class="section-py bg-subtle" id="treatment-pathway">
+    <!-- SECTION 4: MULTI-DISCIPLINARY GRAND ROUNDS & SURGICAL REVIEW BOARD (UNIQUE TO HOME 2) -->
+    <section class="section-py bg-subtle" id="clinical-board">
       <div class="container">
         <div class="text-center section-title-wrap max-w-800 mx-auto mb-5">
-          <span class="section-tag"><i class="bi bi-bezier2"></i> Clinical Methodology</span>
-          <h2 class="h1 mb-3">Our 5-Stage Precision Medical Pathway</h2>
-          <p class="lead">Every medical case follows a structured clinical trajectory designed for diagnostic rigor, surgical safety, and uninterrupted patient telemetry.</p>
+          <span class="section-tag"><i class="bi bi-people-fill"></i> Multi-Disciplinary Governance</span>
+          <h2 class="h1 mb-3">Collaborative Grand Rounds & Specialist Case Review</h2>
+          <p class="lead">Complex surgical and internal medicine cases are never handled in isolation. Our surgical, internal medicine, and critical care faculty convene daily for formal grand rounds.</p>
         </div>
 
         <div class="row g-4">
           <!-- Step 1 -->
-          <div class="col-lg col-md-6">
+          <div class="col-lg-3 col-md-6">
             <div class="clinical-protocol-box">
               <div class="protocol-step-badge">1</div>
-              <h5 class="h6 mb-2">Pre-Clinical Triage</h5>
-              <p class="small text-muted mb-0">Vital signs review, rectal temperature, pulse oximetry baseline, body condition score, and computerized history intake.</p>
+              <h5 class="h6 mb-2">Surgical Architecture</h5>
+              <p class="small text-muted mb-0">Board-certified orthopedic surgeon reviews 3D digital radiographs, templates surgical implants, and establishes the optimal approach.</p>
             </div>
           </div>
 
           <!-- Step 2 -->
-          <div class="col-lg col-md-6">
+          <div class="col-lg-3 col-md-6">
             <div class="clinical-protocol-box">
               <div class="protocol-step-badge">2</div>
-              <h5 class="h6 mb-2">Diagnostic Workup</h5>
-              <p class="small text-muted mb-0">Point-of-care 15-min chemistry/CBC, digital X-rays, ultrasound screening, or cytology to establish objective clinical markers.</p>
+              <h5 class="h6 mb-2">Metabolic Clearance</h5>
+              <p class="small text-muted mb-0">Internal medicine specialist audits organ reserve, coagulation profiles, and renal biomarkers to verify surgical candidacy.</p>
             </div>
           </div>
 
           <!-- Step 3 -->
-          <div class="col-lg col-md-6">
+          <div class="col-lg-3 col-md-6">
             <div class="clinical-protocol-box">
               <div class="protocol-step-badge">3</div>
-              <h5 class="h6 mb-2">Case Formulation</h5>
-              <p class="small text-muted mb-0">Clinicians review objective findings, establish staging/prognosis, and provide itemized estimates with clear options.</p>
+              <h5 class="h6 mb-2">Anesthetic Calibration</h5>
+              <p class="small text-muted mb-0">Calculation of constant rate infusion (CRI) analgesia, local nerve blocks, and customized blood pressure support protocols.</p>
             </div>
           </div>
 
           <!-- Step 4 -->
-          <div class="col-lg col-md-6">
+          <div class="col-lg-3 col-md-6">
             <div class="clinical-protocol-box">
               <div class="protocol-step-badge">4</div>
-              <h5 class="h6 mb-2">Precision Care</h5>
-              <p class="small text-muted mb-0">Execution of surgical intervention, targeted pharmacological therapy, or ICU stabilization under continuous telemetry.</p>
-            </div>
-          </div>
-
-          <!-- Step 5 -->
-          <div class="col-lg col-md-12">
-            <div class="clinical-protocol-box">
-              <div class="protocol-step-badge">5</div>
-              <h5 class="h6 mb-2">Discharge & Telemetry</h5>
-              <p class="small text-muted mb-0">Itemized discharge packet, prescribed pharmaceuticals with digital refill tracking, and portal doctor check-ins.</p>
+              <h5 class="h6 mb-2">ICU Telemetry Plan</h5>
+              <p class="small text-muted mb-0">Critical care nursing supervisor coordinates post-operative arterial monitoring, warming blankets, and rapid pain score checks.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 4: HOSPITAL TECHNOLOGY & EQUIPMENT SPECIFICATIONS -->
+    <!-- SECTION 5: SURGICAL THEATER & TERTIARY INSTRUMENTATION SPECIFICATIONS -->
     <section class="section-py bg-surface" id="equipment-specs">
       <div class="container">
         <div class="text-center section-title-wrap max-w-800 mx-auto mb-5">
-          <span class="section-tag"><i class="bi bi-cpu-fill"></i> Medical Infrastructure</span>
-          <h2 class="h1 mb-3">Hospital Technology & Equipment Specifications</h2>
-          <p class="lead">We invest continuously in diagnostic and surgical hardware matching human tertiary medical centers for exceptional precision.</p>
+          <span class="section-tag"><i class="bi bi-cpu-fill"></i> Advanced Instrumentation</span>
+          <h2 class="h1 mb-3">Tertiary Surgical Theater & Diagnostic Hardware</h2>
+          <p class="lead">Our hospital is equipped with university-grade diagnostic hardware and sterile surgical infrastructure matching human tertiary centers.</p>
         </div>
 
         <div class="row g-4">
@@ -433,15 +499,15 @@
           <div class="col-lg-3 col-md-6">
             <div class="tech-spec-card">
               <div class="d-flex align-items-center justify-content-between mb-3">
-                <span class="badge badge-subtle-primary">Radiology</span>
+                <span class="badge badge-subtle-primary">Orthopedic DR</span>
                 <i class="bi bi-broadcast fs-4 text-accent"></i>
               </div>
-              <h5 class="h6 mb-1">Sound-Eklin TruDR</h5>
-              <p class="small text-muted mb-3 tech-desc">Direct Digital Radiography System</p>
+              <h5 class="h6 mb-1">Sound-Eklin TruDR High-Def</h5>
+              <p class="small text-muted mb-3 tech-desc">Digital Orthopedic Radiography</p>
               <ul class="list-unstyled small text-muted mb-0 border-top pt-2">
-                <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> 2.5 lp/mm high resolution</li>
-                <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> 80% reduced radiation dose</li>
-                <li><i class="bi bi-check2 text-accent me-1"></i> Instant tele-radiology review</li>
+                <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Digital surgical templating</li>
+                <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Sub-millimeter anatomical resolution</li>
+                <li><i class="bi bi-check2 text-accent me-1"></i> Cloud DICOM sharing for referring vets</li>
               </ul>
             </div>
           </div>
@@ -450,15 +516,15 @@
           <div class="col-lg-3 col-md-6">
             <div class="tech-spec-card">
               <div class="d-flex align-items-center justify-content-between mb-3">
-                <span class="badge badge-subtle-accent">Laboratory</span>
-                <i class="bi bi-eyedropper fs-4 text-accent"></i>
+                <span class="badge badge-subtle-accent">Video Endoscopy</span>
+                <i class="bi bi-camera-video fs-4 text-accent"></i>
               </div>
-              <h5 class="h6 mb-1">IDEXX Catalyst One</h5>
-              <p class="small text-muted mb-3 tech-desc">Dry-Slide Chemistry Analyzer</p>
+              <h5 class="h6 mb-1">Karl Storz HD Endoscopy</h5>
+              <p class="small text-muted mb-3 tech-desc">Rigid & Flexible Micro-Optics</p>
               <ul class="list-unstyled small text-muted mb-0 border-top pt-2">
-                <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> 32-parameter chemistry profile</li>
-                <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> 15-minute point-of-care turnaround</li>
-                <li><i class="bi bi-check2 text-accent me-1"></i> Integrated SDMA renal biomarkers</li>
+                <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> 1080p full optical zoom</li>
+                <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Micro-biopsy retrieval channels</li>
+                <li><i class="bi bi-check2 text-accent me-1"></i> Integrated Xenon cold-light source</li>
               </ul>
             </div>
           </div>
@@ -467,15 +533,15 @@
           <div class="col-lg-3 col-md-6">
             <div class="tech-spec-card">
               <div class="d-flex align-items-center justify-content-between mb-3">
-                <span class="badge badge-subtle-primary">Ultrasound</span>
+                <span class="badge badge-subtle-primary">Doppler Ultrasound</span>
                 <i class="bi bi-soundwave fs-4 text-accent"></i>
               </div>
-              <h5 class="h6 mb-1">GE Logiq e Doppler</h5>
-              <p class="small text-muted mb-3 tech-desc">High-Definition Ultrasonography</p>
+              <h5 class="h6 mb-1">GE Logiq e Matrix Doppler</h5>
+              <p class="small text-muted mb-3 tech-desc">Vascular & Abdominal Sonography</p>
               <ul class="list-unstyled small text-muted mb-0 border-top pt-2">
-                <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Multi-frequency broadband probes</li>
-                <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Color and power flow Doppler</li>
-                <li><i class="bi bi-check2 text-accent me-1"></i> Cardiac & abdominal imaging</li>
+                <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Phased-array harmonic probes</li>
+                <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Pulsed & continuous Doppler flow</li>
+                <li><i class="bi bi-check2 text-accent me-1"></i> Real-time guided FNA cytology</li>
               </ul>
             </div>
           </div>
@@ -484,15 +550,15 @@
           <div class="col-lg-3 col-md-6">
             <div class="tech-spec-card">
               <div class="d-flex align-items-center justify-content-between mb-3">
-                <span class="badge badge-subtle-emergency">Surgical Telemetry</span>
+                <span class="badge badge-subtle-emergency">Invasive Telemetry</span>
                 <i class="bi bi-activity fs-4 text-danger"></i>
               </div>
-              <h5 class="h6 mb-1">SurgiVet Advisor 6</h5>
-              <p class="small text-muted mb-3 tech-desc">Multi-Parameter Telemetry Monitor</p>
+              <h5 class="h6 mb-1">SurgiVet Advisor 6-Lead</h5>
+              <p class="small text-muted mb-3 tech-desc">Continuous Anesthetic Telemetry</p>
               <ul class="list-unstyled small text-muted mb-0 border-top pt-2">
-                <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> End-tidal CO2 capnography</li>
-                <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Continuous ECG & SpO2 tracing</li>
-                <li><i class="bi bi-check2 text-accent me-1"></i> Non-invasive blood pressure (NIBP)</li>
+                <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Dual-channel invasive arterial BP</li>
+                <li class="mb-1"><i class="bi bi-check2 text-accent me-1"></i> Microstream sidestream capnography</li>
+                <li><i class="bi bi-check2 text-accent me-1"></i> Continuous multi-lead ECG & core temp</li>
               </ul>
             </div>
           </div>
@@ -500,204 +566,200 @@
       </div>
     </section>
 
-    <!-- SECTION 5: CLINICAL SERVICE SPECIFICATIONS & PRICING MATRIX -->
+    <!-- SECTION 6: TRANSPARENT SURGICAL & SPECIALTY PROCEDURAL PACKAGES -->
     <section class="section-py bg-subtle" id="pricing-matrix">
       <div class="container">
         <div class="text-center section-title-wrap max-w-800 mx-auto mb-5">
-          <span class="section-tag"><i class="bi bi-table"></i> Transparent Clinical Fees</span>
-          <h2 class="h1 mb-3">Service Inclusions & Transparent Clinical Estimates</h2>
-          <p class="lead">We review all procedural specifications and financial estimates before initiating any treatment plan. Zero surprises, complete clarity.</p>
+          <span class="section-tag"><i class="bi bi-table"></i> Transparent Specialty Pricing</span>
+          <h2 class="h1 mb-3">Surgical Packages & Procedural Fee Schedules</h2>
+          <p class="lead">All-inclusive specialty packages covering pre-operative staging, anesthesia, board-certified surgeons, ICU monitoring, and follow-up reviews. Zero surprise surcharges.</p>
         </div>
 
         <div class="table-responsive matrix-table shadow-sm">
           <table class="table table-hover mb-0">
             <thead>
               <tr>
-                <th scope="col" style="min-width: 200px;">Clinical Service</th>
-                <th scope="col" style="min-width: 240px;">Included Diagnostic Scope</th>
-                <th scope="col" style="min-width: 200px;">Anesthesia & Monitoring</th>
-                <th scope="col" style="min-width: 200px;">Discharge & Medications</th>
-                <th scope="col" class="text-end" style="min-width: 140px;">Estimated Fee</th>
+                <th scope="col" style="min-width: 200px;">Specialty Procedure</th>
+                <th scope="col" style="min-width: 240px;">Diagnostic & Surgical Scope</th>
+                <th scope="col" style="min-width: 200px;">Anesthetic & ICU Telemetry</th>
+                <th scope="col" style="min-width: 200px;">Post-Op Care & Discharge</th>
+                <th scope="col" class="text-end" style="min-width: 140px;">Package Fee</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>
-                  <strong class="d-block text-main">Comprehensive Wellness Exam</strong>
-                  <span class="text-muted small">Canine / Feline preventive</span>
+                  <strong class="d-block text-main">TPLO Cruciate Ligament Package</strong>
+                  <span class="text-muted small">Canine orthopedic stabilization</span>
                 </td>
                 <td class="small text-muted">
-                  Nose-to-tail physical, ophthalmic & otic exam, weight scoring, dietary review
+                  Pre-op digital orthogonal templating, Arthrex titanium locking plate, joint inspection
                 </td>
                 <td class="small text-muted">
-                  <span class="badge bg-light text-dark border">None (Conscious)</span>
+                  Board-certified surgeon, epidural analgesia, direct arterial line, Bair Hugger warming
                 </td>
                 <td class="small text-muted">
-                  Free Pet Health Passport & online portal registration
+                  Overnight ICU telemetry, 10-day multi-modal analgesics, 8-week follow-up X-rays included
                 </td>
-                <td class="text-end fw-bold text-main">$65 – $85</td>
+                <td class="text-end fw-bold text-main">$2,850 – $3,600*</td>
               </tr>
 
               <tr>
                 <td>
-                  <strong class="d-block text-main">Dental Prophylaxis & COHAT</strong>
-                  <span class="text-muted small">Complete oral health care</span>
+                  <strong class="d-block text-main">Minimally Invasive Video Endoscopy</strong>
+                  <span class="text-muted small">GI endoscopy & mucosal biopsy</span>
                 </td>
                 <td class="small text-muted">
-                  Full-mouth digital intraoral dental X-rays, 6-point subgingival probing
+                  High-definition mucosal inspection, 6-site biopsy collection, cytology preparation
                 </td>
                 <td class="small text-muted">
-                  General isoflurane anesthesia, IV catheter + fluid therapy, SurgiVet monitoring
+                  Closed-circuit isoflurane anesthesia, continuous pulse oximetry & capnography
                 </td>
                 <td class="small text-muted">
-                  Post-scaling polish, fluoride sealant & home dental care kit
+                  External histopathology review by board pathologist, written staging report in 5 days
                 </td>
-                <td class="text-end fw-bold text-main">$420 – $750*</td>
+                <td class="text-end fw-bold text-main">$950 – $1,450*</td>
               </tr>
 
               <tr>
                 <td>
-                  <strong class="d-block text-main">Soft-Tissue Surgical Suite</strong>
-                  <span class="text-muted small">Spay / Neuter / Mass biopsy</span>
+                  <strong class="d-block text-main">Reconstructive Maxillofacial Oral Surgery</strong>
+                  <span class="text-muted small">Complex extractions & flap repair</span>
                 </td>
                 <td class="small text-muted">
-                  Pre-anesthetic chemistry profile, clotting profile, CBC differential
+                  Full-mouth intraoral radiography, surgical mucoperiosteal flaps, bone contouring
                 </td>
                 <td class="small text-muted">
-                  Sterile operating theatre, Bair Hugger normothermic blanket, dedicated nurse
+                  Regional nerve blocks (bupivacaine), warm IV crystalloid infusion, dedicated LVT
                 </td>
                 <td class="small text-muted">
-                  7-day post-op analgesics, surgical recovery collar, suture removal
+                  Absorbable sutures, antiseptic oral rinse, 7-day analgesic medication packet
                 </td>
-                <td class="text-end fw-bold text-main">$380 – $850*</td>
+                <td class="text-end fw-bold text-main">$680 – $1,250*</td>
               </tr>
 
               <tr>
                 <td>
-                  <strong class="d-block text-main">Advanced Orthopedics (TPLO)</strong>
-                  <span class="text-muted small">Cruciate ligament stabilization</span>
+                  <strong class="d-block text-main">Specialist Second Opinion Consult</strong>
+                  <span class="text-muted small">Orthopedic / Internal Medicine</span>
                 </td>
                 <td class="small text-muted">
-                  Pre-op orthopedic digital X-rays, surgical templating, joint cytology
+                  Comprehensive 60-min specialist review of medical history, prior imaging & lab charts
                 </td>
                 <td class="small text-muted">
-                  Board-certified surgeon, epidural analgesia, direct arterial line
+                  <span class="badge bg-light text-dark border">Non-Surgical Review</span>
                 </td>
                 <td class="small text-muted">
-                  Multi-modal pain medication, support sling, 6-week healing recheck X-rays
+                  Written diagnostic roadmap and treatment options provided to owner & referring vet
                 </td>
-                <td class="text-end fw-bold text-main">$2,400 – $3,800*</td>
+                <td class="text-end fw-bold text-main">$195 – $380</td>
               </tr>
 
               <tr>
                 <td>
-                  <strong class="d-block text-main">Emergency ICU Admission</strong>
-                  <span class="text-muted small">24/7 Trauma stabilization</span>
+                  <strong class="d-block text-main">Post-Op Hydrotherapy & Laser Bundle</strong>
+                  <span class="text-muted small">6-Week Mobility Recovery Program</span>
                 </td>
                 <td class="small text-muted">
-                  Immediate triage, point-of-care blood gas, emergency TFAST ultrasound
+                  Weekly goniometric joint angle measurement, gait analysis, pain index scoring
                 </td>
                 <td class="small text-muted">
-                  Supplemental heated oxygen therapy, vascular access, vitals telemetry
+                  <span class="badge bg-light text-dark border">Zero Sedation Required</span>
                 </td>
                 <td class="small text-muted">
-                  Emergency stabilization pharmacotherapy & critical nurse monitoring
+                  6 underwater treadmill aquatic sessions, 6 Class IV laser therapies, home exercise manual
                 </td>
-                <td class="text-end fw-bold text-main">$250 – $650*</td>
+                <td class="text-end fw-bold text-main">$480 (Bundle)</td>
               </tr>
 
               <tr>
                 <td>
-                  <strong class="d-block text-main">Class IV Laser Therapy</strong>
-                  <span class="text-muted small">6-Session clinical bundle</span>
+                  <strong class="d-block text-main">Acute Trauma ICU Admission Protocol</strong>
+                  <span class="text-muted small">Immediate critical stabilization</span>
                 </td>
                 <td class="small text-muted">
-                  Goniometric joint mobility measurement & pain scale baseline scoring
+                  Rapid triage in &lt;120s, point-of-care blood gas panel, AFAST/TFAST trauma ultrasound
                 </td>
                 <td class="small text-muted">
-                  <span class="badge bg-light text-dark border">Non-Invasive (Zero Sedation)</span>
+                  Heated Snyder oxygen chamber, continuous 5-lead ECG, emergency fluid resuscitation
                 </td>
                 <td class="small text-muted">
-                  Customized home physical rehabilitation exercise manual
+                  Critical care doctor round-the-clock monitoring and twice-daily telephone physician updates
                 </td>
-                <td class="text-end fw-bold text-main">$295 (Bundle)</td>
+                <td class="text-end fw-bold text-main">$350 – $750*</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <p class="small text-muted mt-3 mb-0 text-center">
-          *Note: Surgical, dental extraction, and emergency fees vary depending on patient weight, anesthetic duration, medication dosages, and anatomical complexity. An itemized written estimate is always provided and signed prior to clinical interventions.
+          *All specialty surgical estimates include itemized pre-anesthetic testing, peri-operative telemetry, and prescribed home medications. An itemized written estimate is always reviewed and approved prior to surgical admission.
         </p>
       </div>
     </section>
 
-    <!-- SECTION 6: SERVICE CONSULTATION REQUEST & CTA -->
+    <!-- SECTION 7: INTERACTIVE SPECIALTY CONSULTATION & REFERRAL INTAKE -->
     <section class="section-py text-white bg-blend-hero" style="background-color: var(--primary);" id="service-cta">
       <div class="container">
         <div class="row align-items-center g-5">
           <div class="col-lg-7">
-            <span class="badge bg-white text-primary px-3 py-2 rounded-pill fs-6 mb-3 fw-bold">Specialized Medical Care</span>
-            <h2 class="display-5 text-white fw-bold mb-3">Reserve a Specialized Clinical Consultation</h2>
-            <p class="lead text-white-50 mb-4">Whether your pet requires a second opinion on an orthopedic diagnosis, advanced dental surgery, diagnostic ultrasound, or management of a complex endocrine condition, our board-certified clinical team is here to assist.</p>
+            <span class="badge bg-white text-primary px-3 py-2 rounded-pill fs-6 mb-3 fw-bold">Specialty Practice Intake</span>
+            <h2 class="display-5 text-white fw-bold mb-3">Schedule a Specialty Consultation or Referring Vet Transfer</h2>
+            <p class="lead text-white-50 mb-4">Whether you are scheduling a surgical second opinion, transferring an acute inpatient, or sending a patient from a primary clinic, our clinical coordinators expedite admission within 24 to 48 hours.</p>
             
             <div class="row g-3 text-white-50 small mb-4">
               <div class="col-sm-6">
                 <div class="d-flex align-items-center gap-2">
-                  <i class="bi bi-file-earmark-medical-fill text-accent fs-5"></i>
-                  <span>Direct records transfer from your referring clinic</span>
+                  <i class="bi bi-file-earmark-arrow-up-fill text-accent fs-5"></i>
+                  <span>Digital DICOM imaging and record upload support</span>
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="d-flex align-items-center gap-2">
-                  <i class="bi bi-clock-history text-accent fs-5"></i>
-                  <span>Prompt appointment scheduling within 24–48 hours</span>
+                  <i class="bi bi-telephone-inbound-fill text-accent fs-5"></i>
+                  <span>Direct clinician-to-clinician telephone handoffs</span>
                 </div>
               </div>
             </div>
 
             <div class="d-flex flex-wrap gap-3">
-              <a href="appointments.html" class="btn btn-accent btn-lg">
-                <i class="bi bi-calendar-check me-1"></i> Book Clinical Consultation
+              <a href="appointments.html" class="btn btn-primary btn-lg">
+                <i class="bi bi-calendar-check me-1"></i> Book Specialty Consultation
               </a>
               <a href="tel:5559247387" class="btn btn-outline-light btn-lg">
-                <i class="bi bi-telephone-fill me-1"></i> Speak to Clinical Coordinator
+                <i class="bi bi-telephone-fill me-1"></i> Referral Line: (555) 924-PETS
               </a>
             </div>
           </div>
 
           <div class="col-lg-5">
             <div class="card bg-surface text-main p-4 rounded-4 shadow-lg border-0">
-              <h5 class="h6 text-primary mb-3"><i class="bi bi-send-check-fill me-2"></i> Clinical Consultation Triage</h5>
+              <h5 class="h6 text-primary mb-3"><i class="bi bi-send-check-fill me-2"></i> Specialty Consultation Triage</h5>
               <form action="appointments.html" method="GET">
                 <div class="mb-3">
-                  <label class="form-label small fw-semibold">Clinical Department Needed:</label>
-                  <select class="form-select form-select-sm" name="department" aria-label="Department Selection">
-                    <option value="surgery">Surgery & Orthopedics (TPLO / Soft-Tissue)</option>
-                    <option value="diagnostics">In-House Diagnostics & Imaging (Ultrasound/X-Ray)</option>
-                    <option value="dental">Comprehensive Dental Suite & Oral Surgery</option>
-                    <option value="internal">Internal Medicine & Chronic Disease</option>
-                    <option value="wellness">Preventive Life-Stage Screening</option>
-                    <option value="rehab">Physical Rehabilitation & Laser Therapy</option>
+                  <label class="form-label small fw-semibold">Consultation / Specialty Service:</label>
+                  <select class="form-select form-select-sm" name="department" aria-label="Specialty Discipline Selection">
+                    <option value="orthopedics">Orthopedics & Spine (TPLO / Fracture / IVDD)</option>
+                    <option value="laparoscopy">Minimally Invasive Laparoscopy & Endoscopy</option>
+                    <option value="maxillofacial">Advanced Maxillofacial & Oral Surgery</option>
+                    <option value="internal_oncology">Internal Medicine & Oncology Staging</option>
+                    <option value="rehabilitation">Post-Operative Hydrotherapy & Mobility Rehab</option>
+                    <option value="second_opinion">Comprehensive Surgical Second Opinion</option>
                   </select>
                 </div>
 
                 <div class="mb-3">
-                  <label class="form-label small fw-semibold">Patient Companion Species:</label>
-                  <select class="form-select form-select-sm" name="species" aria-label="Species Selection">
-                    <option value="canine">Canine (Dog)</option>
-                    <option value="feline">Feline (Cat)</option>
-                    <option value="avian_exotic">Avian / Exotic Small Pet</option>
-                  </select>
+                  <label class="form-label small fw-semibold">Referring Primary Clinic / Vet (Optional):</label>
+                  <input type="text" class="form-control form-control-sm" placeholder="e.g. Oakridge Animal Clinic — Dr. Davis" aria-label="Referring Clinic Name">
                 </div>
 
                 <div class="mb-3">
-                  <label class="form-label small fw-semibold">Patient Symptoms / Referral Notes:</label>
-                  <textarea class="form-control form-control-sm" rows="3" placeholder="Briefly describe the condition, prior diagnosis, or diagnostic imaging needed..." aria-label="Symptoms or Notes"></textarea>
+                  <label class="form-label small fw-semibold">Patient Clinical Summary / Existing Diagnosis:</label>
+                  <textarea class="form-control form-control-sm" rows="3" placeholder="Briefly describe the condition, prior diagnostics, or reason for referral..." aria-label="Clinical Summary"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100">
-                  Continue to Booking Calendar <i class="bi bi-arrow-right ms-1"></i>
+                  Continue to Specialty Scheduling <i class="bi bi-arrow-right ms-1"></i>
                 </button>
               </form>
             </div>
@@ -706,7 +768,7 @@
       </div>
     </section>
 
-    <!-- SECTION 7: 24/7 ANIMAL EMERGENCY TRAUMA CENTER (FINAL SECTION) -->
+    <!-- SECTION 8: 24/7 ANIMAL EMERGENCY TRAUMA CENTER -->
     <section class="section-py bg-surface border-top" id="dept-emergency">
       <div class="container">
         <div class="dept-emergency-highlight p-4 p-md-5">
@@ -722,29 +784,29 @@
                 <div class="col-sm-4">
                   <div class="d-flex align-items-center gap-2 text-muted small">
                     <i class="bi bi-clock-fill text-danger fs-5"></i>
-                    <span><strong>Immediate Triage:</strong> Triage in &lt;120s</span>
+                    <span><strong>Immediate Triage:</strong> Evaluation in &lt;120s</span>
                   </div>
                 </div>
                 <div class="col-sm-4">
                   <div class="d-flex align-items-center gap-2 text-muted small">
                     <i class="bi bi-hospital-fill text-danger fs-5"></i>
-                    <span><strong>Snyder ICU:</strong> Heated O2 therapy</span>
+                    <span><strong>Snyder ICU:</strong> Heated O2 concentration</span>
                   </div>
                 </div>
                 <div class="col-sm-4">
                   <div class="d-flex align-items-center gap-2 text-muted small">
                     <i class="bi bi-shield-check text-danger fs-5"></i>
-                    <span><strong>On-Call:</strong> Critical surgeons</span>
+                    <span><strong>Trauma On-Call:</strong> Critical surgeons</span>
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-lg-4 text-lg-end">
               <div class="d-flex flex-column flex-sm-row flex-lg-column gap-3 justify-content-lg-end">
-                <a href="tel:5559247387" class="btn btn-emergency btn-lg fs-6 py-3">
+                <a href="tel:5559247387" class="btn btn-emergency btn-lg">
                   <i class="bi bi-telephone-fill me-2"></i> Call (555) 924-PETS
                 </a>
-                <a href="emergency-care.html" class="btn btn-outline-danger btn-lg fs-6 py-2">
+                <a href="emergency-care.html" class="btn btn-outline-primary btn-lg">
                   <i class="bi bi-arrow-right-circle me-2"></i> ER Protocol & Directions
                 </a>
               </div>
