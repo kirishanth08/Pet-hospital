@@ -130,16 +130,116 @@
       });
     }
 
+    // Date field restriction — Disallow past dates
+    const dateInput = document.getElementById('appointment-date');
+    const today = new Date();
+    const todayYear = today.getFullYear();
+    const todayMonth = String(today.getMonth() + 1).padStart(2, '0');
+    const todayDay = String(today.getDate()).padStart(2, '0');
+    const todayStr = `${todayYear}-${todayMonth}-${todayDay}`;
+
+    if (dateInput) {
+      dateInput.min = todayStr;
+      if (!dateInput.value) {
+        dateInput.value = todayStr;
+      }
+
+      dateInput.addEventListener('change', () => {
+        validateAppointmentDate();
+      });
+      dateInput.addEventListener('input', () => {
+        validateAppointmentDate();
+      });
+    }
+
+    function validateAppointmentDate() {
+      if (!dateInput) return true;
+      const feedback = document.getElementById('appointment-date-feedback') || dateInput.parentElement.querySelector('.invalid-feedback');
+      if (dateInput.value && dateInput.value < todayStr) {
+        dateInput.setCustomValidity('Appointment date cannot be in the past. Please select today or a future date.');
+        dateInput.classList.add('is-invalid');
+        if (feedback) {
+          feedback.textContent = 'Appointment date cannot be in the past. Please select today or a future date.';
+          feedback.style.display = 'block';
+        }
+        return false;
+      }
+      dateInput.setCustomValidity('');
+      dateInput.classList.remove('is-invalid');
+      if (feedback) {
+        feedback.style.display = '';
+        feedback.textContent = 'Please select a valid date (past dates are not allowed).';
+      }
+      return true;
+    }
+
+    // Name fields validation — Disallow numbers in Owner Name and Pet Name
+    const ownerNameInput = document.getElementById('owner-name');
+    const petNameInput = document.getElementById('pet-name');
+
+    function setupNameField(input, labelName = 'name') {
+      if (!input) return;
+      const feedback = input.parentElement?.querySelector('.invalid-feedback');
+
+      input.addEventListener('keydown', (e) => {
+        if (['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Enter', 'Home', 'End'].includes(e.key) ||
+            e.ctrlKey || e.metaKey) {
+          return;
+        }
+        if (/[0-9]/.test(e.key)) {
+          e.preventDefault();
+          input.classList.add('is-invalid');
+          input.setCustomValidity('Numbers are not allowed in names.');
+          if (feedback) {
+            feedback.textContent = 'Numbers are not allowed in names. Please enter letters only.';
+            feedback.style.display = 'block';
+          }
+        }
+      });
+
+      input.addEventListener('input', () => {
+        if (/[0-9]/.test(input.value)) {
+          input.value = input.value.replace(/[0-9]/g, '');
+          input.classList.add('is-invalid');
+          input.setCustomValidity('Numbers are not allowed in names.');
+          if (feedback) {
+            feedback.textContent = 'Numbers are not allowed in names. Please enter letters only.';
+            feedback.style.display = 'block';
+          }
+        } else {
+          input.classList.remove('is-invalid');
+          input.setCustomValidity('');
+          if (feedback) {
+            feedback.style.display = '';
+            feedback.textContent = `Please enter letters only (numbers are not allowed in ${labelName}).`;
+          }
+        }
+      });
+    }
+
+    setupNameField(ownerNameInput, 'name');
+    setupNameField(petNameInput, 'pet name');
+
     // Form Submission
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
       const isPhoneValid = validateAppointmentPhone(true);
+      const isDateValid = validateAppointmentDate();
+      const hasOwnerNumbers = ownerNameInput && /[0-9]/.test(ownerNameInput.value);
+      const hasPetNumbers = petNameInput && /[0-9]/.test(petNameInput.value);
 
-      if (!bookingForm.checkValidity() || !isPhoneValid) {
+      if (hasOwnerNumbers && ownerNameInput) {
+        ownerNameInput.classList.add('is-invalid');
+      }
+      if (hasPetNumbers && petNameInput) {
+        petNameInput.classList.add('is-invalid');
+      }
+
+      if (!bookingForm.checkValidity() || !isPhoneValid || !isDateValid || hasOwnerNumbers || hasPetNumbers) {
         bookingForm.classList.add('was-validated');
         if (window.showToast) {
-          window.showToast('Please correct errors and provide a valid phone number before booking.', 'warning', 'Validation Error');
+          window.showToast('Please correct form errors: numbers are not allowed in names and past dates are prohibited.', 'warning', 'Validation Error');
         }
         return;
       }

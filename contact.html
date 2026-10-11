@@ -57,6 +57,7 @@
             <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
             <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
             <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
           </ul>
 
           <div class="nav-controls">
@@ -68,19 +69,14 @@
             <!-- RTL / LTR Text Toggle -->
             <button class="rtl-text-toggle" type="button" aria-label="Toggle language direction" title="Toggle RTL">RTL</button>
 
-            <!-- User Dashboard Profile Avatar -->
-            <a href="dashboard.html" class="nav-icon-btn nav-avatar-btn" title="User Dashboard" aria-label="User Dashboard">
-              <i class="bi bi-person-circle"></i>
-            </a>
-
             <!-- Pet Owner Portal Login -->
-            <a href="login.html" class="btn btn-sm btn-light" title="Pet Parent Portal">
+            <a href="login.html" class="btn btn-sm btn-outline-primary" title="Pet Parent Portal">
               <i class="bi bi-box-arrow-in-right"></i> Login
             </a>
 
-            <!-- Sign Up CTA -->
-            <a href="register.html" class="btn btn-sm btn-primary">
-              <i class="bi bi-person-plus-fill"></i> Sign Up
+            <!-- Primary Action CTA -->
+            <a href="appointments.html" class="btn btn-sm btn-primary">
+              <i class="bi bi-calendar2-check-fill me-1"></i> Book Appointment
             </a>
           </div>
         </div>
@@ -180,8 +176,8 @@
               <div class="row g-3">
                 <div class="col-md-6">
                   <label for="c-name" class="form-label">Full Name <span class="required">*</span></label>
-                  <input type="text" class="form-control" id="c-name" placeholder="John Smith" required>
-                  <div class="invalid-feedback">Please provide your full name.</div>
+                  <input type="text" class="form-control" id="c-name" placeholder="John Smith" pattern="^[A-Za-z\s.'-]+$" title="Please enter letters only (no numbers allowed in name)." required>
+                  <div class="invalid-feedback">Please enter letters only (numbers are not allowed in names).</div>
                 </div>
                 <div class="col-md-6">
                   <label for="c-email" class="form-label">Email Address <span class="required">*</span></label>
@@ -195,7 +191,8 @@
                 </div>
                 <div class="col-md-6">
                   <label for="c-pet" class="form-label">Pet's Name & Species</label>
-                  <input type="text" class="form-control" id="c-pet" placeholder="e.g. Luna (Siamese Cat)" minlength="2">
+                  <input type="text" class="form-control" id="c-pet" placeholder="e.g. Luna (Siamese Cat)" pattern="^[A-Za-z\s.'\-()]+$" minlength="2" title="Please enter letters only (no numbers allowed in pet name).">
+                  <div class="invalid-feedback">Please enter letters only (numbers are not allowed).</div>
                 </div>
                 <div class="col-12">
                   <label for="c-subject" class="form-label">Inquiry Subject <span class="required">*</span></label>

@@ -298,11 +298,12 @@
 [dir="rtl"] .back-to-top {
   right: auto;
   left: 25px;
+  bottom: 82px;
 }
 
 [dir="rtl"] .floating-emergency-widget {
-  left: auto !important;
-  right: 24px !important;
+  left: 24px !important;
+  right: auto !important;
 }
 
 [dir="rtl"] .dashboard-wrapper ~ .floating-emergency-widget,
@@ -363,15 +364,15 @@
   }
 
   [dir="rtl"] .floating-emergency-widget {
-    left: auto !important;
-    right: 16px !important;
+    left: 16px !important;
+    right: auto !important;
     bottom: 16px !important;
   }
 
   [dir="rtl"] .back-to-top {
     right: auto !important;
     left: 16px !important;
-    bottom: 16px !important;
+    bottom: 74px !important;
   }
 
   [dir="rtl"] .timeline {
@@ -409,3 +410,84 @@
     padding-left: 1rem !important;
   }
 }
+
+/* ==========================================================================
+   RTL VIEW SPECIFIC FIXES: ABOUT ETHICS CENTERING & PRICING PAGE PADDING
+   ========================================================================== */
+
+/* 1. About Page — Guided by Ethics Center Alignment in RTL */
+[dir="rtl"] .text-center,
+[dir="rtl"] .text-center h1,
+[dir="rtl"] .text-center h2,
+[dir="rtl"] .text-center h3,
+[dir="rtl"] .text-center h4,
+[dir="rtl"] .text-center h5,
+[dir="rtl"] .text-center h6,
+[dir="rtl"] .text-center p,
+[dir="rtl"] .text-center .lead,
+[dir="rtl"] .section-title-wrap.text-center,
+[dir="rtl"] .section-title-wrap.text-center * {
+  text-align: center !important;
+}
+
+[dir="rtl"] .text-center .section-tag,
+[dir="rtl"] .section-title-wrap.text-center .section-tag,
+[dir="rtl"] #our-philosophy .section-tag {
+  display: inline-flex !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+[dir="rtl"] #our-philosophy .section-title-wrap,
+[dir="rtl"] #our-philosophy .section-title-wrap * {
+  text-align: center !important;
+}
+
+/* 2. Pricing Page RTL Padding & Layout Normalization */
+[dir="rtl"] ul.list-unstyled,
+[dir="rtl"] .list-unstyled {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+[dir="rtl"] #hospital-packages .card {
+  padding: 1.5rem !important;
+}
+
+[dir="rtl"] #hospital-packages .card ul.list-unstyled {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+[dir="rtl"] #fee-schedule .card {
+  padding: 0 !important;
+}
+
+[dir="rtl"] #fee-schedule .table-responsive {
+  padding: 0 !important;
+}
+
+[dir="rtl"] #fee-schedule .table th,
+[dir="rtl"] #fee-schedule .table td {
+  padding-right: 1.25rem !important;
+  padding-left: 1.25rem !important;
+}
+
+[dir="rtl"] #pricing-hero .breadcrumb {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+[dir="rtl"] #financing-options .card {
+  padding: 1.5rem !important;
+}
+
+[dir="rtl"] .position-absolute.top-0.end-0 {
+  right: auto !important;
+  left: 0 !important;
+  border-radius: 0 0 var(--border-radius) 0 !important;
+}
+

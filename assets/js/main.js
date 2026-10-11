@@ -49,6 +49,27 @@
       });
     }
 
+    // 3b. Floating 24/7 Emergency Care Widget — Prevent overlapping or disturbing hero sections
+    const emergencyWidget = document.querySelector('.floating-emergency-widget');
+    if (emergencyWidget) {
+      const updateEmergencyVisibility = () => {
+        const heroSection = document.getElementById('home-hero') || document.getElementById('clinical-hero');
+        if (heroSection) {
+          // On pages with a top hero section, reveal once scrolled past the initial hero viewport
+          if (window.scrollY > 300) {
+            emergencyWidget.classList.add('visible');
+          } else {
+            emergencyWidget.classList.remove('visible');
+          }
+        } else {
+          // On other pages without a full hero, display widget
+          emergencyWidget.classList.add('visible');
+        }
+      };
+      window.addEventListener('scroll', updateEmergencyVisibility, { passive: true });
+      updateEmergencyVisibility();
+    }
+
     // 4. Initialize Bootstrap tooltips if available
     if (typeof bootstrap !== 'undefined' && bootstrap.Tooltip) {
       const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));

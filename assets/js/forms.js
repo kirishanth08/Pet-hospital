@@ -126,6 +126,83 @@
       setupPhoneInput(pInput);
     });
 
+    // Helper: Name Input Validation and Number Prevention
+    function setupNameInput(nameInput) {
+      if (!nameInput || nameInput.dataset.nameBound) return;
+      nameInput.dataset.nameBound = 'true';
+
+      const feedback = getFeedbackElement(nameInput);
+
+      nameInput.addEventListener('keydown', (e) => {
+        if (['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Enter', 'Home', 'End'].includes(e.key) ||
+            e.ctrlKey || e.metaKey) {
+          return;
+        }
+        if (/[0-9]/.test(e.key)) {
+          e.preventDefault();
+          nameInput.classList.add('is-invalid');
+          nameInput.setCustomValidity('Numbers are not allowed in names.');
+          if (feedback) {
+            feedback.textContent = 'Numbers are not allowed in names. Please enter letters only.';
+            feedback.style.display = 'block';
+          }
+        }
+      });
+
+      nameInput.addEventListener('input', () => {
+        if (/[0-9]/.test(nameInput.value)) {
+          nameInput.value = nameInput.value.replace(/[0-9]/g, '');
+          nameInput.classList.add('is-invalid');
+          nameInput.setCustomValidity('Numbers are not allowed in names.');
+          if (feedback) {
+            feedback.textContent = 'Numbers are not allowed in names. Please enter letters only.';
+            feedback.style.display = 'block';
+          }
+        } else {
+          nameInput.classList.remove('is-invalid');
+          nameInput.setCustomValidity('');
+          if (feedback) {
+            feedback.style.display = '';
+            feedback.textContent = 'Please enter letters only (numbers are not allowed).';
+          }
+        }
+      });
+    }
+
+    // Attach name validation to name inputs across the site
+    document.querySelectorAll('#c-name, #c-pet, #owner-name, #pet-name, #reg-name, input[pattern*="A-Za-z"]').forEach((nInput) => {
+      setupNameInput(nInput);
+    });
+
+    // Helper: Date Input past date prevention
+    const globalToday = new Date();
+    const globalTodayStr = `${globalToday.getFullYear()}-${String(globalToday.getMonth() + 1).padStart(2, '0')}-${String(globalToday.getDate()).padStart(2, '0')}`;
+    
+    document.querySelectorAll('input[type="date"]').forEach((dInput) => {
+      dInput.min = globalTodayStr;
+      if (!dInput.value) {
+        dInput.value = globalTodayStr;
+      }
+      dInput.addEventListener('change', () => {
+        if (dInput.value && dInput.value < globalTodayStr) {
+          dInput.setCustomValidity('Date cannot be in the past. Please select today or a future date.');
+          dInput.classList.add('is-invalid');
+          const fb = getFeedbackElement(dInput);
+          if (fb) {
+            fb.textContent = 'Date cannot be in the past. Please select today or a future date.';
+            fb.style.display = 'block';
+          }
+        } else {
+          dInput.setCustomValidity('');
+          dInput.classList.remove('is-invalid');
+          const fb = getFeedbackElement(dInput);
+          if (fb) {
+            fb.style.display = '';
+          }
+        }
+      });
+    });
+
     // 1. Generic Bootstrap Form Validation
     const forms = document.querySelectorAll('.needs-validation');
     Array.from(forms).forEach((form) => {
@@ -135,7 +212,41 @@
         setupPhoneInput(phoneInput);
       }
 
+      form.querySelectorAll('#c-name, #c-pet, #owner-name, #pet-name, #reg-name, input[pattern*="A-Za-z"]').forEach((nInput) => {
+        setupNameInput(nInput);
+      });
+
       form.addEventListener('submit', (event) => {
+        // Enforce name fields check
+        let hasNameError = false;
+        form.querySelectorAll('#c-name, #c-pet, #owner-name, #pet-name, #reg-name, input[pattern*="A-Za-z"]').forEach((nInput) => {
+          if (/[0-9]/.test(nInput.value)) {
+            hasNameError = true;
+            nInput.classList.add('is-invalid');
+            nInput.setCustomValidity('Numbers are not allowed in names.');
+            const fb = getFeedbackElement(nInput);
+            if (fb) {
+              fb.textContent = 'Numbers are not allowed in names. Please enter letters only.';
+              fb.style.display = 'block';
+            }
+          }
+        });
+
+        // Enforce date field check
+        let hasDateError = false;
+        form.querySelectorAll('input[type="date"]').forEach((dInput) => {
+          if (dInput.value && dInput.value < globalTodayStr) {
+            hasDateError = true;
+            dInput.classList.add('is-invalid');
+            dInput.setCustomValidity('Date cannot be in the past.');
+            const fb = getFeedbackElement(dInput);
+            if (fb) {
+              fb.textContent = 'Date cannot be in the past. Please select today or a future date.';
+              fb.style.display = 'block';
+            }
+          }
+        });
+
         // Specifically enforce phone validation on submit
         if (phoneInput) {
           const val = phoneInput.value.trim();
@@ -160,7 +271,7 @@
           }
         }
 
-        if (!form.checkValidity()) {
+        if (!form.checkValidity() || hasNameError || hasDateError) {
           event.preventDefault();
           event.stopPropagation();
           form.classList.add('was-validated');

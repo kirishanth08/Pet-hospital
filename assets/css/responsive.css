@@ -343,20 +343,31 @@
     text-align: center;
   }
 
-  /* 360px Transparent clinical fees table layout fix */
-  .matrix-table {
+  /* 360px Transparent clinical fees and specialty pricing table layout fix */
+  .matrix-table,
+  #fee-schedule .table-responsive,
+  #pricing-matrix .table-responsive {
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
-    width: 100%;
+    width: 100% !important;
+    display: block !important;
     border-radius: var(--border-radius);
+    max-width: 100%;
   }
 
-  .matrix-table table {
-    min-width: 760px !important;
+  .matrix-table table,
+  #pricing-matrix table {
+    min-width: 780px !important;
+  }
+
+  #fee-schedule table {
+    min-width: 680px !important;
   }
 
   .matrix-table thead th,
-  .matrix-table tbody td {
+  .matrix-table tbody td,
+  #fee-schedule table thead th,
+  #fee-schedule table tbody td {
     padding: 0.85rem 0.95rem;
     font-size: 0.825rem;
   }
@@ -465,6 +476,23 @@
 
   .dashboard-topbar h4 {
     display: none;
+  }
+
+  /* 360px Pricing Tables: guarantee smooth scroll and clean padding */
+  .matrix-table,
+  #fee-schedule .table-responsive,
+  #pricing-matrix .table-responsive {
+    border-radius: 12px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .matrix-table thead th,
+  .matrix-table tbody td,
+  #fee-schedule table thead th,
+  #fee-schedule table tbody td {
+    padding: 0.65rem 0.75rem !important;
+    font-size: 0.8rem !important;
   }
 }
 
