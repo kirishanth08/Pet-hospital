@@ -315,14 +315,60 @@
   }
 
   /* 360px Dashboard alignment and topbar fixes */
+  .dashboard-topbar {
+    padding: 0.6rem 0.75rem !important;
+    gap: 0.5rem !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
   .dashboard-topbar h4 {
     font-size: 0.95rem !important;
     max-width: 140px;
   }
 
+  .dashboard-topbar .d-flex {
+    align-items: center;
+    gap: 0.35rem !important;
+    flex-shrink: 0;
+  }
+
+  .dashboard-topbar .nav-icon-btn {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 0.9rem !important;
+    border-radius: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .dashboard-topbar .rtl-text-toggle {
+    padding: 0.35rem 0.6rem !important;
+    font-size: 0.78rem !important;
+    min-height: 36px !important;
+    height: 36px !important;
+    border-radius: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
   .dashboard-topbar .btn {
-    padding: 0.4rem 0.65rem;
-    font-size: 0.78rem;
+    min-height: 36px !important;
+    padding: 0.35rem 0.65rem !important;
+    font-size: 0.78rem !important;
+    border-radius: 8px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Ensure responsive utilities like d-none properly hide desktop links */
+  .dashboard-topbar .d-none,
+  .dashboard-topbar a.d-none,
+  .dashboard-topbar button.d-none,
+  .dashboard-topbar a[href="index.html"].d-none,
+  .dashboard-topbar a[href="index.html"].d-md-inline-flex {
+    display: none !important;
   }
 
   .dashboard-body {
@@ -471,11 +517,16 @@
   }
 
   .dashboard-topbar {
-    padding: 0.6rem 0.75rem !important;
+    padding: 0.5rem 0.65rem !important;
+    gap: 0.35rem !important;
   }
 
   .dashboard-topbar h4 {
-    display: none;
+    display: none !important;
+  }
+
+  .dashboard-topbar .d-flex {
+    gap: 0.3rem !important;
   }
 
   /* 360px Pricing Tables: guarantee smooth scroll and clean padding */
